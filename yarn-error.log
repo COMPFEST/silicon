@@ -1,0 +1,36 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn init
+
+PATH: 
+  /opt/homebrew/Caskroom/miniforge/base/bin:/opt/homebrew/Caskroom/miniforge/base/condabin:/Users/adjiedjakapermana/Documents/google-cloud-sdk/bin:/Users/adjiedjakapermana/.sdkman/candidates/java/current/bin:/Users/adjiedjakapermana/.sdkman/candidates/gradle/current/bin:/Users/adjiedjakapermana/bin:/Users/adjiedjakapermana/development/flutter/bin:/Users/adjiedjakapermana/Library/Android/sdk/emulator:/Users/adjiedjakapermana/Library/Android/sdk/tools:/opt/homebrew/bin:/opt/homebrew/sbin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Users/adjiedjakapermana/.fig/bin:/Users/adjiedjakapermana/.local/bin:/Users/adjiedjakapermana/Library/Android/sdk/platform-tools:/bin
+
+Yarn version: 
+  1.22.18
+
+Node version: 
+  16.15.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: canceled
+      at Interface.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:137143:13)
+      at Interface.emit (node:events:527:28)
+      at Interface._ttyWrite (node:readline:1081:16)
+      at ReadStream.onkeypress (node:readline:288:10)
+      at ReadStream.emit (node:events:527:28)
+      at emitKeys (node:internal/readline/utils:358:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (node:internal/readline/emitKeypressEvents:61:36)
+      at ReadStream.emit (node:events:527:28)
+      at addChunk (node:internal/streams/readable:315:12)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
