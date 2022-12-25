@@ -59,6 +59,7 @@
     "lib": "lib"
   },
   "dependencies": {
+    "np": "^7.6.2",
     "styled-components": "^5.3.6"
   }
 }
