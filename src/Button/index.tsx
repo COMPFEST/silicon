@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { ButtonHTMLAttributes } from 'react'
 import { StyledButton, StyledLoadingIcon } from './Button.style'
 import { ButtonProps } from './interface'
 
 /**
  * Primary UI component for user interaction
  */
-const Button = ({
+const Button: React.FC<
+  ButtonProps &
+    React.DetailedHTMLProps<
+      ButtonHTMLAttributes<HTMLButtonElement>,
+      HTMLButtonElement
+    >
+> = ({
   variant = 'primary',
   size = 'regular',
   disabled = false,
@@ -13,14 +19,12 @@ const Button = ({
   leftIcon,
   rightIcon,
   children,
-  ...props
-}: ButtonProps) => {
+}) => {
   return (
     <StyledButton
       variant={variant}
       size={size}
       disabled={isLoading || disabled}
-      {...props}
     >
       {isLoading ? (
         <StyledLoadingIcon>
