@@ -5,38 +5,39 @@ import { ButtonProps } from './interface'
 /**
  * Primary UI component for user interaction
  */
-const Button: React.FC<ButtonProps & React.ComponentPropsWithoutRef<'button'>> =
-  ({
-    variant = 'primary',
-    size = 'regular',
-    disabled = false,
-    isLoading = false,
-    leftIcon,
-    rightIcon,
-    children,
-    ...props
-  }) => {
-    return (
-      <StyledButton
-        variant={variant}
-        size={size}
-        disabled={isLoading || disabled}
-        {...props}
-      >
-        {isLoading ? (
-          <StyledLoadingIcon>
-            <LoadingIcon />
-          </StyledLoadingIcon>
-        ) : (
-          <>
-            {leftIcon}
-            {children}
-            {rightIcon}
-          </>
-        )}
-      </StyledButton>
-    )
-  }
+const Button: React.FC<
+  ButtonProps & React.ComponentPropsWithoutRef<'button'>
+> = ({
+  variant = 'primary',
+  size = 'regular',
+  disabled = false,
+  isLoading = false,
+  leftIcon,
+  rightIcon,
+  children,
+  ...props
+}) => {
+  return (
+    <StyledButton
+      variant={variant}
+      size={size}
+      disabled={isLoading || disabled}
+      {...props}
+    >
+      {isLoading ? (
+        <StyledLoadingIcon>
+          <LoadingIcon />
+        </StyledLoadingIcon>
+      ) : (
+        <>
+          {leftIcon}
+          {children}
+          {rightIcon}
+        </>
+      )}
+    </StyledButton>
+  )
+}
 
 const LoadingIcon = () => (
   <svg
