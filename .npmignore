@@ -1,0 +1,11 @@
+node_modules
+package-lock.json
+.husky
+src
+.eslintignore
+.eslintrc.json
+.prettierignore
+.prettierrc
+.gitignore
+package-lock.json
+tsconfig.json

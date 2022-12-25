@@ -6,4 +6,4 @@ module.exports = {
     '@storybook/addon-interactions',
   ],
   framework: '@storybook/react',
-};
+}

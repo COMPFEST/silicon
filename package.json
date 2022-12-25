@@ -1,7 +1,7 @@
 {
-  "name": "storybook-react-library",
+  "name": "@compfest/silicon",
   "version": "0.1.0",
-  "description": "test-purpose",
+  "description": "Silicon Design System - Lightweight and interactive React component",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
   "types": "lib/index.d.ts",
@@ -24,8 +24,16 @@
     "@storybook/react": "^6.5.15",
     "@storybook/testing-library": "^0.0.13",
     "@types/react": "^18.0.26",
+    "@typescript-eslint/eslint-plugin": "^5.47.0",
+    "@typescript-eslint/parser": "^5.47.0",
     "babel-loader": "^8.3.0",
+    "eslint": ">=5.16.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-react": "^7.31.11",
+    "husky": "^8.0.2",
     "postcss": "^8.4.20",
+    "prettier": "^2.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup": "^3.8.1",
@@ -34,10 +42,18 @@
     "rollup-plugin-typescript2": "^0.34.1",
     "typescript": "^4.9.4"
   },
-  "dependencies": {},
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build": "rollup -c --bundleConfigAsCjs"
+    "build": "rollup -c --bundleConfigAsCjs",
+    "prepare": "husky install",
+    "check-types": "tsc --pretty --noEmit",
+    "check-format": "prettier --check .",
+    "check-lint": "eslint . --ext ts --ext tsx --ext js",
+    "format": "prettier --write .",
+    "test-all": "yarn format && yarn check-format && yarn check-lint && yarn check-types"
+  },
+  "directories": {
+    "lib": "lib"
   }
 }
