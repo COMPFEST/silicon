@@ -45,6 +45,7 @@
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",
+    "local": "yarn build && yarn unlink &&  yarn link",
     "build-storybook": "build-storybook",
     "build": "rollup -c --bundleConfigAsCjs",
     "prepare": "husky install",
