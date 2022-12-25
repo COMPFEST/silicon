@@ -7,4 +7,7 @@ export const parameters = {
     },
   },
   layout: 'centered',
+  backgrounds: {
+    default: 'dark',
+  },
 }
