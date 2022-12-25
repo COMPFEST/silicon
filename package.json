@@ -1,5 +1,5 @@
 {
-  "name": "silicon",
+  "name": "compfest-silicon",
   "version": "0.1.1-0",
   "description": "Silicon Design System - Lightweight and interactive React component",
   "main": "lib/index.js",
