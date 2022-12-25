@@ -11,7 +11,6 @@ export interface ButtonProps extends Partial<StyledButtonProps> {
   disabled?: boolean
   children: ReactNode
   isLoading?: boolean
-  onClick?: () => void
 }
 
 export interface VariantsInterface {

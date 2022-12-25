@@ -2,7 +2,9 @@ import styled from 'styled-components'
 import { VARIANTS } from './constants'
 import { StyledButtonProps } from './interface'
 
-export const StyledButton = styled.button`
+export const StyledButton = styled.button<
+  StyledButtonProps & React.ComponentPropsWithoutRef<'button'>
+>`
   border-radius: 12px;
   outline: none;
   border: none;
@@ -10,16 +12,14 @@ export const StyledButton = styled.button`
   color: white;
   box-shadow: none;
   font-weight: 600px;
-  font-size: ${({ size }: StyledButtonProps) =>
-    size === 'regular' ? '16px' : '12px'};
+  font-size: ${({ size }) => (size === 'regular' ? '16px' : '12px')};
   transition: all 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
   display: flex;
   align-items: center;
   gap: 12px;
-  ${({ variant }: StyledButtonProps) => VARIANTS[variant]};
+  ${({ variant }) => VARIANTS[variant]};
   @media only screen and (max-width: 768px) {
-    font-size: ${({ size }: StyledButtonProps) =>
-      size === 'regular' ? '12px' : '10px'};
+    font-size: ${({ size }) => (size === 'regular' ? '12px' : '10px')};
     padding: 10px 24px;
   }
 `
