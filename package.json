@@ -1,7 +1,7 @@
 {
-  "name": "silicon",
+  "name": "storybook-react-library",
   "version": "0.1.0",
-  "description": "Silicon Design System - Lightweight and interactive React component",
+  "description": "test-purpose",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
   "types": "lib/index.d.ts",
