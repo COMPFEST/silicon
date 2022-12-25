@@ -20,6 +20,7 @@ const ExampleIcon: React.FC = () => (
 )
 
 export default {
+  id: 'button',
   title: 'Button',
   component: Button,
   argTypes: {
