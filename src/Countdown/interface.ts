@@ -1,5 +1,5 @@
 export interface CountdownProps {
   title?: string
-  targetDate: Date 
+  targetDate: Date
   displayDate?: boolean
 }
