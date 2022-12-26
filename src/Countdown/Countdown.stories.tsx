@@ -18,7 +18,6 @@ const Template: ComponentStory<typeof Countdown> = (args) => (
 )
 
 export const CompleteProps = Template.bind({})
-
 CompleteProps.args = {
   title: 'Oprec Staff',
   targetDate: new Date('26 December 2022 21:58'),
