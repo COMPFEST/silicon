@@ -1,4 +1,3 @@
 export interface TipCardProps {
-    text: string
-  }
-  
+  text: string
+}
