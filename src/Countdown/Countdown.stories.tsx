@@ -38,7 +38,7 @@ WithoutDisplayDate.args = {
 export const CountdownMoreThan1Day = Template.bind({})
 CountdownMoreThan1Day.args = {
   title: 'Oprec Staff',
-  targetDate: new Date('11 January 2023 00:00'),
+  targetDate: new Date('7 April 2023 00:00'),
   displayDate: true,
 }
 

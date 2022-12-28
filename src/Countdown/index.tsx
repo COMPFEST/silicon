@@ -89,6 +89,7 @@ const Countdown: React.FC<CountdownProps> = ({
               ? remainingTime.days.toString().padStart(2, '0')
               : remainingTime.hours.toString().padStart(2, '0')}
           </TimeDigit>
+
           {remainingTime.days != 0 ? 'Hari' : 'Jam'}
         </TimeBox>
 

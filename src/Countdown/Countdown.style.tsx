@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const CountdownContainer = styled.div`
+  font-family: 'R-Flex', sans-serif;
   color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -33,6 +34,7 @@ export const TimeBox = styled.div`
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   padding: 1rem 1.3rem;
+  text-align: center;
 `
 
 export const DotContainer = styled.div`
@@ -51,5 +53,13 @@ export const Dot = styled.div`
 export const TimeDigit = styled.p`
   margin: 0;
   padding: 0;
+  font-style: normal;
+  font-weight: 700;
   font-size: 2.5rem;
+`
+
+export const TimeLabel = styled.p`
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
 `
