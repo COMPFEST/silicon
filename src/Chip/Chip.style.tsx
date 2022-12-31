@@ -4,7 +4,7 @@ export const SelectedChip = styled.div`
   font-family: 'Inter', sans-serif;
   background-color: #4ec1f3;
   border: 3px solid #0aa4e7;
-  font-weight: 600;
+  font-weight: 500;
   color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
@@ -22,7 +22,6 @@ export const UnselectedChip = styled(SelectedChip)`
   background-color: transparent;
   border-color: #ffffff;
   color: #ffffff;
-  font-weight: 500;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
