@@ -60,6 +60,7 @@
   },
   "dependencies": {
     "np": "^7.6.2",
+    "react-icons": "^4.7.1",
     "styled-components": "^5.3.6"
   }
 }

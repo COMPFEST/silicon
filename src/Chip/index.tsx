@@ -6,7 +6,8 @@ import { SelectedChip, UnselectedChip } from './Chip.style'
 const Chip: React.FC<ChipProps> = ({
   isSelected = false,
   onClick = null,
-  leftIcon,
+  showLeftIcon = false,
+  leftIcon = null,
   children,
 }) => {
   const [selected, setSelected] = useState(isSelected)
@@ -19,7 +20,7 @@ const Chip: React.FC<ChipProps> = ({
           if (onClick != null) onClick()
         }}
       >
-        {leftIcon}
+        {showLeftIcon && leftIcon}
         {children}
       </SelectedChip>
     )
@@ -30,7 +31,7 @@ const Chip: React.FC<ChipProps> = ({
         if (onClick != null) onClick()
       }}
     >
-      {leftIcon}
+      {showLeftIcon && leftIcon}
       {children}
     </UnselectedChip>
   )
