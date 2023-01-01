@@ -21,10 +21,16 @@ export default {
     },
     showLeftIcon: {
       control: 'boolean',
+      description:
+        'Controls whether the chip should contain a left icon or not.',
       defaultValue: false,
     },
     onClick: {
+      description: 'The function to be run when the chip is clicked.',
       action: 'Chip clicked!',
+    },
+    children: {
+      description: 'The text inside the chip.',
     },
   },
 } as ComponentMeta<typeof Chip>
