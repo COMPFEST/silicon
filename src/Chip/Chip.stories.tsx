@@ -14,6 +14,8 @@ export default {
       defaultValue: false,
     },
     leftIcon: {
+      description:
+        'The icon that will be rendered on the left of the text inside the chip. It is recommended to use icons from React Icons to simplify the layouting.',
       defaultValue: <RiHome4Line size={20} />,
       table: {
         disable: true,
