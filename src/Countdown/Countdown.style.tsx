@@ -33,7 +33,8 @@ export const TimeBox = styled.div`
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 12px;
-  padding: 1rem 1.3rem;
+  width: 93px;
+  height: 111px;
   text-align: center;
 `
 
@@ -52,14 +53,15 @@ export const Dot = styled.div`
 
 export const TimeDigit = styled.p`
   margin: 0;
+  margin-top: -10px;
   padding: 0;
   font-style: normal;
   font-weight: 700;
-  font-size: 2.5rem;
+  font-size: 3rem;
 `
 
 export const TimeLabel = styled.p`
   margin: 0;
   padding: 0;
-  font-family: 'Inter', sans-serif;
+  font-size: 18px;
 `

@@ -9,6 +9,7 @@ import {
   TimeBox,
   TimeContainer,
   TimeDigit,
+  TimeLabel,
   Title,
 } from './Countdown.style'
 import { CountdownProps } from './interface'
@@ -90,7 +91,7 @@ const Countdown: React.FC<CountdownProps> = ({
               : remainingTime.hours.toString().padStart(2, '0')}
           </TimeDigit>
 
-          {remainingTime.days != 0 ? 'Hari' : 'Jam'}
+          <TimeLabel>{remainingTime.days != 0 ? 'Hari' : 'Jam'}</TimeLabel>
         </TimeBox>
 
         <DotContainer>
@@ -104,7 +105,7 @@ const Countdown: React.FC<CountdownProps> = ({
               ? remainingTime.hours.toString().padStart(2, '0')
               : remainingTime.minutes.toString().padStart(2, '0')}
           </TimeDigit>
-          {remainingTime.days != 0 ? 'Jam' : 'Menit'}
+          <TimeLabel>{remainingTime.days != 0 ? 'Jam' : 'Menit'}</TimeLabel>
         </TimeBox>
 
         <DotContainer>
@@ -118,7 +119,7 @@ const Countdown: React.FC<CountdownProps> = ({
               ? remainingTime.minutes.toString().padStart(2, '0')
               : remainingTime.seconds.toString().padStart(2, '0')}
           </TimeDigit>
-          {remainingTime.days != 0 ? 'Menit' : 'Detik'}
+          <TimeLabel>{remainingTime.days != 0 ? 'Menit' : 'Detik'}</TimeLabel>
         </TimeBox>
       </TimeContainer>
 
