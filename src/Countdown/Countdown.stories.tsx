@@ -13,9 +13,17 @@ export default {
   },
 } as ComponentMeta<typeof Countdown>
 
-const Template: ComponentStory<typeof Countdown> = (args) => (
-  <Countdown {...args} />
-)
+const Template: ComponentStory<typeof Countdown> = (args) => {
+  const { targetDate, ...rest } = args
+  return (
+    <Countdown
+      {...rest}
+      targetDate={
+        typeof targetDate === 'number' ? new Date(targetDate) : targetDate
+      }
+    />
+  )
+}
 
 const today = new Date()
 const tomorrow = new Date()
