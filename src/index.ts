@@ -1,3 +1,4 @@
 import Button from './Button'
+import Disclosure from './Disclosure'
 
-export { Button }
+export { Button, Disclosure }
