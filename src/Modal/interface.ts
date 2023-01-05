@@ -11,4 +11,3 @@ export interface ModalProps extends Partial<isDisplayedProps> {
   acceptButton: ReactNode
   cancelButton?: ReactNode
 }
-
