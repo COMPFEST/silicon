@@ -6,6 +6,7 @@ import SearchInput from './Input/Search'
 import Radio from './Input/Radio'
 import Checkbox from './Input/Checkbox'
 import Countdown from './Countdown'
+import Disclosure from './Disclosure'
 
 export {
   Button,
@@ -16,4 +17,5 @@ export {
   Checkbox,
   Countdown,
   FileInput,
+  Disclosure,
 }
