@@ -1,4 +1,4 @@
 export interface DisclosureProps {
-    title: string,
-    content: string,
+  title: string
+  content: string
 }
