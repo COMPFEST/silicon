@@ -16,12 +16,32 @@ export default {
 
 const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />
 
-export const Displayed = Template.bind({})
+export const NoButton = Template.bind({})
 
-Displayed.args = {
-  title: 'test',
-  content: 'test',
-  imageUrl: 'asdsa',
+NoButton.args = {
+  title: 'Heading',
+  content:
+    'Lorem ipsum dolor sit amet, consectetasdasd sdaurdasas dasasadipiscing elit. Ut dui orci ac egestas.',
+  imageUrl: 'https://www.w3schools.com/tags/img_girl.jpg',
+}
+
+export const AccButton = Template.bind({})
+
+AccButton.args = {
+  title: 'Heading',
+  content:
+    'Lorem ipsum dolor sit amet, consectetasdasd sdaurdasas dasasadipiscing elit. Ut dui orci ac egestas.',
+  imageUrl: 'https://www.w3schools.com/tags/img_girl.jpg',
+  acceptButton: <Button>Accept</Button>,
+}
+
+export const CompleteButton = Template.bind({})
+
+CompleteButton.args = {
+  title: 'Heading',
+  content:
+    'Lorem ipsum dolor sit amet, consectetasdasd sdaurdasas dasasadipiscing elit. Ut dui orci ac egestas.',
+  imageUrl: 'https://www.w3schools.com/tags/img_girl.jpg',
   acceptButton: <Button>Accept</Button>,
   cancelButton: <Button variant="secondary">Cancel</Button>,
 }
