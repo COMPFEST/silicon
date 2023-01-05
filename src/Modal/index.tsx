@@ -1,6 +1,15 @@
 import { ModalProps } from './interface'
 import React from 'react'
-import { ModalContainter, ModalContent, ButtonContainer, TextContainter, HeadingText, ContentText, ImgContainer, HeadingContainer } from './Modal.style'
+import {
+  ModalContainter,
+  ModalContent,
+  ButtonContainer,
+  TextContainter,
+  HeadingText,
+  ContentText,
+  ImgContainer,
+  HeadingContainer,
+} from './Modal.style'
 
 const Modal: React.FC<ModalProps> = ({
   title = '',
@@ -14,27 +23,20 @@ const Modal: React.FC<ModalProps> = ({
   return (
     <ModalContainter isDisplayed={isDisplayed}>
       <ModalContent>
-
-        <ImgContainer src={imageUrl}>
-        </ImgContainer>
+        <ImgContainer src={imageUrl}></ImgContainer>
 
         <HeadingContainer>
-          <HeadingText>
-            {title}
-          </HeadingText>
+          <HeadingText>{title}</HeadingText>
         </HeadingContainer>
 
         <TextContainter>
-          <ContentText>
-            {content}
-          </ContentText>
+          <ContentText>{content}</ContentText>
         </TextContainter>
 
         <ButtonContainer>
           {acceptButton}
           {cancelButton}
         </ButtonContainer>
-
       </ModalContent>
     </ModalContainter>
   )
