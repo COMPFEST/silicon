@@ -2,6 +2,7 @@ import { ModalProps } from './interface'
 import React from 'react'
 import { ModalContainter, ModalContent, ButtonContainer, TextContainter, HeadingText, ContentText, ImgContainer, HeadingContainer } from './Modal.style'
 
+
 const Modal: React.FC<ModalProps> = ({
   title = '',
   content = '',
