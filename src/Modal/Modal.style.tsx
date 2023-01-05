@@ -11,14 +11,14 @@ export const ModalContainter = styled.div<isDisplayedProps>`
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: #28293d;
+  background: rgb(40, 41, 61, 0.6);
 `
 
 export const ModalContent = styled.div`
   display: block;
   background-color: #373951;
   margin: auto;
-  padding: 20px;S
+  padding: 20px;
   border: 1px solid #373951;
   justify-content: center;
   width: 270px;

@@ -1,45 +1,35 @@
-import { ModalProps } from './interface'
+import { ModalWrapperProps } from './interface'
 import React from 'react'
-import {
-  ModalContainter,
-  ModalContent,
-  ButtonContainer,
-  TextContainter,
-  HeadingText,
-  ContentText,
-  ImgContainer,
-  HeadingContainer,
-} from './Modal.style'
+import Modal from '.'
+import { useState } from 'react'
+import Button from '../Button'
 
-const Modal: React.FC<ModalProps> = ({
+const ModalWrapper: React.FC<ModalWrapperProps> = ({
   title = '',
   content = '',
   imageUrl,
   acceptButton = null,
   cancelButton,
-  isDisplayed = false,
-  ...props
+  Display = false,
 }) => {
+
+  const [displayState, setDisplayState] = useState(Display)
+  const handleButton = () => setDisplayState(!displayState)
+  
+
   return (
-    <ModalContainter isDisplayed={isDisplayed}>
-      <ModalContent>
-        <ImgContainer src={imageUrl}></ImgContainer>
+    <div>
+      <Button variant='primary' onClick={handleButton}>Click</Button>
 
-        <HeadingContainer>
-          <HeadingText>{title}</HeadingText>
-        </HeadingContainer>
-
-        <TextContainter>
-          <ContentText>{content}</ContentText>
-        </TextContainter>
-
-        <ButtonContainer>
-          {acceptButton}
-          {cancelButton}
-        </ButtonContainer>
-      </ModalContent>
-    </ModalContainter>
+      <Modal 
+      title={title}
+      isDisplayed={displayState}
+      content={content}
+      imageUrl={imageUrl}
+      acceptButton={acceptButton}
+      cancelButton={cancelButton}></Modal>
+    </div>
   )
 }
 
-export default Modal
+export default ModalWrapper

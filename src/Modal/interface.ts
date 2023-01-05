@@ -11,3 +11,12 @@ export interface ModalProps extends Partial<isDisplayedProps> {
   acceptButton: ReactNode
   cancelButton?: ReactNode
 }
+
+export interface ModalWrapperProps{
+  Display: boolean
+  title: string
+  content: string
+  imageUrl?: string
+  acceptButton: ReactNode
+  cancelButton?: ReactNode
+}

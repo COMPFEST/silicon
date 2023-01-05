@@ -1,20 +1,20 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
-import Modal from '.'
 import Button from '../Button'
+import ModalWrapper from './modalWrapper'
 
 export default {
   id: 'modal',
   title: 'Modal',
-  component: Modal,
+  component: ModalWrapper,
   argTypes: {
-    isDisplayed: {
+    Display: {
       control: 'boolean',
     },
   },
-} as ComponentMeta<typeof Modal>
+} as ComponentMeta<typeof ModalWrapper>
 
-const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />
+const Template: ComponentStory<typeof ModalWrapper> = (args) => <ModalWrapper {...args} />
 
 export const NoButton = Template.bind({})
 
