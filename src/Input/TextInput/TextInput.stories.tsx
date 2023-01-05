@@ -10,11 +10,11 @@ export default {
   component: TextInput,
 } as Meta
 
-const TypedInputTemplate: Story<TextInputProps> = (args) => (
+const Template: Story<TextInputProps> = (args) => (
   <TextInput {...args} />
 )
 
-export const _TextInput = TypedInputTemplate.bind({})
+export const _TextInput = Template.bind({})
 _TextInput.args = {
   label: 'Label',
   helper: 'Helper text',
