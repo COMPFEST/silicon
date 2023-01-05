@@ -5,3 +5,7 @@ export interface SearchInputProps
   align?: 'left' | 'center'
   icon?: 'none' | 'left' | 'right'
 }
+
+export interface SearchIconProps {
+  hidden?: boolean
+}

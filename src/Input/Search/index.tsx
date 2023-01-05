@@ -1,5 +1,5 @@
 import React from 'react'
-import { SearchInputProps } from './interface'
+import { SearchIconProps, SearchInputProps } from './interface'
 import { SearchDiv, SearchIconDiv, StyledSearchInput } from './Search.style'
 
 const SearchInput: React.FC<SearchInputProps> = ({
@@ -25,10 +25,8 @@ const SearchInput: React.FC<SearchInputProps> = ({
   )
 }
 
-const SearchIcon = ({
+const SearchIcon: React.FC<SearchIconProps> = ({
   hidden=false
-}: {
-  hidden?: boolean
 }) => (
   <SearchIconDiv hidden={hidden}>
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
