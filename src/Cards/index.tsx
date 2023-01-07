@@ -17,18 +17,23 @@ const Cards: React.FC<CardsProps> = ({ ...props }) => {
     const image = document.getElementById('image')
 
     if (content == '' && title == '') {
-      first!.setAttribute('style', 'max-height: fit-content * 0/5; max-width: fit-content * 0.5;')
+      first!.setAttribute(
+        'style',
+        'max-height: fit-content * 0/5; max-width: fit-content * 0.5;'
+      )
       second!.remove()
     } else if (imageUrl == '') {
       image!.remove()
       first!.setAttribute('style', 'height: fit-content; width: fit-content;')
-    } else if (title != '' || content != ''){
+    } else if (title != '' || content != '') {
       const firstHeight = first!.clientHeight
       const secondHeight = second!.clientHeight
       const imageHeight = firstHeight - secondHeight + 40
-      image?.setAttribute('style', `max-height: ${imageHeight}px; top: 40px; overflow: visible;`)
+      image?.setAttribute(
+        'style',
+        `max-height: ${imageHeight}px; top: 40px; overflow: visible;`
+      )
     }
-    
   }, [])
 
   return (
