@@ -68,6 +68,7 @@
   },
   "dependencies": {
     "np": "^7.6.2",
+    "react-dropzone": "^14.2.3",
     "styled-components": "^5.3.6"
   }
 }
