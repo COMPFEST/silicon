@@ -18,15 +18,11 @@ export default {
       options: ['none', 'left', 'right'],
       control: { type: 'radio' },
       defaultValue: 'none',
-    }
-  }
+    },
+  },
 } as Meta
 
-const Template: Story<SearchInputProps> = (args) => (
-  <SearchInput {...args} />
-)
+const Template: Story<SearchInputProps> = (args) => <SearchInput {...args} />
 
 export const _SearchInput = Template.bind({})
-_SearchInput.args = {
-  
-}
+_SearchInput.args = {}
