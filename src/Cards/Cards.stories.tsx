@@ -13,7 +13,8 @@ const Template: Story<CardsProps> = (args) => <Cards {...args} />
 
 export const Normal = Template.bind({})
 Normal.args = {
-  imageUrl: 'https://images.unsplash.com/photo-1602784380190-81706bc30b9b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80',
+  imageUrl:
+    'https://images.unsplash.com/photo-1602784380190-81706bc30b9b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80',
   title: 'A title',
   content:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non ac mi nunc volutpat gravida malesuada eu massa vestibulum.',
