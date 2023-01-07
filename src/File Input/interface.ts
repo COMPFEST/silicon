@@ -1,4 +1,4 @@
 export interface FileInputProps {
-  title: string,
+  title: string
   content: string
 }
