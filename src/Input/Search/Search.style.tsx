@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { SearchInputProps } from "./interface";
+import styled from 'styled-components'
+import { SearchInputProps } from './interface'
 
 export const StyledSearchInput = styled.input<SearchInputProps>`
   background-color: transparent;
@@ -9,7 +9,7 @@ export const StyledSearchInput = styled.input<SearchInputProps>`
   caret-color: white;
   color: white;
   font-size: 16px;
-  text-align: ${props => props.align === 'left' ? 'left' : 'center'};
+  text-align: ${(props) => (props.align === 'left' ? 'left' : 'center')};
 
   :focus {
     ::placeholder {
@@ -20,13 +20,15 @@ export const StyledSearchInput = styled.input<SearchInputProps>`
     ::-webkit-input-placeholder {
       opacity: 0;
     }
-    :-moz-placeholder { /* Firefox 18- */
+    :-moz-placeholder {
+      /* Firefox 18- */
       opacity: 0;
     }
-    ::-moz-placeholder {  /* Firefox 19+ */
+    ::-moz-placeholder {
+      /* Firefox 19+ */
       opacity: 0;
     }
-    :-ms-input-placeholder {  
+    :-ms-input-placeholder {
       opacity: 0;
     }
   }
@@ -36,11 +38,11 @@ export const StyledSearchInput = styled.input<SearchInputProps>`
   }
 `
 
-export const SearchIconDiv = styled.div<{hidden: boolean}>`
+export const SearchIconDiv = styled.div<{ hidden: boolean }>`
   display: flex;
   flex-direction: column;
   justify-items: center;
-  visibility: ${(props) => props.hidden ? 'hidden' : 'visible'};
+  visibility: ${(props) => (props.hidden ? 'hidden' : 'visible')};
   opacity: 0.3;
 
   @media only screen and (max-width: 768px) {
@@ -69,13 +71,15 @@ export const SearchDiv = styled.div`
     & > ${StyledSearchInput}::-webkit-input-placeholder {
       color: white;
     }
-    & > ${StyledSearchInput}:-moz-placeholder { /* Firefox 18- */
+    & > ${StyledSearchInput}:-moz-placeholder {
+      /* Firefox 18- */
       color: white;
     }
-    & > ${StyledSearchInput}::-moz-placeholder {  /* Firefox 19+ */
+    & > ${StyledSearchInput}::-moz-placeholder {
+      /* Firefox 19+ */
       color: white;
     }
-    & > ${StyledSearchInput}:-ms-input-placeholder {  
+    & > ${StyledSearchInput}:-ms-input-placeholder {
       color: white;
     }
 

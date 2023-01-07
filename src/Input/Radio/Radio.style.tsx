@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const StyledRadio = styled.input`
   /* Hide the Native Radio Input */
@@ -18,7 +18,7 @@ export const StyledRadio = styled.input`
   place-content: center;
 
   ::before {
-    content: "";
+    content: '';
     width: 0.45em;
     height: 0.45em;
     border-radius: 50%;
@@ -37,7 +37,6 @@ export const StyledRadio = styled.input`
       border: 1px solid rgba(255, 255, 255, 0.6);
     }
   }
-
 
   :disabled {
     border: 1px solid rgba(255, 255, 255, 0.1);
