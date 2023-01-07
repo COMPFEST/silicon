@@ -12,22 +12,23 @@ const ModalWrapper: React.FC<ModalWrapperProps> = ({
   cancelButton,
   Display = false,
 }) => {
-
   const [displayState, setDisplayState] = useState(Display)
   const handleButton = () => setDisplayState(!displayState)
-  
 
   return (
     <div>
-      <Button variant='primary' onClick={handleButton}>Click</Button>
+      <Button variant="primary" onClick={handleButton}>
+        Click
+      </Button>
 
-      <Modal 
-      title={title}
-      isDisplayed={displayState}
-      content={content}
-      imageUrl={imageUrl}
-      acceptButton={acceptButton}
-      cancelButton={cancelButton}></Modal>
+      <Modal
+        title={title}
+        isDisplayed={displayState}
+        content={content}
+        imageUrl={imageUrl}
+        acceptButton={acceptButton}
+        cancelButton={cancelButton}
+      ></Modal>
     </div>
   )
 }

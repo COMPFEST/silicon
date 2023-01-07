@@ -1,6 +1,6 @@
-import { ReactNode } from "react"
+import { ReactNode } from 'react'
 
-export interface TooltipsProps{
-    text: string
-    children: ReactNode
-  }
+export interface TooltipsProps {
+  text: string
+  children: ReactNode
+}
