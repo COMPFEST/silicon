@@ -8,22 +8,21 @@ export const StyledRadio = styled.input`
   margin: 0;
 
   color: transparent;
-  width: 0.85em;
-  height: 0.85em;
+  width: 16px;
+  height: 16px;
   border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 50%;
-  font-size: 16px;
 
   display: grid;
   place-content: center;
 
   ::before {
     content: '';
-    width: 0.45em;
-    height: 0.45em;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     transform: scale(0);
-    outline: 0.25em solid rgba(54, 67, 252, 1);
+    outline: 4px solid rgba(54, 67, 252, 1);
     transition: transform 120ms ease-in-out;
   }
 
@@ -53,7 +52,14 @@ export const StyledRadio = styled.input`
   }
 
   @media only screen and (max-width: 768px) {
-    font-size: 12px;
+    width: 12px;
+    height: 12px;
+
+    ::before {
+      width: 6px;
+      height: 6px;
+      outline: 4px solid rgba(54, 67, 252, 1);
+    }
   }
 `
 
