@@ -4,7 +4,6 @@ import {
   CheckboxDiv,
   CheckboxLabel,
   StyledCheckbox,
-  
   SVGDiv,
 } from './Checkbox.style'
 
