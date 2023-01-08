@@ -26,7 +26,11 @@ export const StyledCheckbox = styled.input`
 
   :enabled {
     :checked {
-      background-image: linear-gradient(rgba(85, 97, 255, 1), rgba(54, 67, 252, 1), rgba(54, 67, 252, 1));
+      background-image: linear-gradient(
+        rgba(85, 97, 255, 1),
+        rgba(54, 67, 252, 1),
+        rgba(54, 67, 252, 1)
+      );
       border: none;
 
       ::before {
