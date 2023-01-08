@@ -74,22 +74,40 @@ export default {
 const DropdownTemplate: Story<DropdownProps & DropdownItemProps> = (args) => (
   <Dropdown {...args}>
     <Item isButton={args.isButton} icon={args.icon}>
-      option 1
+      Child 1
     </Item>
     <Item isButton={args.isButton} icon={args.icon}>
-      option 2
+      Child 2
     </Item>
     <Item isButton={args.isButton} icon={args.icon}>
-      option 3
+      Child 3
     </Item>
     <Item isButton={args.isButton} icon={args.icon}>
-      option 4
+      Child 4
     </Item>
     <Item isButton={args.isButton} icon={args.icon}>
-      option 5
+      Child 5
     </Item>
     <Item isButton={args.isButton} icon={args.icon}>
-      option 6
+      Child 6
+    </Item>
+    <Item isButton={args.isButton} icon={args.icon}>
+      Child 7
+    </Item>
+    <Item isButton={args.isButton} icon={args.icon}>
+      Child 8
+    </Item>
+    <Item isButton={args.isButton} icon={args.icon}>
+      Child 9
+    </Item>
+    <Item isButton={args.isButton} icon={args.icon}>
+      Child 10
+    </Item>
+    <Item isButton={args.isButton} icon={args.icon}>
+      Child 11
+    </Item>
+    <Item isButton={args.isButton} icon={args.icon}>
+      Child 12
     </Item>
   </Dropdown>
 )

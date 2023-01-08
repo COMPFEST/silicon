@@ -1,5 +1,5 @@
 import React from 'react'
-import { DropdownItem } from './Dropdown.style'
+import { DropdownItem, IconContainer } from './Dropdown.style'
 import { DropdownItemProps } from './interface'
 
 const Item: React.FC<DropdownItemProps> = ({
@@ -16,7 +16,7 @@ const Item: React.FC<DropdownItemProps> = ({
           if (onClick != null) onClick()
         }}
       >
-        {icon}
+        <IconContainer>{icon}</IconContainer>
         {children}
       </DropdownItem>
     )
@@ -29,7 +29,7 @@ const Item: React.FC<DropdownItemProps> = ({
           }
         }}
       >
-        {icon}
+        <IconContainer>{icon}</IconContainer>
         {children}
       </DropdownItem>
     )
