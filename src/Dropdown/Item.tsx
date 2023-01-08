@@ -4,14 +4,16 @@ import { DropdownItemProps } from './interface'
 
 const Item: React.FC<DropdownItemProps> = ({
   isButton = 'button',
-  onClick = undefined,
+  onClick = null,
   href = '',
   children = '',
   icon = null,
 }) => {
-  if (isButton == 'button')
+  if (isButton === 'button')
     return (
-      <DropdownItem onClick={onClick}>
+      <DropdownItem onClick={() => {
+        if (onClick != null) onClick()
+      }}>
         {icon}
         {children}
       </DropdownItem>
@@ -19,9 +21,10 @@ const Item: React.FC<DropdownItemProps> = ({
   else
     return (
       <DropdownItem
-        onClick={(e) => {
-          e.preventDefault()
-          window.location.href = href
+        onClick={() => {
+          if (href != '') {
+            window.location.href = href
+          }
         }}
       >
         {icon}

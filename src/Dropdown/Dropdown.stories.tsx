@@ -30,6 +30,11 @@ export default {
         disable: true,
       },
     },
+    mobile: {
+      table: {
+        disable: true,
+      },
+    },
     isButton: {
       control: 'radio',
       options: ['button', 'a'],
@@ -47,6 +52,22 @@ export default {
         disable: true,
       },
     },
+    href: {
+      control: 'text',
+      if: {
+        arg: 'isButton',
+        eq: 'a'
+      },
+      defaultValue: ''
+    },
+    onclick: {
+      control: 'text',
+      if: {
+        arg: 'isButton',
+        eq: 'button'
+      },
+      defaultValue: ''
+    }
   },
 } as Meta
 
@@ -60,6 +81,15 @@ const DropdownTemplate: Story<DropdownProps & DropdownItemProps> = (args) => (
     </Item>
     <Item isButton={args.isButton} icon={args.icon}>
       option 3
+    </Item>
+    <Item isButton={args.isButton} icon={args.icon}>
+      option 4
+    </Item>
+    <Item isButton={args.isButton} icon={args.icon}>
+      option 5
+    </Item>
+    <Item isButton={args.isButton} icon={args.icon}>
+      option 6
     </Item>
   </Dropdown>
 )
