@@ -11,9 +11,11 @@ const Item: React.FC<DropdownItemProps> = ({
 }) => {
   if (isButton === 'button')
     return (
-      <DropdownItem onClick={() => {
-        if (onClick != null) onClick()
-      }}>
+      <DropdownItem
+        onClick={() => {
+          if (onClick != null) onClick()
+        }}
+      >
         {icon}
         {children}
       </DropdownItem>

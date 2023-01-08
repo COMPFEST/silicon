@@ -56,18 +56,18 @@ export default {
       control: 'text',
       if: {
         arg: 'isButton',
-        eq: 'a'
+        eq: 'a',
       },
-      defaultValue: ''
+      defaultValue: '',
     },
     onclick: {
       control: 'text',
       if: {
         arg: 'isButton',
-        eq: 'button'
+        eq: 'button',
       },
-      defaultValue: ''
-    }
+      defaultValue: '',
+    },
   },
 } as Meta
 
