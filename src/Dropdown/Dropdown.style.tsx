@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import { StyledDropdownProps } from './interface'
 
 export const DropdownContainer = styled.div`
-  font-family: 'Inter', sans-serif;
   font-size: 16px;
   color: #ffffff;
   display: flex;

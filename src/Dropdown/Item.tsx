@@ -8,6 +8,7 @@ const Item: React.FC<DropdownItemProps> = ({
   href = '',
   children = '',
   icon = null,
+  isSelected = false
 }) => {
   if (isButton === 'button')
     return (
@@ -22,16 +23,12 @@ const Item: React.FC<DropdownItemProps> = ({
     )
   else
     return (
-      <DropdownItem
-        onClick={() => {
-          if (href != '') {
-            window.location.href = href
-          }
-        }}
-      >
-        <IconContainer>{icon}</IconContainer>
-        {children}
-      </DropdownItem>
+      <a href={href}>
+        <DropdownItem>
+          <IconContainer>{icon}</IconContainer>
+          {children}
+        </DropdownItem>
+      </a>
     )
 }
 

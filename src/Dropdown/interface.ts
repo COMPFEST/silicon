@@ -15,4 +15,5 @@ export interface DropdownItemProps extends Partial<StyledDropdownProps> {
   href?: string
   children: string
   icon?: ReactNode
+  isSelected?: boolean
 }

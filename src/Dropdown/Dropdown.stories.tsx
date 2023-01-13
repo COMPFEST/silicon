@@ -58,7 +58,7 @@ export default {
         arg: 'isButton',
         eq: 'a',
       },
-      defaultValue: '',
+      defaultValue: 'https://www.w3schools.com/js/js_loop_while.asp',
     },
     onclick: {
       control: 'text',
@@ -76,7 +76,7 @@ const DropdownTemplate: Story<DropdownProps & DropdownItemProps> = (args) => (
     <Item isButton={args.isButton} icon={args.icon}>
       Child 1
     </Item>
-    <Item isButton={args.isButton} icon={args.icon}>
+    <Item isButton={args.isButton} icon={args.icon} href={args.href}>
       Child 2
     </Item>
     <Item isButton={args.isButton} icon={args.icon}>
