@@ -11,8 +11,8 @@ import { DropdownProps } from './interface'
 
 const Dropdown: React.FC<DropdownProps> = ({ children }) => {
   const options = children
-  const [isActive, setIsActive] = useState(false)
   const [selected, setSelected] = useState<number | null>(null)
+  const [isActive, setIsActive] = useState(false)
   const [clicked, setClicked] = useState(false)
 
   const ArrowIcon = () => (

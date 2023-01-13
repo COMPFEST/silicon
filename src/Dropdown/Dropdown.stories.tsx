@@ -58,7 +58,7 @@ export default {
         arg: 'isButton',
         eq: 'a',
       },
-      defaultValue: 'https://www.w3schools.com/js/js_loop_while.asp',
+      defaultValue: '',
     },
     onclick: {
       control: 'text',
@@ -73,41 +73,20 @@ export default {
 
 const DropdownTemplate: Story<DropdownProps & DropdownItemProps> = (args) => (
   <Dropdown {...args}>
-    <Item isButton={args.isButton} icon={args.icon}>
+    <Item isButton={args.isButton} icon={args.icon} href={args.href} onClick={args.onClick}>
       Child 1
     </Item>
-    <Item isButton={args.isButton} icon={args.icon} href={args.href}>
+    <Item isButton={args.isButton} icon={args.icon} href={args.href} onClick={args.onClick}>
       Child 2
     </Item>
-    <Item isButton={args.isButton} icon={args.icon}>
+    <Item isButton={args.isButton} icon={args.icon} href={args.href} onClick={args.onClick}>
       Child 3
     </Item>
-    <Item isButton={args.isButton} icon={args.icon}>
+    <Item isButton={args.isButton} icon={args.icon} href={args.href} onClick={args.onClick}>
       Child 4
     </Item>
-    <Item isButton={args.isButton} icon={args.icon}>
+    <Item isButton={args.isButton} icon={args.icon} href={args.href} onClick={args.onClick}>
       Child 5
-    </Item>
-    <Item isButton={args.isButton} icon={args.icon}>
-      Child 6
-    </Item>
-    <Item isButton={args.isButton} icon={args.icon}>
-      Child 7
-    </Item>
-    <Item isButton={args.isButton} icon={args.icon}>
-      Child 8
-    </Item>
-    <Item isButton={args.isButton} icon={args.icon}>
-      Child 9
-    </Item>
-    <Item isButton={args.isButton} icon={args.icon}>
-      Child 10
-    </Item>
-    <Item isButton={args.isButton} icon={args.icon}>
-      Child 11
-    </Item>
-    <Item isButton={args.isButton} icon={args.icon}>
-      Child 12
     </Item>
   </Dropdown>
 )

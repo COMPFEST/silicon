@@ -1,5 +1,10 @@
 import React from 'react'
-import { DropdownItem, IconContainer } from './Dropdown.style'
+import { 
+  DropdownItem, 
+  IconContainer, 
+  Link, 
+  Text 
+} from './Dropdown.style'
 import { DropdownItemProps } from './interface'
 
 const Item: React.FC<DropdownItemProps> = ({
@@ -8,7 +13,6 @@ const Item: React.FC<DropdownItemProps> = ({
   href = '',
   children = '',
   icon = null,
-  isSelected = false,
 }) => {
   if (isButton === 'button')
     return (
@@ -18,17 +22,17 @@ const Item: React.FC<DropdownItemProps> = ({
         }}
       >
         <IconContainer>{icon}</IconContainer>
-        {children}
+        <Text>{children}</Text>
       </DropdownItem>
     )
   else
     return (
-      <a href={href}>
+      <Link href={href}>
         <DropdownItem>
           <IconContainer>{icon}</IconContainer>
-          {children}
+          <Text>{children}</Text>
         </DropdownItem>
-      </a>
+      </Link>
     )
 }
 
