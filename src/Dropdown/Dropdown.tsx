@@ -30,12 +30,12 @@ const Dropdown: React.FC<DropdownProps> = ({ children }) => {
       />
     </svg>
   )
-  
+
   useEffect(() => {
-    for(let i = 0; i < options.length; i++) {
-      if (options[i].props.isSelected) setSelected(i);
+    for (let i = 0; i < options.length; i++) {
+      if (options[i].props.isSelected) setSelected(i)
     }
-  }, []);
+  }, [])
 
   return (
     <DropdownContainer>

@@ -8,7 +8,7 @@ const Item: React.FC<DropdownItemProps> = ({
   href = '',
   children = '',
   icon = null,
-  isSelected = false
+  isSelected = false,
 }) => {
   if (isButton === 'button')
     return (
