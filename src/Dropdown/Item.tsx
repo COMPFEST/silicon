@@ -1,10 +1,5 @@
 import React from 'react'
-import { 
-  DropdownItem, 
-  IconContainer, 
-  Link, 
-  Text 
-} from './Dropdown.style'
+import { DropdownItem, IconContainer, Link, Text } from './Dropdown.style'
 import { DropdownItemProps } from './interface'
 
 const Item: React.FC<DropdownItemProps> = ({

@@ -33,7 +33,8 @@ export const DropdownHeader = styled.div<StyledDropdownProps>`
   text-overflow: truncate;
   border-style: ${(props) => (props.isActive ? 'none' : 'solid')};
   border-color: rgba(255, 255, 255, 0.3);
-  background-color: ${(props) => (props.isActive ? 'rgba(79, 82, 117, 1)' : 'rgba(62, 64, 91, 0)')};
+  background-color: ${(props) =>
+    props.isActive ? 'rgba(79, 82, 117, 1)' : 'rgba(62, 64, 91, 0)'};
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
   }

@@ -73,19 +73,44 @@ export default {
 
 const DropdownTemplate: Story<DropdownProps & DropdownItemProps> = (args) => (
   <Dropdown {...args}>
-    <Item isButton={args.isButton} icon={args.icon} href={args.href} onClick={args.onClick}>
+    <Item
+      isButton={args.isButton}
+      icon={args.icon}
+      href={args.href}
+      onClick={args.onClick}
+    >
       Child 1
     </Item>
-    <Item isButton={args.isButton} icon={args.icon} href={args.href} onClick={args.onClick}>
+    <Item
+      isButton={args.isButton}
+      icon={args.icon}
+      href={args.href}
+      onClick={args.onClick}
+    >
       Child 2
     </Item>
-    <Item isButton={args.isButton} icon={args.icon} href={args.href} onClick={args.onClick}>
+    <Item
+      isButton={args.isButton}
+      icon={args.icon}
+      href={args.href}
+      onClick={args.onClick}
+    >
       Child 3
     </Item>
-    <Item isButton={args.isButton} icon={args.icon} href={args.href} onClick={args.onClick}>
+    <Item
+      isButton={args.isButton}
+      icon={args.icon}
+      href={args.href}
+      onClick={args.onClick}
+    >
       Child 4
     </Item>
-    <Item isButton={args.isButton} icon={args.icon} href={args.href} onClick={args.onClick}>
+    <Item
+      isButton={args.isButton}
+      icon={args.icon}
+      href={args.href}
+      onClick={args.onClick}
+    >
       Child 5
     </Item>
   </Dropdown>
