@@ -33,14 +33,12 @@ export const TextInputContainer = styled.div`
 `
 
 export const LabelDiv = styled.div`
-  font-family: 'R-Flex', sans-serif;
   color: white;
 `
 
 export const BottomTextDiv = styled.div<{
   error?: boolean
 }>`
-  font-family: 'R-Flex', sans-serif;
   color: rgba(255, 255, 255, 0.8);
   color: ${(props) =>
     props.error ? 'rgba(255, 115, 135, 1)' : 'rgba(255, 255, 255, 0.8)'};
