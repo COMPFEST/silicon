@@ -1,5 +1,5 @@
 import { ModalProps } from './interface'
-import React from 'react'
+import React, { useRef } from 'react'
 import {
   ModalContainter,
   ModalContent,
@@ -18,10 +18,20 @@ const Modal: React.FC<ModalProps> = ({
   acceptButton = null,
   cancelButton,
   isDisplayed = false,
+  handleState,
   ...props
 }) => {
+
+  const modContain = useRef(null)
   return (
-    <ModalContainter isDisplayed={isDisplayed}>
+    <ModalContainter ref={modContain} id='container' onClick={function(){
+      window.onclick = function(event) {
+        const modal = document.getElementById("container");
+        if (event.target == modal) {
+          handleState();
+        }
+      }
+    }} isDisplayed={isDisplayed}>
       <ModalContent>
         <ImgContainer src={imageUrl}></ImgContainer>
 

@@ -24,7 +24,6 @@ NoButton.args = {
     'Lorem ipsum dolor sit amet, consectetasdasd sdaurdasas dasasadipiscing elit. Ut dui orci ac egestas.',
   imageUrl: 'https://www.w3schools.com/tags/img_girl.jpg',
 }
-
 export const AccButton = Template.bind({})
 
 AccButton.args = {
