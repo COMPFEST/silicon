@@ -60,14 +60,6 @@ export default {
       },
       defaultValue: '',
     },
-    onclick: {
-      control: 'text',
-      if: {
-        arg: 'isButton',
-        eq: 'button',
-      },
-      defaultValue: '',
-    },
   },
 } as Meta
 
