@@ -27,7 +27,8 @@ const ModalWrapper: React.FC<ModalWrapperProps> = ({
       content={content}
       imageUrl={imageUrl}
       acceptButton={acceptButton}
-      cancelButton={cancelButton}></Modal>
+      cancelButton={cancelButton}
+      handleState={handleButton}></Modal>
     </div>
   )
 }
