@@ -8,6 +8,16 @@ export default {
   id: 'file input',
   title: 'File Input',
   component: FileInput,
+  argTypes: {
+    link: {
+      control: 'boolean',
+    },
+    isSuccess: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 } as Meta
 
 const Template: Story<FileInputProps> = (args) => <FileInput {...args} />
