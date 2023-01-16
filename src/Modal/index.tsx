@@ -21,17 +21,21 @@ const Modal: React.FC<ModalProps> = ({
   handleState,
   ...props
 }) => {
-
   const modContain = useRef(null)
   return (
-    <ModalContainter ref={modContain} id='container' onClick={function(){
-      window.onclick = function(event) {
-        const modal = document.getElementById("container");
-        if (event.target == modal) {
-          handleState();
+    <ModalContainter
+      ref={modContain}
+      id="container"
+      onClick={function () {
+        window.onclick = function (event) {
+          const modal = document.getElementById('container')
+          if (event.target == modal) {
+            handleState()
+          }
         }
-      }
-    }} isDisplayed={isDisplayed}>
+      }}
+      isDisplayed={isDisplayed}
+    >
       <ModalContent>
         <ImgContainer src={imageUrl}></ImgContainer>
 
