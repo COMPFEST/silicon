@@ -14,7 +14,9 @@ export default {
   },
 } as ComponentMeta<typeof ModalWrapper>
 
-const Template: ComponentStory<typeof ModalWrapper> = (args) => <ModalWrapper {...args} />
+const Template: ComponentStory<typeof ModalWrapper> = (args) => (
+  <ModalWrapper {...args} />
+)
 
 export const NoButton = Template.bind({})
 

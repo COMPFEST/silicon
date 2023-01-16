@@ -13,7 +13,7 @@ export interface ModalProps extends Partial<isDisplayedProps> {
   handleState: () => void
 }
 
-export interface ModalWrapperProps{
+export interface ModalWrapperProps {
   Display: boolean
   title: string
   content: string
