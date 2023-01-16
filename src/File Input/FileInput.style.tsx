@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import { StyledFileInputProps } from './interface'
 
 export const FileInputContainer = styled.div<StyledFileInputProps>`
-  font-family: sans-serif;
   width: 558px;
   height: 260x;
   outline-style: dashed;
