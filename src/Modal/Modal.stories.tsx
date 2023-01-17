@@ -11,6 +11,16 @@ export default {
     Display: {
       control: 'boolean',
     },
+    acceptButton: {
+      table: {
+          disable: true,
+      },
+    },
+    cancelButton: {
+        table: {
+            disable: true,
+        },
+    },
   },
 } as ComponentMeta<typeof ModalWrapper>
 
