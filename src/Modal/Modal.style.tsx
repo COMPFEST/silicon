@@ -33,16 +33,23 @@ export const ModalContent = styled.div`
 export const HeadingText = styled.p`
   color: #ffffff;
   font-family: 'R-Flex';
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: break-word;
   font-style: normal;
   font-weight: 600;
   font-size: 26px;
   line-height: 50%;
+  line-height: 1;
 `
 
 export const ContentText = styled.p`
   color: rgba(255, 255, 255, 0.6);
   font-family: 'Inter';
   font-style: normal;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: break-word;
   font-weight: 600;
   font-size: 16px;
 `
@@ -51,7 +58,7 @@ export const TextContainter = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 2px;
+  padding: 0px 2px;
 `
 
 export const HeadingContainer = styled.div`
