@@ -12,14 +12,10 @@ export default {
       control: 'boolean',
     },
     acceptButton: {
-      table: {
-          disable: true,
-      },
+      control: false,
     },
     cancelButton: {
-        table: {
-            disable: true,
-        },
+      control: false
     },
   },
 } as ComponentMeta<typeof ModalWrapper>
