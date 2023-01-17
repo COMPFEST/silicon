@@ -33,6 +33,7 @@ const Cards: React.FC<CardsProps> = ({ ...props }) => {
         'style',
         `max-height: ${imageHeight}px; top: 40px; overflow: visible;`
       )
+      first!.setAttribute('style', `max-height: ${imageHeight + secondHeight - 80}px;`)
     }
   }, [])
 
