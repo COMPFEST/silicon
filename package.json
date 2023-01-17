@@ -60,6 +60,7 @@
   },
   "dependencies": {
     "np": "^7.6.2",
+    "react-hot-toast": "^2.4.0",
     "styled-components": "^5.3.6"
   }
 }
