@@ -10,7 +10,7 @@ export const TooltipsSpanTop = styled.span`
   color: white;
   max-width: 33ch;
   position: absolute;
-  padding: 1px 16px;
+  padding: 8px 16px;
   margin: 2px;
   visibility: hidden;
   border-radius: 6px;
@@ -33,7 +33,7 @@ export const TooltipsSpanBot = styled.span`
   color: white;
   max-width: 33ch;
   position: absolute;
-  padding: 1px 16px;
+  padding: 8px 16px;
   margin: 2px;
   visibility: hidden;
   border-radius: 6px;
