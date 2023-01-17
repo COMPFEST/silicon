@@ -23,7 +23,7 @@ const Tooltips: React.FC<TooltipsProps> = ({ text = '', children }) => {
         const { top } = container.current.getBoundingClientRect()
         const { height } = container.current.getBoundingClientRect()
         const tooltipHeight = tooltipRef.current.getBoundingClientRect().height
-        if (windowHeight - (top + height + tooltipHeight) < 0) {
+        if (windowHeight - (top + height + tooltipHeight) < 5) {
           tooltipRef.current.style.bottom = height + 25 + 'px'
           setPosition(false)
         } else {
