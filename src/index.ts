@@ -1,5 +1,4 @@
 import Button from './Button'
-import Countdown from './Countdown'
-import Modal from './Modal'
+import Tooltips from './Tooltips'
 
-export { Button, Countdown, Modal }
+export { Button, Tooltips }

@@ -60,5 +60,5 @@ export const Tester = styled.div`
 
 export const Tester2 = styled.div`
   position: absolute;
-  bottom: 5px;
+  bottom: 20px;
 `

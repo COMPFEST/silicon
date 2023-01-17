@@ -8,7 +8,7 @@ const TooltipsWrapper: React.FC<TooltipsProps> = ({ text = '' }) => {
     <div>
       <Tester>
         <Tooltips text={text}>
-          <p>Arrange ur Mouse Here :D max length hereasdasdasdasd</p>
+          <p>Arrange ur Mouse Here :D</p>
         </Tooltips>
       </Tester>
       <Tester2>
