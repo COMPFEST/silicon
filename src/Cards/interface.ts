@@ -1,6 +1,9 @@
 export interface CardsProps {
   imageUrl?: string
   title?: string
-  content?: string
-  onClick?: () => void
+  body?: string
+  className?: string
+  imgClassName?: string
+  width: number
+  height: number
 }
