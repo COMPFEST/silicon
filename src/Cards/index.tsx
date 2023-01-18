@@ -1,53 +1,44 @@
 import React, { useEffect } from 'react'
 import { CardsProps } from './interface'
 import {
-  SecondContainer,
-  Title,
   Content,
-  FirstContainer,
+  Title,
+  Body,
+  Main,
   Image,
 } from './Cards.style'
 
 const Cards: React.FC<CardsProps> = ({ ...props }) => {
-  const { imageUrl, title, content } = props
+  const { imageUrl, title, body, className, imgClassName, width, height } = props
 
-  useEffect(() => {
-    const second = document.getElementById('second')
-    const first = document.getElementById('first')
-    const image = document.getElementById('image')
+  // useEffect(() => {
+  //   const content = document.getElementById('content')
+  //   const main = document.getElementById('main')
+  //   const image = document.getElementById('image')
 
-    if (content == '' && title == '') {
-      first!.setAttribute(
-        'style',
-        'max-height: fit-content * 0/5; max-width: fit-content * 0.5;'
-      )
-      second!.remove()
-    } else if (imageUrl == '') {
-      image!.remove()
-      first!.setAttribute('style', 'height: fit-content; width: fit-content;')
-    } else if (title != '' || content != '') {
-      const firstHeight = first!.clientHeight
-      const secondHeight = second!.clientHeight
-      const imageHeight = firstHeight - secondHeight + 40
-      image?.setAttribute(
-        'style',
-        `max-height: ${imageHeight}px; top: 40px; overflow: visible;`
-      )
-      first!.setAttribute(
-        'style',
-        `max-height: ${imageHeight + secondHeight - 80}px;`
-      )
-    }
-  }, [])
+  //   if (imageUrl && (body || title)) {
+  //     const firstHeight = main!.clientHeight
+  //     const contentHeight = content!.clientHeight
+  //     const imageHeight = firstHeight - contentHeight + 40
+  //     image?.setAttribute(
+  //       'style',
+  //       `max-height: ${imageHeight}px; top: 40px; overflow: visible;`
+  //     )
+  //     main!.setAttribute(
+  //       'style',
+  //       `max-height: ${imageHeight + contentHeight - 80}px;`
+  //     )
+  //   }
+  // }, [])
 
   return (
-    <FirstContainer id="first">
-      <Image src={imageUrl} id="image"></Image>
-      <SecondContainer id="second">
+    <Main id="main" className={className} width={width} height={height}>
+      {imageUrl != '' && <Image src={imageUrl} id="image" className={imgClassName} height={height} width={width}></Image>}
+      {(title != '' || body != '') && <Content id="content" width={width} height={height}>
         {title != '' && <Title>{title}</Title>}
-        {content != '' && <Content>{content}</Content>}
-      </SecondContainer>
-    </FirstContainer>
+        {body != '' && <Body>{body}</Body>}
+      </Content>}
+    </Main>
   )
 }
 
