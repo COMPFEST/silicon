@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const SelectedChip = styled.div`
-  font-family: 'Inter', sans-serif;
   background-color: #4ec1f3;
   border: 3px solid #0aa4e7;
   font-weight: 500;
