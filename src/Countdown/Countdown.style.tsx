@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const CountdownContainer = styled.div`
-  font-family: 'R-Flex', sans-serif;
   color: #ffffff;
   display: flex;
   flex-direction: column;
