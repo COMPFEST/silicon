@@ -33,12 +33,14 @@ export const StyledRadio = styled.input`
     }
 
     :hover {
+      cursor: pointer;
       border: 1px solid rgba(255, 255, 255, 0.6);
     }
   }
 
   :disabled {
     border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: not-allowed;
 
     :checked {
       border: none;
@@ -67,7 +69,6 @@ export const RadioLabel = styled.div`
   color: white;
   font-size: 16px;
   line-height: 18px;
-  cursor: default;
 
   @media only screen and (max-width: 768px) {
     font-size: 12px;
@@ -79,8 +80,16 @@ export const RadioDiv = styled.div`
   gap: 8px;
   align-items: center;
 
-  :hover > ${StyledRadio}:enabled {
-    border: 1px solid rgba(255, 255, 255, 0.6);
+  :hover {
+    cursor: pointer;
+
+    :has(${StyledRadio}:disabled) {
+      cursor: not-allowed;
+    }
+
+    > ${StyledRadio}:enabled {
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
   }
 
   & > ${StyledRadio}:disabled ~ * {

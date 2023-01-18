@@ -40,11 +40,13 @@ export const StyledCheckbox = styled.input`
 
     :hover {
       border: 1px solid rgba(255, 255, 255, 0.6);
+      cursor: pointer;
     }
   }
 
   :disabled {
     border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: not-allowed;
 
     :checked {
       background-color: rgba(255, 255, 255, 0.1);
@@ -70,7 +72,6 @@ export const CheckboxLabel = styled.div`
   color: white;
   font-size: 16px;
   line-height: 18px;
-  cursor: default;
 
   @media only screen and (max-width: 768px) {
     font-size: 12px;
@@ -82,8 +83,16 @@ export const CheckboxDiv = styled.div`
   gap: 8px;
   align-items: center;
 
-  :hover > ${StyledCheckbox}:enabled {
-    border: 1px solid rgba(255, 255, 255, 0.6);
+  :hover {
+    cursor: pointer;
+
+    :has(${StyledCheckbox}:disabled) {
+      cursor: not-allowed;
+    }
+  
+    > ${StyledCheckbox}:enabled {
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
   }
 
   & > ${StyledCheckbox}:disabled ~ * {
