@@ -2,7 +2,7 @@ import React from 'react'
 import { Meta, Story } from '@storybook/react'
 import { ToastProps } from './interface'
 import useToast from '.'
-import Toast from './toast'
+import Toast from './trigger'
 
 export default {
   id: 'toast',
