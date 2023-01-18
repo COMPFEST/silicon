@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const TipCardContainer = styled.div`
-  font-family: 'Inter', sans-serif;
   color: #ffffff;
   font-weight: 500;
   border-radius: 0.75rem;
