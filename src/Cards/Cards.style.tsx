@@ -7,9 +7,7 @@ export const Content = styled.div<CardsProps>`
   background: #3e405b;
   border-radius: 24px;
   position: relative;
-  ${(props) =>
-    `width: ${props.width}px;`
-  }
+  ${(props) => `width: ${props.width}px;`}
 `
 
 export const Title = styled.div`
@@ -35,9 +33,7 @@ export const Main = styled.div<CardsProps>`
   align-items: center;
   background: #373951;
   border-radius: 24px;
-  ${(props) =>
-    `width: ${props.width}px;`
-  }
+  ${(props) => `width: ${props.width}px;`}
 `
 
 export const Image = styled.img<CardsProps>`
@@ -45,7 +41,5 @@ export const Image = styled.img<CardsProps>`
   overflow: hidden;
   object-fit: cover;
   position: relative;
-  ${(props) =>
-    `width: ${props.width}px;`
-  }
+  ${(props) => `width: ${props.width}px;`}
 `
