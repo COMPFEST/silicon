@@ -2,7 +2,7 @@ import React from 'react'
 import { Meta, Story } from '@storybook/react'
 import { ToastProps } from './interface'
 import useToast from '.'
-import Toast from './toast';
+import Toast from './toast'
 
 export default {
   id: 'toast',
@@ -10,14 +10,14 @@ export default {
   component: Toast,
 } as Meta
 
-const Demo = (props:ToastProps) => {
-    return (
-        <div>
-            <button onClick={useToast({...props})}>Tap me!</button>
-            <Toast position='top-left'/>
-        </div>
-    );
-};
+const Demo = (props: ToastProps) => {
+  return (
+    <div>
+      <button onClick={useToast({ ...props })}>Tap me!</button>
+      <Toast position="top-left" />
+    </div>
+  )
+}
 
 const Template: Story<ToastProps> = (args) => <Demo {...args} />
 

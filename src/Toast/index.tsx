@@ -11,7 +11,8 @@ function useToast(props: ToastProps): () => Promise<unknown> {
     promise,
   } = props
 
-  const callToast = () => toast.promise(
+  const callToast = () =>
+    toast.promise(
       promise,
       {
         loading: loadingMessage,
@@ -55,7 +56,7 @@ function useToast(props: ToastProps): () => Promise<unknown> {
       }
     )
 
-    return callToast
+  return callToast
 }
 
 const LoadingIcon: React.FC = () => (
