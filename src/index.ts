@@ -1,6 +1,8 @@
 import Button from './Button'
 import FileInput from './File-Input'
 import Modal from './Modal'
+import Toast from './Toast/trigger'
+import useToast from './Toast'
 import TextInput from './Input/TextInput'
 import SearchInput from './Input/Search'
 import Radio from './Input/Radio'
@@ -18,4 +20,6 @@ export {
   Countdown,
   FileInput,
   Disclosure,
+  Toast,
+  useToast
 }
