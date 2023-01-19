@@ -3,6 +3,8 @@ import { Meta } from '@storybook/react/types-6-0'
 import { Story } from '@storybook/react'
 import Button from './'
 import { ButtonProps } from './interface'
+import { within, userEvent } from '@storybook/testing-library'
+import { expect } from '@storybook/jest'
 
 const ExampleIcon: React.FC = () => (
   <svg
@@ -85,4 +87,10 @@ Ghost.args = {
   ...Primary.args,
   children: 'Tertiary',
   variant: 'ghost',
+}
+
+Ghost.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement)
+  await userEvent.click(canvas.getByRole('button'))
+  await expect(canvas.getByRole('button')).toHaveTextContent('Tertiary')
 }
