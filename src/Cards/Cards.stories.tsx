@@ -13,12 +13,11 @@ const Template: Story<CardsProps> = (args) => <Cards {...args} />
 
 export const Normal = Template.bind({})
 Normal.args = {
-  imageUrl:
-    'https://i.imgur.com/2XpTBZa.png',
+  imageUrl: 'https://i.imgur.com/2XpTBZa.png',
   title: 'A title',
   body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non ac mi nunc volutpat gravida malesuada eu massa vestibulum.',
   width: 300,
-  height: 280,
+  height: 270,
 }
 
 export const WithoutContent = Template.bind({})
