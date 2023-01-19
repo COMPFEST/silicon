@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { SearchIconProps, SearchInputProps } from './interface'
 import { SearchDiv, SearchIconDiv, StyledSearchInput } from './Search.style'
 
@@ -8,12 +8,15 @@ const SearchInput: React.FC<SearchInputProps> = ({
   placeholder = 'Placeholder',
   ...props
 }) => {
+  const inputRef = useRef<HTMLInputElement>(null)
+
   return (
     <>
-      <SearchDiv>
+      <SearchDiv onClick={() => inputRef.current?.focus()}>
         {icon === 'left' && <SearchIcon />}
         {icon === 'right' && align === 'center' && <SearchIcon hidden />}
         <StyledSearchInput
+          ref={inputRef}
           placeholder="Placeholder"
           align={align}
           {...props}
