@@ -89,7 +89,7 @@ export const CheckboxDiv = styled.div`
     :has(${StyledCheckbox}:disabled) {
       cursor: not-allowed;
     }
-  
+
     > ${StyledCheckbox}:enabled {
       border: 1px solid rgba(255, 255, 255, 0.6);
     }
