@@ -7,7 +7,6 @@ import {
   FileName,
   Dropzone,
   OpenButton,
-  SaveButton,
   URLContainer,
   FileUploaded,
   DeleteButton,
@@ -32,9 +31,9 @@ import {
   DeleteIcon,
 } from './assets'
 import { FileInputProps, HelperProps } from './interface'
+import Button from '../Button'
 
 const FileInput: React.FC<FileInputProps> = ({
-  content = '',
   link = false,
   title = 'Secondary message',
 }) => {
@@ -110,7 +109,6 @@ const UploadArea: React.FC<HelperProps> = ({
   setSelectedFile,
 }) => {
   const onDrop = useCallback((acceptedFiles: any) => {
-    console.log(acceptedFiles)
     setSelectedFile(acceptedFiles[0].name)
     setIsSuccess(true)
   }, [])
@@ -156,14 +154,15 @@ const UploadArea: React.FC<HelperProps> = ({
               onChange={handleChange}
               value={selectedFile}
             />
-            <SaveButton
+            <Button
+              disabled={selectedFile == ''}
               onClick={() => {
                 setIsSuccess(true)
                 setIsLink(true)
               }}
             >
               <SaveIcon />
-            </SaveButton>
+            </Button>
           </URLInputContainer>
         </URLContainer>
       )}

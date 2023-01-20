@@ -13,7 +13,6 @@ export interface HelperProps {
 }
 
 export interface FileInputProps extends Partial<StyledFileInputProps> {
-  link?: boolean
   title: string
-  content: string
+  link?: boolean
 }
