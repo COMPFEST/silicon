@@ -90,12 +90,14 @@ export const DeleteButton = styled.button`
 export const SuccessImageContainer = styled.div`
   padding-top: 32px;
 `
-export const OpenButton = styled.button`
+export const OpenButton = styled.span`
   color: #0aa4e7;
-  font-weight: 600;
   font-size: 16px;
-  background-color: transparent;
+  cursor: pointer;
+  margin: 0px 4px;
+  font-weight: 600;
   border-style: none;
+  background-color: transparent;
   &:hover {
     text-decoration: underline;
   }
@@ -114,14 +116,13 @@ export const URLContainer = styled.div`
   padding-bottom: 32px;
 `
 export const LineContainer = styled.div`
+  gap: 10px;
+  display: flex;
+  color: #ffffff;
   width: inherit;
   font-weight: 600;
-  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  font-weight: 600px;
-  color: #ffffff;
 `
 export const Line = styled.div`
   width: 168px;
@@ -164,20 +165,6 @@ export const Input = styled.input`
 
   &:focus {
     border-style: none;
-  }
-`
-export const SaveButton = styled.button`
-  border-radius: 12px;
-  border-style: none;
-  background-image: linear-gradient(#5561ff, #3643fc);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 12px 32px;
-  height: 100%;
-  @media only screen and (max-width: 768px) {
-    max-width: 82px;
-    max-height: 42px;
   }
 `
 export const Message = styled.div`
