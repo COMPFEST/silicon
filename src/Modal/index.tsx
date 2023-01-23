@@ -9,17 +9,20 @@ import {
   ContentText,
   ImgContainer,
   HeadingContainer,
+  ModalContentContainter,
+  FillContainter,
 } from './Modal.style'
 
 const Modal: React.FC<ModalProps> = ({
   id,
   title = '',
-  content = '',
+  children,
   imageUrl,
   acceptButton = null,
   cancelButton,
   isDisplayed = false,
   handleState,
+  variant = 'sm',
   ...props
 }) => {
   const modContain = useRef(null)
@@ -36,23 +39,29 @@ const Modal: React.FC<ModalProps> = ({
         }
       }}
       isDisplayed={isDisplayed}
-    >
-      <ModalContent>
-        <ImgContainer src={imageUrl}></ImgContainer>
+    > 
+      <ModalContent variant={variant}>
+        <ModalContentContainter variant={variant}>
+          { imageUrl ? <ImgContainer variant={variant}  src={imageUrl}></ImgContainer> : null}
+          
+          <FillContainter>
+            <HeadingContainer variant={variant}>
+              <HeadingText variant={variant}>{title}</HeadingText>
+            </HeadingContainer>
 
-        <HeadingContainer>
-          <HeadingText>{title}</HeadingText>
-        </HeadingContainer>
+            <TextContainter>
+              <ContentText>{children}</ContentText>
+            </TextContainter>
 
-        <TextContainter>
-          <ContentText>{content}</ContentText>
-        </TextContainter>
-
-        <ButtonContainer>
-          {acceptButton}
-          {cancelButton}
+            
+          </FillContainter>
+        </ModalContentContainter>
+        <ButtonContainer variant={variant}>
+              {acceptButton}
+              {cancelButton}
         </ButtonContainer>
       </ModalContent>
+
     </ModalContainter>
   )
 }

@@ -1,12 +1,12 @@
 import { ReactNode } from 'react'
 
-export interface isDisplayedProps {
+export interface ModalExtensionProps {
   isDisplayed: true | false
 }
 
-export interface ModalProps extends Partial<isDisplayedProps> {
+export interface ModalProps extends Partial<ModalExtensionProps>, Partial<ModalSizeProps> {
   title: string
-  content: string
+  children: ReactNode
   imageUrl?: string
   acceptButton: ReactNode
   cancelButton?: ReactNode
@@ -14,11 +14,15 @@ export interface ModalProps extends Partial<isDisplayedProps> {
   handleState: () => void
 }
 
-export interface ModalWrapperProps {
+export interface ModalWrapperProps extends Partial<ModalSizeProps> {
   Display: boolean
   title: string
-  content: string
+  content: ReactNode
   imageUrl?: string
   acceptButton: ReactNode
   cancelButton?: ReactNode
+}
+
+export interface ModalSizeProps {
+  variant: 'sm' | 'md' | 'lg'
 }
