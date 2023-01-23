@@ -7,12 +7,12 @@ const TooltipsWrapper: React.FC<TooltipsProps> = ({ text = '' }) => {
   return (
     <div>
       <Tester>
-        <Tooltips text={text}>
+        <Tooltips id='test' text={text}>
           <p>Arrange ur Mouse Here :D</p>
         </Tooltips>
       </Tester>
       <Tester2>
-        <Tooltips text={text}>
+        <Tooltips id='test2' text={text}>
           <p>Arrange ur Mouse Here :D</p>
         </Tooltips>
       </Tester2>

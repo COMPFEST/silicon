@@ -8,7 +8,7 @@ import {
   TooltipsSpanTop,
 } from './Tooltips.style'
 
-const Tooltips: React.FC<TooltipsProps> = ({ text = '', children }) => {
+const Tooltips: React.FC<TooltipsProps> = ({ id, text = '', children }) => {
   const tooltipRef = useRef<HTMLSpanElement>(null)
   const container = useRef<HTMLDivElement>(null)
   const [position, setPosition] = useState(true)
