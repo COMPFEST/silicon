@@ -10,7 +10,7 @@ import {
 
 const Disclosure: React.FC<
   DisclosureProps & React.ComponentPropsWithoutRef<'div'>
-> = ({ title, children, mainProps, childrenProps, titleProps }) => {
+> = ({ title, children, ...props }) => {
   const handleClick = () => {
     const children = document.getElementById('children')
     const main = document.getElementById('container')
@@ -39,16 +39,14 @@ const Disclosure: React.FC<
   }, [])
 
   return (
-    <MainContainer id="container" {...mainProps}>
-      <TitleContainer id="title" onClick={handleClick} {...titleProps}>
+    <MainContainer id="container" {...props}>
+      <TitleContainer id="title" onClick={handleClick}>
         <Title>{title}</Title>
         <StyledCaretIcon id="caret">
           <CaretIcon />
         </StyledCaretIcon>
       </TitleContainer>
-      <ChildrenContainer id="children" {...childrenProps}>
-        {children}
-      </ChildrenContainer>
+      <ChildrenContainer id="children">{children}</ChildrenContainer>
     </MainContainer>
   )
 }
