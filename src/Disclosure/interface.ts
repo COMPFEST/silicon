@@ -1,4 +1,13 @@
-export interface DisclosureProps {
+import { ReactNode } from 'react'
+
+export interface SizesInterface {
+  size: 'sm' | 'md' | 'lg'
+}
+
+export interface DisclosureProps extends Partial<SizesInterface> {
   title: string
-  content: string
+  children: ReactNode
+  mainProps: any
+  childrenProps: any
+  titleProps: any
 }

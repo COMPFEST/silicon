@@ -3,26 +3,27 @@ import { DisclosureProps } from './interface'
 import {
   TitleContainer,
   MainContainer,
-  ContentContainer,
+  ChildrenContainer,
   StyledCaretIcon,
+  Title
 } from './Disclosure.style'
 
-const Disclosure: React.FC<DisclosureProps> = ({ ...props }) => {
-  const { title, content } = props
-
+const Disclosure: React.FC<
+  DisclosureProps & React.ComponentPropsWithoutRef<'div'>
+> = ({ title, children, mainProps, childrenProps, titleProps }) => {
   const handleClick = () => {
-    const content = document.getElementById('content')
+    const children = document.getElementById('children')
     const main = document.getElementById('container')
     const caret = document.getElementById('caret')
     const title = document.getElementById('title')
 
-    if (content!.style.display === 'none') {
-      content!.style.display = 'block'
+    if (children!.style.display === 'none') {
+      children!.style.display = 'block'
       caret!.setAttribute('style', 'transform: rotate(-180deg)')
       main!.setAttribute('style', 'border: 4px solid rgba(255, 255, 255, 0.1)')
       title!.setAttribute('style', 'background: rgba(255, 255, 255, 0.1)')
     } else {
-      content!.style.display = 'none'
+      children!.style.display = 'none'
       caret!.setAttribute('style', 'transform: rotate(-0deg)')
       main!.setAttribute('style', 'border: 0px solid rgba(255, 255, 255, 0.1)')
       title!.setAttribute(
@@ -33,19 +34,23 @@ const Disclosure: React.FC<DisclosureProps> = ({ ...props }) => {
   }
 
   useEffect(() => {
-    const content = document.getElementById('content')
-    content!.style.display = 'none'
+    const children = document.getElementById('children')
+    children!.style.display = 'none'
   }, [])
 
   return (
-    <MainContainer id="container">
-      <TitleContainer id="title" onClick={handleClick}>
-        {title}
+    <MainContainer id="container" {...mainProps}>
+      <TitleContainer id="title" onClick={handleClick} {...titleProps}>
+        <Title >
+          {title}
+        </Title>
         <StyledCaretIcon id="caret">
           <CaretIcon />
         </StyledCaretIcon>
       </TitleContainer>
-      <ContentContainer id="content">{content}</ContentContainer>
+      <ChildrenContainer id="children" {...childrenProps}>
+        {children}
+      </ChildrenContainer>
     </MainContainer>
   )
 }
