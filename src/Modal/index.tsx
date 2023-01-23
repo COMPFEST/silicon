@@ -12,6 +12,7 @@ import {
 } from './Modal.style'
 
 const Modal: React.FC<ModalProps> = ({
+  id,
   title = '',
   content = '',
   imageUrl,

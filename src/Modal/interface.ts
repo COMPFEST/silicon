@@ -10,6 +10,7 @@ export interface ModalProps extends Partial<isDisplayedProps> {
   imageUrl?: string
   acceptButton: ReactNode
   cancelButton?: ReactNode
+  id: string
   handleState: () => void
 }
 
