@@ -5,7 +5,7 @@ import {
   MainContainer,
   ChildrenContainer,
   StyledCaretIcon,
-  Title
+  Title,
 } from './Disclosure.style'
 
 const Disclosure: React.FC<
@@ -41,9 +41,7 @@ const Disclosure: React.FC<
   return (
     <MainContainer id="container" {...mainProps}>
       <TitleContainer id="title" onClick={handleClick} {...titleProps}>
-        <Title >
-          {title}
-        </Title>
+        <Title>{title}</Title>
         <StyledCaretIcon id="caret">
           <CaretIcon />
         </StyledCaretIcon>
