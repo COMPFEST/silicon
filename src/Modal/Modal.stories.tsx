@@ -15,7 +15,7 @@ export default {
       control: false,
     },
     cancelButton: {
-      control: false
+      control: false,
     },
   },
 } as ComponentMeta<typeof ModalWrapper>

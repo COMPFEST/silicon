@@ -22,7 +22,7 @@ const ModalWrapper: React.FC<ModalWrapperProps> = ({
       </Button>
 
       <Modal
-        id='testModal'
+        id="testModal"
         title={title}
         isDisplayed={displayState}
         content={content}
