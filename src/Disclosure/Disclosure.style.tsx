@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Title = styled.div`
   align-items: stretch;
   padding: 13px;
-  white-space: nowrap; 
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 `
@@ -18,7 +18,7 @@ export const TitleContainer = styled.div`
   padding-right: 13px;
   :hover {
     background: rgba(255, 255, 255, 0.1);
-  };
+  }
 `
 
 export const ChildrenContainer = styled.div`
@@ -28,9 +28,7 @@ export const ChildrenContainer = styled.div`
   font-size: 16px;
   line-height: 150%;
   color: rgba(255, 255, 255, 0.8);
-  @media only screen and (max-width: 768px) {
-    width: 206px;
-  }
+  width: 100%;
 `
 
 export const MainContainer = styled.div`
@@ -41,12 +39,17 @@ export const MainContainer = styled.div`
   font-weight: 700;
   box-sizing: border-box;
   padding: 16px;
-  width: 495px;
   background: rgba(0, 0, 0, 0.1);
   border-radius: 24px;
   background: #373951;
-  @media only screen and (max-width: 768px) {
-    width: 270px;
+  @media only screen and (min-width: 300px) {
+    width: 280px;
+  }
+  @media only screen and (min-width: 400px) {
+    width: 350px;
+  }
+  @media only screen and (min-width: 750px) {
+    width: 495px;
   }
   cursor: pointer;
 `
