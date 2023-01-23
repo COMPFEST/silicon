@@ -16,14 +16,15 @@ export const ModalContainter = styled.div<ModalExtensionProps>`
 `
 
 export const ModalContent = styled.div<ModalSizeProps>`
-  display: block; 
+  display: block;
   background-color: #373951;
   margin: auto;
   padding: 20px;
   border: 1px solid #373951;
   justify-content: center;
-  width: ${({ variant }) => (variant == 'lg' ? '500px' : variant == 'sm' ? '230px' : '270px')};
-  gap:2;
+  width: ${({ variant }) =>
+    variant == 'lg' ? '500px' : variant == 'sm' ? '230px' : '270px'};
+  gap: 2;
   border-radius: 25px;
   box-shadow: 0px 100px 126px rgba(0, 0, 0, 0.15),
     0px 41.7776px 52.6398px rgba(0, 0, 0, 0.107828),
@@ -35,7 +36,7 @@ export const ModalContent = styled.div<ModalSizeProps>`
 export const ModalContentContainter = styled.div<ModalSizeProps>`
   display: flex;
   flex-direction: ${({ variant }) => (variant == 'lg' ? 'row' : ' column')};
-  gap : 25px;
+  gap: 25px;
 `
 
 export const FillContainter = styled.div`
@@ -67,20 +68,22 @@ export const ContentText = styled.div`
 `
 
 export const TextContainter = styled.div`
-  margin:0;
+  margin: 0;
 `
 
 export const HeadingContainer = styled.div<ModalSizeProps>`
   display: flex;
   flex-direction: row;
-  justify-content: ${({ variant }) => (variant == 'lg' ? 'flex-start' : 'center')};
-  height : fit;
+  justify-content: ${({ variant }) =>
+    variant == 'lg' ? 'flex-start' : 'center'};
+  height: fit;
 `
 
 export const ButtonContainer = styled.div<ModalSizeProps>`
   display: flex;
-  flex-direction : ${({ variant }) => (variant == 'sm' ? 'column' : 'row')};
-  justify-content: ${({ variant }) => (variant == 'lg' ? 'flex-end' : 'center')};
+  flex-direction: ${({ variant }) => (variant == 'sm' ? 'column' : 'row')};
+  justify-content: ${({ variant }) =>
+    variant == 'lg' ? 'flex-end' : 'center'};
   gap: 0.75rem;
   min-width: 100%;
 `
