@@ -1,20 +1,27 @@
 import styled from 'styled-components'
 
-export const TitleContainer = styled.div`
-  padding: 0px 13px;
-  color: #ffffff;
-  border-radius: 8px;
-  align-self: stretch;
-  display: flex;
-  justify-content: space-between;
+export const Title = styled.div`
   align-items: stretch;
   padding: 13px;
-  :hover {
-    background: rgba(255, 255, 255, 0.1);
-  }
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
 `
 
-export const ContentContainer = styled.div`
+export const TitleContainer = styled.div`
+  color: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  align-self: stretch;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 13px;
+  :hover {
+    background: rgba(255, 255, 255, 0.1);
+  };
+`
+
+export const ChildrenContainer = styled.div`
   width: 431px;
   padding: 8px 13px;
   font-weight: 600;

@@ -14,6 +14,6 @@ const Template: Story<DisclosureProps> = (args) => <Disclosure {...args} />
 export const Primary = Template.bind({})
 Primary.args = {
   title: 'What is a disclosure?',
-  content:
+  children:
     'A simple, accessible foundation for building custom UIs that show and hide content.',
 }
