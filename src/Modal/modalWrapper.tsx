@@ -6,11 +6,12 @@ import Button from '../Button'
 
 const ModalWrapper: React.FC<ModalWrapperProps> = ({
   title = '',
-  content = '',
+  content,
   imageUrl,
   acceptButton = null,
   cancelButton,
   Display = false,
+  variant,
 }) => {
   const [displayState, setDisplayState] = useState(Display)
   const handleButton = () => setDisplayState(!displayState)
@@ -22,15 +23,17 @@ const ModalWrapper: React.FC<ModalWrapperProps> = ({
       </Button>
 
       <Modal
+        variant={variant}
         id="testModal"
         title={title}
         isDisplayed={displayState}
-        content={content}
         imageUrl={imageUrl}
         acceptButton={acceptButton}
         cancelButton={cancelButton}
         handleState={handleButton}
-      ></Modal>
+      >
+        {content}
+      </Modal>
     </div>
   )
 }
