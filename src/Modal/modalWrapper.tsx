@@ -26,7 +26,7 @@ const ModalWrapper: React.FC<ModalWrapperProps> = ({
       <Modal
         variant={variant}
         id="testModal"
-        alt = {alt}
+        alt={alt}
         title={title}
         isDisplayed={displayState}
         imageUrl={imageUrl}

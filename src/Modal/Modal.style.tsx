@@ -75,7 +75,6 @@ export const HeadingText = styled.p<ModalSizeProps>`
   @media only screen and (max-width: 1000px) {
     margin: 0;
   }
-  
 `
 
 export const ContentText = styled.div`
@@ -114,15 +113,14 @@ export const ButtonContent = styled.div<ModalSizeProps>`
     variant == 'lg' ? 'flex-end' : 'center'};
   @media only screen and (max-width: 1440px) {
     justify-content: flex-end;
-  } 
+  }
   @media only screen and (max-width: 1000px) {
     justify-content: center;
   }
 `
 export const ButtonContainer = styled.div<ModalSizeProps>`
   display: flex;
-  flex-direction: ${({ variant }) =>
-  variant == 'sm' ? 'column' : 'row'};
+  flex-direction: ${({ variant }) => (variant == 'sm' ? 'column' : 'row')};
   justify-content: ${({ variant }) =>
     variant == 'lg' ? 'flex-end' : 'center'};
   gap: 0.75rem;
@@ -145,8 +143,8 @@ export const ImgContainer = styled.img<ModalSizeProps>`
   height: 200px;
   border-radius: 25px;
   @media only screen and (max-width: 1440px) {
-    width : 300px;
-  } 
+    width: 300px;
+  }
   @media only screen and (max-width: 1000px) {
     width: 100%;
   }
