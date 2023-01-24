@@ -45,7 +45,11 @@ const Modal: React.FC<ModalProps> = ({
       <ModalContent variant={variant}>
         <ModalContentContainter variant={variant}>
           {imageUrl ? (
-            <ImgContainer alt={alt} variant={variant} src={imageUrl}></ImgContainer>
+            <ImgContainer
+              alt={alt}
+              variant={variant}
+              src={imageUrl}
+            ></ImgContainer>
           ) : null}
 
           <FillContainter>
@@ -59,12 +63,8 @@ const Modal: React.FC<ModalProps> = ({
           </FillContainter>
         </ModalContentContainter>
         <ButtonContainer variant={variant}>
-          <ButtonContent variant={variant}>
-            {acceptButton}
-          </ButtonContent>
-          <ButtonContent variant={variant}>
-            {cancelButton}
-          </ButtonContent>
+          <ButtonContent variant={variant}>{acceptButton}</ButtonContent>
+          <ButtonContent variant={variant}>{cancelButton}</ButtonContent>
         </ButtonContainer>
       </ModalContent>
     </ModalContainter>
