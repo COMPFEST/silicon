@@ -32,10 +32,25 @@ export const ModalContent = styled.div<ModalSizeProps>`
     0px 12.5216px 15.7772px rgba(0, 0, 0, 0.075),
     0px 6.6501px 8.37913px rgba(0, 0, 0, 0.0605839),
     0px 2.76726px 3.48674px rgba(0, 0, 0, 0.0421718);
+  @media only screen and (max-width: 1440px) {
+    width: 500px;
+  }
+  @media only screen and (max-width: 1000px) {
+    width: 270px;
+  }
+  @media only screen and (max-width: 768px) {
+    width: 230px;
+  }
 `
 export const ModalContentContainter = styled.div<ModalSizeProps>`
   display: flex;
   flex-direction: ${({ variant }) => (variant == 'lg' ? 'row' : ' column')};
+  @media only screen and (max-width: 1440px) {
+    flex-direction: row;
+  }
+  @media only screen and (max-width: 1000px) {
+    flex-direction: column;
+  }
   gap: 25px;
 `
 
@@ -54,6 +69,13 @@ export const HeadingText = styled.p<ModalSizeProps>`
   font-size: 26px;
   line-height: 1;
   margin: ${({ variant }) => (variant == 'lg' ? '16px 0px 0px 0px' : '0')};
+  @media only screen and (max-width: 1440px) {
+    margin: 16px 0px 0px 0px;
+  }
+  @media only screen and (max-width: 1000px) {
+    margin: 0;
+  }
+  
 `
 
 export const ContentText = styled.div`
@@ -77,19 +99,55 @@ export const HeadingContainer = styled.div<ModalSizeProps>`
   justify-content: ${({ variant }) =>
     variant == 'lg' ? 'flex-start' : 'center'};
   height: fit;
+  @media only screen and (max-width: 1440px) {
+    justify-content: flex-start;
+  }
+  @media only screen and (max-width: 1000px) {
+    justify-content: center;
+  }
 `
 
+export const ButtonContent = styled.div<ModalSizeProps>`
+  display: flex;
+  flex-direction: row;
+  justify-content: ${({ variant }) =>
+    variant == 'lg' ? 'flex-end' : 'center'};
+  @media only screen and (max-width: 1440px) {
+    justify-content: flex-end;
+  } 
+  @media only screen and (max-width: 1000px) {
+    justify-content: center;
+  }
+`
 export const ButtonContainer = styled.div<ModalSizeProps>`
   display: flex;
-  flex-direction: ${({ variant }) => (variant == 'sm' ? 'column' : 'row')};
+  flex-direction: ${({ variant }) =>
+  variant == 'sm' ? 'column' : 'row'};
   justify-content: ${({ variant }) =>
     variant == 'lg' ? 'flex-end' : 'center'};
   gap: 0.75rem;
-  min-width: 100%;
+  @media only screen and (max-width: 1440px) {
+    justify-content: flex-end;
+    flex-direction: row;
+  }
+  @media only screen and (max-width: 1000px) {
+    justify-content: center;
+    flex-direction: row;
+  }
+  @media only screen and (max-width: 768px) {
+    justify-content: center;
+    flex-direction: column;
+  }
 `
 
 export const ImgContainer = styled.img<ModalSizeProps>`
   width: ${({ variant }) => (variant == 'lg' ? '300px' : '100%')};
   height: 200px;
   border-radius: 25px;
+  @media only screen and (max-width: 1440px) {
+    width : 300px;
+  } 
+  @media only screen and (max-width: 1000px) {
+    width: 100%;
+  }
 `
