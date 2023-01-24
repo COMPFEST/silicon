@@ -3,7 +3,7 @@ import React, { useRef } from 'react'
 import {
   ModalContainter,
   ModalContent,
-  ButtonContainer,
+  ButtonContent,
   TextContainter,
   HeadingText,
   ContentText,
@@ -11,6 +11,7 @@ import {
   HeadingContainer,
   ModalContentContainter,
   FillContainter,
+  ButtonContainer,
 } from './Modal.style'
 
 const Modal: React.FC<ModalProps> = ({
@@ -23,6 +24,7 @@ const Modal: React.FC<ModalProps> = ({
   isDisplayed = false,
   handleState,
   variant = 'sm',
+  alt,
   ...props
 }) => {
   const modContain = useRef(null)
@@ -43,7 +45,7 @@ const Modal: React.FC<ModalProps> = ({
       <ModalContent variant={variant}>
         <ModalContentContainter variant={variant}>
           {imageUrl ? (
-            <ImgContainer variant={variant} src={imageUrl}></ImgContainer>
+            <ImgContainer alt={alt} variant={variant} src={imageUrl}></ImgContainer>
           ) : null}
 
           <FillContainter>
@@ -57,8 +59,12 @@ const Modal: React.FC<ModalProps> = ({
           </FillContainter>
         </ModalContentContainter>
         <ButtonContainer variant={variant}>
-          {acceptButton}
-          {cancelButton}
+          <ButtonContent variant={variant}>
+            {acceptButton}
+          </ButtonContent>
+          <ButtonContent variant={variant}>
+            {cancelButton}
+          </ButtonContent>
         </ButtonContainer>
       </ModalContent>
     </ModalContainter>

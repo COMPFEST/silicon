@@ -13,6 +13,7 @@ export interface ModalProps
   acceptButton: ReactNode
   cancelButton?: ReactNode
   id: string
+  alt: string
   handleState: () => void
 }
 
@@ -20,6 +21,7 @@ export interface ModalWrapperProps extends Partial<ModalSizeProps> {
   Display: boolean
   title: string
   content: ReactNode
+  alt: string
   imageUrl?: string
   acceptButton: ReactNode
   cancelButton?: ReactNode

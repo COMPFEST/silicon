@@ -37,6 +37,7 @@ NoButton.args = {
     </p>
   ),
   imageUrl: 'https://www.w3schools.com/tags/img_girl.jpg',
+  alt: 'tester',
 }
 export const AccButton = Template.bind({})
 
@@ -50,6 +51,7 @@ AccButton.args = {
   ),
   imageUrl: 'https://www.w3schools.com/tags/img_girl.jpg',
   acceptButton: <Button>Accept</Button>,
+  alt: 'tester',
 }
 
 export const CompleteButton = Template.bind({})
@@ -60,4 +62,5 @@ CompleteButton.args = {
   content: <p>Lorem ipsum dolor sit amet, consectetasdasd s</p>,
   acceptButton: <Button>Accept</Button>,
   cancelButton: <Button variant="secondary">Cancel</Button>,
+  alt: 'tester',
 }
