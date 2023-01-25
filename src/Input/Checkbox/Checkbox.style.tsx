@@ -39,7 +39,9 @@ export const StyledCheckbox = styled.input`
     }
 
     :hover {
-      border: 1px solid rgba(255, 255, 255, 0.6);
+      :not(:checked) {
+        border: 1px solid rgba(255, 255, 255, 0.6);
+      }
       cursor: pointer;
     }
   }
@@ -90,7 +92,7 @@ export const CheckboxDiv = styled.div`
       cursor: not-allowed;
     }
 
-    > ${StyledCheckbox}:enabled {
+    > ${StyledCheckbox}:enabled:not(:checked) {
       border: 1px solid rgba(255, 255, 255, 0.6);
     }
   }
