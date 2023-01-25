@@ -1,13 +1,14 @@
 import styled from 'styled-components'
-import { CardsProps } from './interface'
+import { SIZES } from './constants'
+import { StyledCardsProps } from './interface'
 
-export const Content = styled.div<CardsProps>`
+export const Content = styled.div`
   display: flex;
   flex-direction: column;
   background: #3e405b;
   border-radius: 24px;
   position: relative;
-  ${(props) => `width: ${props.width}px;`}
+  width: 100%;
 `
 
 export const Title = styled.div`
@@ -16,6 +17,9 @@ export const Title = styled.div`
   line-height: 120%;
   color: #ffffff;
   padding: 24px 24px 20px 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `
 
 export const Body = styled.div`
@@ -26,20 +30,21 @@ export const Body = styled.div`
   padding: 0px 24px 24px 24px;
 `
 
-export const Main = styled.div<CardsProps>`
+export const Main = styled.div<StyledCardsProps>`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
   background: #373951;
   border-radius: 24px;
-  ${(props) => `width: ${props.width}px;`}
+  ${({ size }) => SIZES[size]};
+  text-align: justify;
 `
 
-export const Image = styled.img<CardsProps>`
+export const Image = styled.img`
   border-radius: 24px;
   overflow: hidden;
   object-fit: cover;
   position: relative;
-  ${(props) => `width: ${props.width}px;`}
+  width: 100%;
 `
