@@ -17,4 +17,5 @@ _TextInput.args = {
   label: 'Label',
   helper: 'Helper text',
   error: 'Error message',
+  type: 'text'
 }

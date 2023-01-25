@@ -13,6 +13,7 @@ const TextInput: React.FC<TextInputProps> = ({
   error,
   placeholder = 'Placeholder',
   isError = false,
+  type,
   ...props
 }) => {
   return (
@@ -23,7 +24,7 @@ const TextInput: React.FC<TextInputProps> = ({
         <StyledTextInput
           placeholder={placeholder}
           isError={isError}
-          type="text"
+          type={type}
           {...props}
         ></StyledTextInput>
 

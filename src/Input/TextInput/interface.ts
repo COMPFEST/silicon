@@ -9,4 +9,5 @@ export interface TextInputProps extends StyledTextInputProps {
   label?: string
   helper?: string
   error?: string
+  type: string
 }
