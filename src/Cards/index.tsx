@@ -4,21 +4,21 @@ import { Content, Title, Body, Main, Image } from './Cards.style'
 
 const Cards: React.FC<CardsProps & React.ComponentPropsWithoutRef<'div'>> = ({
   imageUrl,
-  title = '',
+  title,
   body,
-  className,
+  contentClassName,
   imgClassName,
-  size = 'sm',
+  id,
+  size = 'md',
+  ...props
 }) => {
   return (
-    <Main id="main" className={className} size={size}>
-      {imageUrl != '' && (
-        <Image src={imageUrl} id="image" className={imgClassName}></Image>
-      )}
-      {(title != '' || body != '') && (
-        <Content id="content">
-          {title != '' && <Title id="title">{title}</Title>}
-          {body != '' && <Body>{body}</Body>}
+    <Main id={id} size={size} {...props}>
+      {imageUrl && <Image src={imageUrl} className={imgClassName}></Image>}
+      {(title || body) && (
+        <Content className={contentClassName}>
+          {title && <Title>{title}</Title>}
+          {body && <Body>{body}</Body>}
         </Content>
       )}
     </Main>

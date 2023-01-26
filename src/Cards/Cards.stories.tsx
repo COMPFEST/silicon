@@ -50,6 +50,21 @@ export default {
         disable: true,
       },
     },
+    id: {
+      table: {
+        disable: true,
+      },
+    },
+    imgClassName: {
+      table: {
+        disable: true,
+      },
+    },
+    contentClassName: {
+      table: {
+        disable: true,
+      },
+    },
   },
 } as Meta
 
