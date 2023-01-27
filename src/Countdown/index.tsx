@@ -18,7 +18,7 @@ const Countdown: React.FC<CountdownProps> = ({
   title = '',
   targetDate,
   displayDate = false,
-  timeBoxClassName
+  timeBoxClassName,
 }) => {
   const defaultRemainingTime = {
     days: 0,
