@@ -18,6 +18,7 @@ const Countdown: React.FC<CountdownProps> = ({
   title = '',
   targetDate,
   displayDate = false,
+  timeBoxClassName
 }) => {
   const defaultRemainingTime = {
     days: 0,
@@ -84,7 +85,7 @@ const Countdown: React.FC<CountdownProps> = ({
 
       {/* Countdown */}
       <TimeContainer>
-        <TimeBox>
+        <TimeBox className={timeBoxClassName}>
           <TimeDigit>
             {remainingTime.days != 0
               ? remainingTime.days.toString().padStart(2, '0')
@@ -99,7 +100,7 @@ const Countdown: React.FC<CountdownProps> = ({
           <Dot />
         </DotContainer>
 
-        <TimeBox>
+        <TimeBox className={timeBoxClassName}>
           <TimeDigit>
             {remainingTime.days != 0
               ? remainingTime.hours.toString().padStart(2, '0')
@@ -113,7 +114,7 @@ const Countdown: React.FC<CountdownProps> = ({
           <Dot />
         </DotContainer>
 
-        <TimeBox>
+        <TimeBox className={timeBoxClassName}>
           <TimeDigit>
             {remainingTime.days != 0
               ? remainingTime.minutes.toString().padStart(2, '0')
