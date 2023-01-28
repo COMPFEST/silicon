@@ -15,7 +15,7 @@ export default {
     },
     content: {
       control: 'text',
-    }
+    },
   },
 } as ComponentMeta<typeof ModalWrapper>
 
@@ -37,7 +37,7 @@ MDSize.args = {
   title: 'Heading',
   imageUrl: 'https://www.w3schools.com/tags/img_girl.jpg',
   alt: 'tester',
-  variant:'md',
+  variant: 'md',
 }
 
 export const SMSize = Template.bind({})
@@ -46,5 +46,5 @@ SMSize.args = {
   title: 'Heading',
   imageUrl: 'https://www.w3schools.com/tags/img_girl.jpg',
   alt: 'tester',
-  variant:'sm',
+  variant: 'sm',
 }

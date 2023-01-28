@@ -30,4 +30,3 @@ export interface ModalWrapperProps extends Partial<ModalSizeProps> {
 export interface ModalSizeProps {
   variant: 'sm' | 'md' | 'lg'
 }
-

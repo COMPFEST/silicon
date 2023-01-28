@@ -37,7 +37,8 @@ export const ModalContent = styled.div<ModalSizeProps>`
   @media only screen and (max-width: 768px) {
     width: 230px;
   }
-  width: ${({ variant }) => (variant == 'lg' ? '500px' : variant == 'md' ? '270px' : '230px')};
+  width: ${({ variant }) =>
+    variant == 'lg' ? '500px' : variant == 'md' ? '270px' : '230px'};
 `
 
 export const ModalContentContainter = styled.div<ModalSizeProps>`
@@ -96,7 +97,8 @@ export const HeadingContainer = styled.div<ModalSizeProps>`
   @media only screen and (max-width: 1000px) {
     justify-content: center;
   }
-  justify-content: ${({ variant }) => (variant == 'lg' ? 'flex-start' : 'center')};
+  justify-content: ${({ variant }) =>
+    variant == 'lg' ? 'flex-start' : 'center'};
 `
 
 export const ButtonContent = styled.div<ModalSizeProps>`
@@ -106,7 +108,8 @@ export const ButtonContent = styled.div<ModalSizeProps>`
   @media only screen and (max-width: 1000px) {
     justify-content: center;
   }
-  justify-content: ${({ variant }) => (variant == 'lg' ? 'flex-end' : 'center')};
+  justify-content: ${({ variant }) =>
+    variant == 'lg' ? 'flex-end' : 'center'};
 `
 
 export const ButtonContainer = styled.div<ModalSizeProps>`
@@ -123,7 +126,8 @@ export const ButtonContainer = styled.div<ModalSizeProps>`
     justify-content: center;
     flex-direction: column;
   }
-  justify-content: ${({ variant }) => (variant == 'lg' ? 'flex-end' : 'center')};
+  justify-content: ${({ variant }) =>
+    variant == 'lg' ? 'flex-end' : 'center'};
   flex-direction: ${({ variant }) => (variant == 'sm' ? 'column' : 'row')};
 `
 
