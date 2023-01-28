@@ -7,6 +7,8 @@ export interface CardsProps extends Partial<StyledCardsProps> {
   title?: string
   body?: string
   contentClassName?: string
+  titleClassName?: string
+  bodyClassName?: string
   imgClassName?: string
 }
 
