@@ -38,7 +38,7 @@ export const Main = styled.div<StyledCardsProps>`
   background: #373951;
   border-radius: 24px;
   ${({ size }) => SIZES[size]};
-  text-align: justify;
+  text-align: start;
 `
 
 export const Image = styled.img`
