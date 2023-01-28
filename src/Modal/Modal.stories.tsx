@@ -1,6 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
-import Button from '../Button'
 import ModalWrapper from './modalWrapper'
 
 export default {
@@ -8,17 +7,15 @@ export default {
   title: 'Modal',
   component: ModalWrapper,
   argTypes: {
-    variant: {
-      control: 'radio',
-      options: ['lg', 'md', 'sm'],
-      defaultValue: 'lg',
-    },
     acceptButton: {
-      control: false,
+      control: 'boolean',
     },
     cancelButton: {
-      control: false,
+      control: 'boolean',
     },
+    content: {
+      control: 'text',
+    }
   },
 } as ComponentMeta<typeof ModalWrapper>
 
@@ -26,41 +23,28 @@ const Template: ComponentStory<typeof ModalWrapper> = (args) => (
   <ModalWrapper {...args} />
 )
 
-export const NoButton = Template.bind({})
+export const LGSize = Template.bind({})
 
-NoButton.args = {
+LGSize.args = {
   title: 'Heading',
-  content: (
-    <p>
-      Lorem ipsum dolor sit amet, consectetasdasd sdaurdasas dasasadipiscing
-      elit. Ut dui orci ac egestas.
-    </p>
-  ),
   imageUrl: 'https://www.w3schools.com/tags/img_girl.jpg',
   alt: 'tester',
+  variant: 'lg',
 }
-export const AccButton = Template.bind({})
+export const MDSize = Template.bind({})
 
-AccButton.args = {
+MDSize.args = {
   title: 'Heading',
-  content: (
-    <p>
-      Lorem ipsum dolor sit amet, consectetasdasd sdaurdasas dasasadipiscing
-      elit. Ut dui orci ac egestas.
-    </p>
-  ),
   imageUrl: 'https://www.w3schools.com/tags/img_girl.jpg',
-  acceptButton: <Button>Accept</Button>,
   alt: 'tester',
+  variant:'md',
 }
 
-export const CompleteButton = Template.bind({})
+export const SMSize = Template.bind({})
 
-CompleteButton.args = {
+SMSize.args = {
   title: 'Heading',
   imageUrl: 'https://www.w3schools.com/tags/img_girl.jpg',
-  content: <p>Lorem ipsum dolor sit amet, consectetasdasd s</p>,
-  acceptButton: <Button>Accept</Button>,
-  cancelButton: <Button variant="secondary">Cancel</Button>,
   alt: 'tester',
+  variant:'sm',
 }

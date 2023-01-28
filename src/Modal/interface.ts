@@ -23,10 +23,11 @@ export interface ModalWrapperProps extends Partial<ModalSizeProps> {
   content: ReactNode
   alt: string
   imageUrl?: string
-  acceptButton: ReactNode
-  cancelButton?: ReactNode
+  acceptButton: boolean
+  cancelButton: boolean
 }
 
 export interface ModalSizeProps {
   variant: 'sm' | 'md' | 'lg'
 }
+
