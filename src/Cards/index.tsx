@@ -10,6 +10,7 @@ const Cards: React.FC<CardsProps & React.ComponentPropsWithoutRef<'div'>> = ({
   bodyClassName,
   imgClassName,
   contentClassName,
+  idContent,
   size = 'md',
   ...props
 }) => {
@@ -17,7 +18,7 @@ const Cards: React.FC<CardsProps & React.ComponentPropsWithoutRef<'div'>> = ({
     <Main size={size} {...props}>
       {imageUrl && <Image src={imageUrl} className={imgClassName}></Image>}
       {(title || body) && (
-        <Content className={contentClassName}>
+        <Content className={contentClassName} id={idContent}>
           {title && <Title className={titleClassName}>{title}</Title>}
           {body && <Body className={bodyClassName}>{body}</Body>}
         </Content>
