@@ -65,6 +65,11 @@ export default {
         disable: true,
       },
     },
+    idContent: {
+      table: {
+        disable: true,
+      },
+    },
   },
 } as Meta
 
