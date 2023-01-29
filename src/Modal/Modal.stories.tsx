@@ -16,6 +16,11 @@ export default {
     content: {
       control: 'text',
     },
+    variant: {
+      control: 'radio',
+      options: ['lg', 'md', 'sm'],
+      defaultValue: 'None',
+    },
   },
 } as ComponentMeta<typeof ModalWrapper>
 
