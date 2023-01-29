@@ -9,6 +9,7 @@ export const Content = styled.div`
   border-radius: 24px;
   position: relative;
   width: 100%;
+  transition: 0.5s;
 `
 
 export const Title = styled.div`
@@ -39,6 +40,7 @@ export const Main = styled.div<StyledCardsProps>`
   border-radius: 24px;
   ${({ size }) => SIZES[size]};
   text-align: start;
+  transition: 0.2s;
 `
 
 export const Image = styled.img`
