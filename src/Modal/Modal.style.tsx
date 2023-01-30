@@ -4,7 +4,7 @@ import { ModalSizeProps } from './interface'
 
 export const ModalContainter = styled.div<ModalExtensionProps>`
   display: ${({ isDisplayed }) => (isDisplayed ? 'block' : ' none')};
-  position: absolute;
+  position: fixed;
   z-index: 1;
   padding-top: 28vh;
   left: 0;

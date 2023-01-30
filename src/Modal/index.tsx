@@ -1,5 +1,5 @@
 import { ModalProps } from './interface'
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import {
   ModalContainter,
   ModalContent,
@@ -28,6 +28,13 @@ const Modal: React.FC<ModalProps> = ({
   ...props
 }) => {
   const modContain = useRef(null)
+  useEffect(() => {
+    if (isDisplayed) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "visible";
+    }
+  }, [isDisplayed])
   return (
     <ModalContainter
       ref={modContain}
