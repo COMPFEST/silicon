@@ -10,6 +10,7 @@ export const StyledSearchInput = styled.input<SearchInputProps>`
   color: white;
   font-size: 16px;
   text-align: ${(props) => (props.align === 'left' ? 'left' : 'center')};
+  flex-grow: 1;
 
   :focus {
     ::placeholder {
