@@ -15,6 +15,7 @@ import {
 import { CountdownProps } from './interface'
 
 const Countdown: React.FC<CountdownProps> = ({
+  id,
   title = '',
   targetDate,
   displayDate = false,
@@ -79,7 +80,7 @@ const Countdown: React.FC<CountdownProps> = ({
     .replace('.', ':')
 
   return (
-    <CountdownContainer>
+    <CountdownContainer id={id}>
       {/* Title */}
       <Title>{title}</Title>
 
