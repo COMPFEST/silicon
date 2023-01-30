@@ -6,12 +6,10 @@ export const CountdownContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: fit-content;
-  font-weight: 700;
+  font-weight: 600;
 `
 
 export const Title = styled.p`
-  margin: 0;
-  padding: 0;
   letter-spacing: 0.5rem;
   text-transform: uppercase;
 `
@@ -51,16 +49,12 @@ export const Dot = styled.div`
 `
 
 export const TimeDigit = styled.p`
-  margin: 0;
-  margin-top: -10px;
-  padding: 0;
-  font-style: normal;
   font-weight: 700;
-  font-size: 3rem;
+  font-size: 36px;
+  margin-top: -10px;
+  margin-bottom: -5px;
 `
 
 export const TimeLabel = styled.p`
-  margin: 0;
-  padding: 0;
-  font-size: 18px;
+  font-size: 16px;
 `
