@@ -6,7 +6,7 @@ export const ModalContainter = styled.div<ModalExtensionProps>`
   display: ${({ isDisplayed }) => (isDisplayed ? 'block' : ' none')};
   position: absolute;
   z-index: 1;
-  padding-top: 50%;
+  padding-top: 120px;
   left: 0;
   top: 0;
   width: 100%;
