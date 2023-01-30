@@ -20,6 +20,9 @@ const Countdown: React.FC<CountdownProps> = ({
   targetDate,
   displayDate = false,
   timeBoxClassName,
+  titleClassName,
+  timeDigitClassName,
+  timeLabelClassName,
 }) => {
   const defaultRemainingTime = {
     days: 0,
@@ -82,18 +85,20 @@ const Countdown: React.FC<CountdownProps> = ({
   return (
     <CountdownContainer id={id}>
       {/* Title */}
-      <Title>{title}</Title>
+      <Title className={titleClassName}>{title}</Title>
 
       {/* Countdown */}
       <TimeContainer>
         <TimeBox className={timeBoxClassName}>
-          <TimeDigit>
+          <TimeDigit className={timeDigitClassName}>
             {remainingTime.days != 0
               ? remainingTime.days.toString().padStart(2, '0')
               : remainingTime.hours.toString().padStart(2, '0')}
           </TimeDigit>
 
-          <TimeLabel>{remainingTime.days != 0 ? 'Hari' : 'Jam'}</TimeLabel>
+          <TimeLabel className={timeLabelClassName}>
+            {remainingTime.days != 0 ? 'Hari' : 'Jam'}
+          </TimeLabel>
         </TimeBox>
 
         <DotContainer>
@@ -102,12 +107,14 @@ const Countdown: React.FC<CountdownProps> = ({
         </DotContainer>
 
         <TimeBox className={timeBoxClassName}>
-          <TimeDigit>
+          <TimeDigit className={timeDigitClassName}>
             {remainingTime.days != 0
               ? remainingTime.hours.toString().padStart(2, '0')
               : remainingTime.minutes.toString().padStart(2, '0')}
           </TimeDigit>
-          <TimeLabel>{remainingTime.days != 0 ? 'Jam' : 'Menit'}</TimeLabel>
+          <TimeLabel className={timeLabelClassName}>
+            {remainingTime.days != 0 ? 'Jam' : 'Menit'}
+          </TimeLabel>
         </TimeBox>
 
         <DotContainer>
@@ -116,12 +123,14 @@ const Countdown: React.FC<CountdownProps> = ({
         </DotContainer>
 
         <TimeBox className={timeBoxClassName}>
-          <TimeDigit>
+          <TimeDigit className={timeDigitClassName}>
             {remainingTime.days != 0
               ? remainingTime.minutes.toString().padStart(2, '0')
               : remainingTime.seconds.toString().padStart(2, '0')}
           </TimeDigit>
-          <TimeLabel>{remainingTime.days != 0 ? 'Menit' : 'Detik'}</TimeLabel>
+          <TimeLabel className={timeLabelClassName}>
+            {remainingTime.days != 0 ? 'Menit' : 'Detik'}
+          </TimeLabel>
         </TimeBox>
       </TimeContainer>
 

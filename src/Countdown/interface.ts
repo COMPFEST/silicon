@@ -1,7 +1,10 @@
 export interface CountdownProps {
   id: string
   title?: string
-  targetDate: Date
   displayDate?: boolean
+  targetDate: Date
   timeBoxClassName?: string
+  titleClassName?: string
+  timeDigitClassName?: string
+  timeLabelClassName?: string
 }
