@@ -9,7 +9,7 @@ const DropdownItem: React.FC<DropdownItemProps> = ({
   children = '',
   icon = null,
 }) => {
-  if (isButton === 'button')
+  if (isButton)
     return (
       <StyledDropdownItem
         onClick={() => {

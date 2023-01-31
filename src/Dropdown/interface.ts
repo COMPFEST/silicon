@@ -10,7 +10,7 @@ export interface DropdownProps extends Partial<StyledDropdownProps> {
 }
 
 export interface DropdownItemProps extends Partial<StyledDropdownProps> {
-  isButton?: 'button' | 'a'
+  isButton?: boolean
   onClick?: () => void
   href?: string
   children: string
