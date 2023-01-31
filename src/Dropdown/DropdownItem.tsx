@@ -1,9 +1,9 @@
 import React from 'react'
-import { DropdownItem, IconContainer, Link, Text } from './Dropdown.style'
+import { StyledDropdownItem, IconContainer, Link, Text } from './Dropdown.style'
 import { DropdownItemProps } from './interface'
 
-const Item: React.FC<DropdownItemProps> = ({
-  isButton = 'button',
+const DropdownItem: React.FC<DropdownItemProps> = ({
+  isButton = true,
   onClick = null,
   href = '',
   children = '',
@@ -11,24 +11,24 @@ const Item: React.FC<DropdownItemProps> = ({
 }) => {
   if (isButton === 'button')
     return (
-      <DropdownItem
+      <StyledDropdownItem
         onClick={() => {
           if (onClick != null) onClick()
         }}
       >
         <IconContainer>{icon}</IconContainer>
         <Text>{children}</Text>
-      </DropdownItem>
+      </StyledDropdownItem>
     )
   else
     return (
       <Link href={href}>
-        <DropdownItem>
+        <StyledDropdownItem>
           <IconContainer>{icon}</IconContainer>
           <Text>{children}</Text>
-        </DropdownItem>
+        </StyledDropdownItem>
       </Link>
     )
 }
 
-export default Item
+export default DropdownItem

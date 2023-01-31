@@ -75,7 +75,7 @@ export const DropdownItemContainer = styled.div<StyledDropdownProps>`
     width: 328px;
   }
 `
-export const DropdownItem = styled.div`
+export const StyledDropdownItem = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;

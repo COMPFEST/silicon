@@ -1,7 +1,7 @@
 import { Meta, Story } from '@storybook/react/types-6-0'
 import React from 'react'
-import Dropdown from './Dropdown'
-import Item from './Item'
+import Dropdown from './'
+import DropdownItem from './DropdownItem'
 import { DropdownItemProps, DropdownProps } from './interface'
 
 const ExampleIcon: React.FC = () => (
@@ -23,7 +23,7 @@ export default {
   id: 'dropdown',
   title: 'Dropdown',
   component: Dropdown,
-  subcomponents: { Item },
+  subcomponents: { DropdownItem },
   argTypes: {
     isActive: {
       table: {
@@ -65,46 +65,46 @@ export default {
 
 const DropdownTemplate: Story<DropdownProps & DropdownItemProps> = (args) => (
   <Dropdown {...args}>
-    <Item
+    <DropdownItem
       isButton={args.isButton}
       icon={args.icon}
       href={args.href}
       onClick={args.onClick}
     >
       Child 1
-    </Item>
-    <Item
+    </DropdownItem>
+    <DropdownItem
       isButton={args.isButton}
       icon={args.icon}
       href={args.href}
       onClick={args.onClick}
     >
       Child 2
-    </Item>
-    <Item
+    </DropdownItem>
+    <DropdownItem
       isButton={args.isButton}
       icon={args.icon}
       href={args.href}
       onClick={args.onClick}
     >
       Child 3
-    </Item>
-    <Item
+    </DropdownItem>
+    <DropdownItem
       isButton={args.isButton}
       icon={args.icon}
       href={args.href}
       onClick={args.onClick}
     >
       Child 4
-    </Item>
-    <Item
+    </DropdownItem>
+    <DropdownItem
       isButton={args.isButton}
       icon={args.icon}
       href={args.href}
       onClick={args.onClick}
     >
       Child 5
-    </Item>
+    </DropdownItem>
   </Dropdown>
 )
 
