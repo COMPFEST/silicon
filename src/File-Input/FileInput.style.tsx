@@ -3,6 +3,7 @@ import { StyledFileInputProps } from './interface'
 
 export const FileInputContainer = styled.div<StyledFileInputProps>`
   width: 558px;
+  padding: 12px;
   height: 260x;
   outline-style: dashed;
   outline-width: 4px;
@@ -41,6 +42,7 @@ export const PrimaryMessageContainer = styled.div`
 `
 export const SecondaryMessage = styled.p`
   color: rgba(255, 255, 255, 0.8);
+  text-align: center;
 `
 export const SuccessMessageContainer = styled.div`
   display: flex;
@@ -84,8 +86,19 @@ export const DeleteContainer = styled.div`
   }
 `
 export const DeleteButton = styled.button`
-  background-color: transparent;
   border-style: none;
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all;
+  transition-duration: 0.5s;
+  border-radius: 100%;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: all;
+    transition-duration: 0.5s;
+  }
 `
 export const SuccessImageContainer = styled.div`
   padding-top: 32px;
