@@ -35,7 +35,8 @@ import Button from '../Button'
 
 const FileInput: React.FC<FileInputProps> = ({
   link = false,
-  title = 'Secondary message',
+  title,
+  fileUrlLabel,
 }) => {
   const [isLink, setIsLink] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
@@ -59,6 +60,7 @@ const FileInput: React.FC<FileInputProps> = ({
           setIsLink={setIsLink}
           setIsSuccess={setIsSuccess}
           setSelectedFile={setSelectedFile}
+          fileUrlLabel={fileUrlLabel}
         />
       )}
     </FileInputContainer>
@@ -107,6 +109,7 @@ const UploadArea: React.FC<HelperProps> = ({
   setIsLink,
   setIsSuccess,
   setSelectedFile,
+  fileUrlLabel,
 }) => {
   const onDrop = useCallback((acceptedFiles: any) => {
     setSelectedFile(acceptedFiles[0].name)
@@ -132,7 +135,7 @@ const UploadArea: React.FC<HelperProps> = ({
         <PrimaryMessageContainer>
           Drag atau
           <OpenButton onClick={open}>upload</OpenButton>
-          file kamu di sini
+          file kamu di sini!
         </PrimaryMessageContainer>
         <SecondaryMessage>{text}</SecondaryMessage>
       </DropzoneTextContainer>
@@ -145,12 +148,12 @@ const UploadArea: React.FC<HelperProps> = ({
             <Line></Line>
           </LineContainer>
 
-          <Message>cantumkan link Google Drive</Message>
+          <Message>{fileUrlLabel}</Message>
 
           <URLInputContainer>
             <Input
               type="url"
-              placeholder="Link Google Drive"
+              placeholder="File Link"
               onChange={handleChange}
               value={selectedFile}
             />

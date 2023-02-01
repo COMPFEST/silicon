@@ -7,12 +7,14 @@ export interface HelperProps {
   link?: boolean
   isLink?: boolean
   selectedFile?: string
+  fileUrlLabel?: string
   setIsLink: (value: React.SetStateAction<boolean>) => void
   setIsSuccess: (value: React.SetStateAction<boolean>) => void
   setSelectedFile: (value: React.SetStateAction<string>) => void
 }
 
-export interface FileInputProps extends Partial<StyledFileInputProps> {
+export interface FileInputProps {
   title: string
   link?: boolean
+  fileUrlLabel?: string
 }
