@@ -10,7 +10,7 @@ import {
 import { DropdownProps } from './interface'
 
 const Dropdown: React.FC<DropdownProps> = ({ children }) => {
-  const options = children
+  const options = Array.isArray(children) ? children : [children]
   const [selected, setSelected] = useState<number | null>(null)
   const [isActive, setIsActive] = useState(false)
   const [clicked, setClicked] = useState(false)
@@ -32,7 +32,7 @@ const Dropdown: React.FC<DropdownProps> = ({ children }) => {
   )
 
   useEffect(() => {
-    for (let i = 0; i < options.length; i++) {
+    for (let i = 0; i < options!.length; i++) {
       if (options[i].props.isSelected) setSelected(i)
     }
   }, [])

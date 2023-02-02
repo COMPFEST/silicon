@@ -6,7 +6,7 @@ export interface StyledDropdownProps {
 }
 
 export interface DropdownProps extends Partial<StyledDropdownProps> {
-  children: ReactElement<DropdownItemProps>[]
+  children: ReactElement<DropdownItemProps>[] | ReactElement<DropdownItemProps>
 }
 
 export interface DropdownItemProps extends Partial<StyledDropdownProps> {
