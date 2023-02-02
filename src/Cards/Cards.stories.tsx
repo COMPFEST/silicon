@@ -65,6 +65,16 @@ export default {
         disable: true,
       },
     },
+    bodyClassName: {
+      table: {
+        disable: true,
+      },
+    },
+    titleClassName: {
+      table: {
+        disable: true,
+      },
+    },
     idContent: {
       table: {
         disable: true,
