@@ -1,11 +1,10 @@
-import React, { useCallback, useState } from 'react'
+import React, { ComponentPropsWithoutRef, forwardRef, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
 import {
   Line,
   Input,
   Message,
   FileName,
-  Dropzone,
   OpenButton,
   URLContainer,
   FileUploaded,
@@ -33,45 +32,97 @@ import {
 import { FileInputProps, HelperProps } from './interface'
 import Button from '../Button'
 
-const FileInput: React.FC<FileInputProps> = ({
-  link = false,
-  title,
-  fileUrlLabel,
-}) => {
-  const [isLink, setIsLink] = useState(false)
-  const [isSuccess, setIsSuccess] = useState(false)
-  const [selectedFile, setSelectedFile] = useState('')
+const FileInput = forwardRef<
+  HTMLInputElement,
+  ComponentPropsWithoutRef<'input'> & FileInputProps
+>(
+  (
+    {
+      withLink = false,
+      title,
+      fileUrlLabel,
+      onDrop,
+      fileValue,
+      onReset,
+      ...props
+    },
+    ref
+  ) => {
+    const [isLink, setIsLink] = useState(false)
+    const [isSuccess, setIsSuccess] = useState(false)
 
-  return (
-    <FileInputContainer isSuccess={isSuccess}>
-      {isSuccess ? (
-        <Success
-          isLink={isLink}
-          setIsLink={setIsLink}
-          selectedFile={selectedFile}
-          setIsSuccess={setIsSuccess}
-          setSelectedFile={setSelectedFile}
-        />
-      ) : (
-        <UploadArea
-          link={link}
-          text={title}
-          selectedFile={selectedFile}
-          setIsLink={setIsLink}
-          setIsSuccess={setIsSuccess}
-          setSelectedFile={setSelectedFile}
-          fileUrlLabel={fileUrlLabel}
-        />
-      )}
-    </FileInputContainer>
-  )
-}
+    const { getRootProps, open, getInputProps } = useDropzone({
+      onDrop: (acceptedFiles: any) => {
+        onDrop(acceptedFiles)
+        setIsSuccess(true)
+      },
+      noClick: true,
+      multiple: false,
+      noKeyboard: true,
+    })
+
+    return (
+      <FileInputContainer isSuccess={isSuccess}>
+        {isSuccess ? (
+          <Success
+            isLink={isLink}
+            setIsLink={setIsLink}
+            fileValue={fileValue}
+            setIsSuccess={setIsSuccess}
+            onReset={onReset}
+          />
+        ) : (
+          <ContentContainer {...getRootProps()}>
+            <input ref={ref} {...props} name="file" {...getInputProps()} />
+            <UploadImg />
+            <DropzoneTextContainer>
+              <PrimaryMessageContainer>
+                Drag atau
+                <OpenButton onClick={open}>upload</OpenButton>
+                file kamu di sini!
+              </PrimaryMessageContainer>
+              <SecondaryMessage>{title}</SecondaryMessage>
+            </DropzoneTextContainer>
+
+            {withLink ? (
+              <URLContainer>
+                <LineContainer>
+                  <Line></Line>
+                  atau
+                  <Line></Line>
+                </LineContainer>
+
+                <Message>{fileUrlLabel}</Message>
+
+                <URLInputContainer>
+                  <Input ref={ref} {...props} />
+                  <Button
+                    disabled={!fileValue}
+                    onClick={() => {
+                      setIsSuccess(true)
+                      setIsLink(true)
+                    }}
+                  >
+                    <SaveIcon />
+                  </Button>
+                </URLInputContainer>
+              </URLContainer>
+            ) : (
+              ''
+            )}
+          </ContentContainer>
+        )}
+      </FileInputContainer>
+    )
+  }
+)
 
 const Success: React.FC<HelperProps> = ({
   isLink,
+  setIsLink,
+  fileValue,
   setIsSuccess,
-  selectedFile,
-  setSelectedFile,
+  onReset,
 }) => {
   return (
     <ContentContainer>
@@ -79,7 +130,8 @@ const Success: React.FC<HelperProps> = ({
         <DeleteButton
           onClick={() => {
             setIsSuccess(false)
-            setSelectedFile('')
+            setIsLink(false)
+            onReset
           }}
         >
           <DeleteIcon />
@@ -95,82 +147,13 @@ const Success: React.FC<HelperProps> = ({
 
         <FileUploaded>
           {isLink ? <LinkIcon /> : <FileIcon />}
-          <FileName>{selectedFile}</FileName>
+          <FileName>{fileValue}</FileName>
         </FileUploaded>
       </SuccessMessageContainer>
     </ContentContainer>
   )
 }
 
-const UploadArea: React.FC<HelperProps> = ({
-  link,
-  text,
-  selectedFile,
-  setIsLink,
-  setIsSuccess,
-  setSelectedFile,
-  fileUrlLabel,
-}) => {
-  const onDrop = useCallback((acceptedFiles: any) => {
-    setSelectedFile(acceptedFiles[0].name)
-    setIsSuccess(true)
-  }, [])
-
-  const handleChange = (event: { target: { value: any } }) => {
-    setSelectedFile(event.target.value)
-  }
-
-  const { getRootProps, open, getInputProps } = useDropzone({
-    onDrop,
-    noClick: true,
-    multiple: false,
-    noKeyboard: true,
-  })
-
-  return (
-    <ContentContainer {...getRootProps()}>
-      <Dropzone {...getInputProps()}></Dropzone>
-      <UploadImg />
-      <DropzoneTextContainer>
-        <PrimaryMessageContainer>
-          Drag atau
-          <OpenButton onClick={open}>upload</OpenButton>
-          file kamu di sini!
-        </PrimaryMessageContainer>
-        <SecondaryMessage>{text}</SecondaryMessage>
-      </DropzoneTextContainer>
-
-      {link && (
-        <URLContainer>
-          <LineContainer>
-            <Line></Line>
-            atau
-            <Line></Line>
-          </LineContainer>
-
-          <Message>{fileUrlLabel}</Message>
-
-          <URLInputContainer>
-            <Input
-              type="url"
-              placeholder="File Link"
-              onChange={handleChange}
-              value={selectedFile}
-            />
-            <Button
-              disabled={selectedFile == ''}
-              onClick={() => {
-                setIsSuccess(true)
-                setIsLink(true)
-              }}
-            >
-              <SaveIcon />
-            </Button>
-          </URLInputContainer>
-        </URLContainer>
-      )}
-    </ContentContainer>
-  )
-}
+FileInput.displayName = 'FileInput'
 
 export default FileInput
