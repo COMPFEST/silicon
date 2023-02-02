@@ -14,7 +14,7 @@ export const Content = styled.div`
 
 export const Title = styled.div`
   font-weight: 400;
-  font-size: 24px;
+  // font-size: 24px;
   line-height: 120%;
   color: #ffffff;
   padding: 24px 24px 20px 24px;
@@ -25,10 +25,11 @@ export const Title = styled.div`
 
 export const Body = styled.div`
   font-weight: 600;
-  font-size: 16px;
+  // font-size: 16px;
   line-height: 150%;
   color: rgba(255, 255, 255, 0.8);
   padding: 0px 24px 24px 24px;
+  transition: all 2s linear;
 `
 
 export const Main = styled.div<StyledCardsProps>`
