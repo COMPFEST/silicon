@@ -63,7 +63,7 @@ export default {
 } as Meta
 
 const DropdownTemplate: Story<DropdownProps & DropdownItemProps> = (args) => (
-  <Dropdown {...args}>
+  <Dropdown>
     <DropdownItem
       isButton={args.isButton}
       icon={args.icon}

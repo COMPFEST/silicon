@@ -9,7 +9,7 @@ import {
 } from './Dropdown.style'
 import { DropdownProps } from './interface'
 
-const Dropdown: React.FC<DropdownProps> = ({ children }) => {
+const Dropdown: React.FC<DropdownProps> = ({ children, icon }) => {
   const options = Array.isArray(children) ? children : [children]
   const [selected, setSelected] = useState<number | null>(null)
   const [isActive, setIsActive] = useState(false)
@@ -48,7 +48,7 @@ const Dropdown: React.FC<DropdownProps> = ({ children }) => {
           }}
         >
           {selected !== null ? options[selected] : 'Select an option'}
-          {clicked ? <ArrowIcon /> : <></>}
+          {clicked && (icon ? icon : <ArrowIcon />)}
         </DropdownHeader>
       </DropdownHeaderContainer>
 
