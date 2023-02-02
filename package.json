@@ -20,8 +20,10 @@
     "@storybook/addon-interactions": "^6.5.15",
     "@storybook/addon-links": "^6.5.15",
     "@storybook/builder-webpack4": "^6.5.15",
+    "@storybook/jest": "^0.0.10",
     "@storybook/manager-webpack4": "^6.5.15",
     "@storybook/react": "^6.5.15",
+    "@storybook/test-runner": "^0.9.3",
     "@storybook/testing-library": "^0.0.13",
     "@types/react": "^18.0.26",
     "@types/styled-components": "^5.1.26",
@@ -53,7 +55,8 @@
     "check-format": "prettier --check .",
     "check-lint": "eslint . --ext ts --ext tsx --ext js",
     "format": "prettier --write .",
-    "test-all": "yarn format && yarn check-format && yarn check-lint && yarn check-types"
+    "test-all": "yarn format && yarn check-format && yarn check-lint && yarn check-types",
+    "test-storybook": "test-storybook"
   },
   "directories": {
     "lib": "lib"
