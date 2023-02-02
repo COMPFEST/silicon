@@ -17,4 +17,6 @@ export interface FileInputProps {
   fileValue: string
   onDrop: (acceptedFiles: any) => void
   onReset: () => void
+  fileId?: string
+  fileUrlId?: string
 }

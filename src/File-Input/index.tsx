@@ -44,6 +44,8 @@ const FileInput = forwardRef<
       onDrop,
       fileValue,
       onReset,
+      fileId,
+      fileUrlId,
       ...props
     },
     ref
@@ -73,7 +75,13 @@ const FileInput = forwardRef<
           />
         ) : (
           <ContentContainer {...getRootProps()}>
-            <input ref={ref} {...props} name="file" {...getInputProps()} />
+            <input
+              id={fileId}
+              ref={ref}
+              {...props}
+              name="file"
+              {...getInputProps()}
+            />
             <UploadImg />
             <DropzoneTextContainer>
               <PrimaryMessageContainer>
@@ -83,7 +91,6 @@ const FileInput = forwardRef<
               </PrimaryMessageContainer>
               <SecondaryMessage>{title}</SecondaryMessage>
             </DropzoneTextContainer>
-
             {withLink ? (
               <URLContainer>
                 <LineContainer>
@@ -95,7 +102,7 @@ const FileInput = forwardRef<
                 <Message>{fileUrlLabel}</Message>
 
                 <URLInputContainer>
-                  <Input ref={ref} {...props} />
+                  <Input id={fileUrlId} ref={ref} {...props} />
                   <Button
                     disabled={!fileValue}
                     onClick={() => {
