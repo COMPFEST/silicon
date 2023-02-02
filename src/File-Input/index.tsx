@@ -131,7 +131,7 @@ const Success: React.FC<HelperProps> = ({
           onClick={() => {
             setIsSuccess(false)
             setIsLink(false)
-            onReset
+            onReset()
           }}
         >
           <DeleteIcon />
