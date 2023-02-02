@@ -58,6 +58,19 @@ export const DropdownContent = styled.div<StyledDropdownProps>`
   border-color: rgba(255, 255, 255, 0.3);
   background-color: rgba(62, 64, 91, 1);
   width: inherit;
+  overflow: hidden;
+
+  @keyframes in-transition {
+    0% {
+      max-height: 0;
+    }
+    100% {
+      max-height: 999px;
+    }
+  }
+
+  animation: in-transition 1.5s;
+  animation-fill-mode: forwards;
 `
 export const DropdownItemContainer = styled.div<StyledDropdownProps>`
   display: flex;
