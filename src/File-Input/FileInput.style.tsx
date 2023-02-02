@@ -8,15 +8,23 @@ export const FileInputContainer = styled.div<StyledFileInputProps>`
   outline-style: dashed;
   outline-width: 4px;
   outline-color: ${(props) =>
-    props.isSuccess ? '#3EEBBE' : 'rgba(255, 255, 255, 0.1)'};
+    props.isSuccess ? 'rgba(62, 235, 190, 1)' : 'rgba(255, 255, 255, 0.1)'};
   border-radius: 24px;
   align-items: start;
   justify-content: center;
   font-size: 16px;
   position: relative;
+  transition: all;
+  transition-duration: 0.5s;
   @media only screen and (max-width: 768px) {
     width: 308px;
     font-size: 12px;
+  }
+  &:hover {
+    transition: all;
+    transition-duration: 0.5s;
+    outline-color: ${(props) =>
+      props.isSuccess ? 'rgba(62, 235, 190, 1)' : 'rgba(255, 255, 255, 0.5)'};
   }
 `
 export const ContentContainer = styled.div`
