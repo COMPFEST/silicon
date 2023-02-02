@@ -3,18 +3,18 @@ export interface StyledFileInputProps {
 }
 
 export interface HelperProps {
-  text?: string
-  link?: boolean
-  isLink?: boolean
-  selectedFile?: string
-  fileUrlLabel?: string
+  isLink: boolean
+  fileValue: string
+  onReset: () => void
   setIsLink: (value: React.SetStateAction<boolean>) => void
   setIsSuccess: (value: React.SetStateAction<boolean>) => void
-  setSelectedFile: (value: React.SetStateAction<string>) => void
 }
 
 export interface FileInputProps {
   title: string
-  link?: boolean
-  fileUrlLabel?: string
+  withLink?: boolean
+  fileUrlLabel: string
+  fileValue: string
+  onDrop: (acceptedFiles: any) => void
+  onReset: () => void
 }
