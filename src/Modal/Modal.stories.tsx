@@ -4,7 +4,6 @@ import ModalWrapper from './modalWrapper'
 import { expect } from '@storybook/jest'
 import { within, userEvent } from '@storybook/testing-library'
 
-
 export default {
   id: 'modal',
   title: 'Modal',
@@ -77,5 +76,3 @@ SMSize.play = async ({ canvasElement }) => {
   await userEvent.click(canvas.getByRole('button'))
   await expect(canvas.getByTestId('modal')).toHaveStyle('display: block')
 }
-
-
