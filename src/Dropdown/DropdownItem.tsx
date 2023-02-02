@@ -27,7 +27,7 @@ const DropdownItem: React.FC<DropdownItemProps> = ({
     )
   else
     return (
-      <StyledDropdownLinkItem href={href}>
+      <StyledDropdownLinkItem as='a' href={href}>
         <IconContainer>{icon}</IconContainer>
         <Text>{children}</Text>
       </StyledDropdownLinkItem>

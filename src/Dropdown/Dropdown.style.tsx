@@ -82,23 +82,9 @@ export const StyledDropdownButtonItem = styled.div`
   }
 `
 
-export const StyledDropdownLinkItem = styled.a`
-  padding: 18px 10px 18px 10px;
-  display: flex;
-  text-align: left;
-  align-items: center;
-  gap: 8px;
-  overflow: hidden;
-  word-break: break-word;
-  width: 388px;
-  height: inherit;
-  cursor: pointer;
+export const StyledDropdownLinkItem = styled(StyledDropdownButtonItem)`
   color: #ffffff;
   text-decoration: none;
-  @media only screen and (max-width: 768px) {
-    gap: 4px;
-    width: 328px;
-  }
 `
 
 export const Text = styled.div`
