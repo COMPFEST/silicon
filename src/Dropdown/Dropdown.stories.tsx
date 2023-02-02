@@ -36,9 +36,8 @@ export default {
       },
     },
     isButton: {
-      control: 'radio',
-      options: ['button', 'a'],
-      defaultValue: 'button',
+      control: 'boolean',
+      defaultValue: true,
     },
     showIcon: {
       control: 'boolean',
@@ -56,7 +55,7 @@ export default {
       control: 'text',
       if: {
         arg: 'isButton',
-        eq: 'a',
+        eq: false,
       },
       defaultValue: '',
     },

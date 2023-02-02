@@ -60,38 +60,50 @@ export const DropdownContent = styled.div<StyledDropdownProps>`
   width: inherit;
 `
 export const DropdownItemContainer = styled.div<StyledDropdownProps>`
+  display: flex;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+`
+export const StyledDropdownButtonItem = styled.div`
   padding: 18px 10px 18px 10px;
   display: flex;
   text-align: left;
   align-items: center;
+  gap: 8px;
+  overflow: hidden;
+  word-break: break-word;
   width: 388px;
   height: inherit;
   cursor: pointer;
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-  }
-
   @media only screen and (max-width: 768px) {
+    gap: 4px;
     width: 328px;
   }
 `
-export const StyledDropdownItem = styled.div`
+
+export const StyledDropdownLinkItem = styled.a`
+  padding: 18px 10px 18px 10px;
   display: flex;
+  text-align: left;
   align-items: center;
   gap: 8px;
   overflow: hidden;
   word-break: break-word;
+  width: 388px;
+  height: inherit;
+  cursor: pointer;
+  color: #ffffff;
+  text-decoration: none;
   @media only screen and (max-width: 768px) {
     gap: 4px;
+    width: 328px;
   }
 `
+
 export const Text = styled.div`
   max-width: 270px;
 `
 export const IconContainer = styled.div`
   display: flex;
-`
-export const Link = styled.a`
-  color: #ffffff;
-  text-decoration: none;
 `
