@@ -39,6 +39,7 @@ const Modal: React.FC<ModalProps> = ({
     <ModalContainter
       ref={modContain}
       id="container"
+      data-testid="modal"
       onClick={function () {
         window.onclick = function (event) {
           const modal = document.getElementById('container')
