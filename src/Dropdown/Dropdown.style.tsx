@@ -15,7 +15,7 @@ export const DropdownContainer = styled.div`
 `
 export const DropdownHeaderContainer = styled.div<StyledDropdownProps>`
   border-radius: ${(props) => (props.isActive ? '12px 12px 0px 0px' : '12px')};
-  border-style: ${(props) => (props.isActive ? 'solid' : 'none')};
+  border: ${(props) => (props.isActive ? '2px solid' : 'none')};
   border-bottom: 0px;
   border-color: rgba(255, 255, 255, 0.3);
   background-color: ${(props) =>
@@ -31,7 +31,7 @@ export const DropdownHeader = styled.div<StyledDropdownProps>`
   height: 44px;
   overflow: hidden;
   text-overflow: truncate;
-  border-style: ${(props) => (props.isActive ? 'none' : 'solid')};
+  border: ${(props) => (props.isActive ? 'none' : '2px solid')};
   border-color: rgba(255, 255, 255, 0.3);
   background-color: ${(props) =>
     props.isActive ? 'rgba(79, 82, 117, 1)' : 'rgba(62, 64, 91, 0)'};
@@ -53,7 +53,7 @@ export const DropdownContent = styled.div<StyledDropdownProps>`
   justify-content: center;
   align-items: left;
   border-radius: ${(props) => (props.isActive ? '0px 0px 12px 12px' : '12px')};
-  border-style: solid;
+  border: 2px solid;
   border-top: 0px;
   border-color: rgba(255, 255, 255, 0.3);
   background-color: rgba(62, 64, 91, 1);
