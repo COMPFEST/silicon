@@ -4,6 +4,8 @@ import TabGroup from '.'
 import { TabGroupProps } from './interface'
 import Tab from '../Tab'
 import { TabProps } from '../Tab/interface'
+import { within, userEvent } from '@storybook/testing-library'
+import { expect } from '@storybook/jest'
 
 const ExampleIcon = () => (
   <svg
@@ -43,10 +45,26 @@ export default {
 
 const Template: Story<TabGroupProps & TabProps> = (args) => (
   <TabGroup>
-    <Tab title="Tab 1" icon={args.icon} />
-    <Tab title="Tab 2" icon={args.icon} />
-    <Tab title="Tab 3" icon={args.icon} />
+    <Tab title="Tab 1" icon={args.icon} data-testid="tabgroup-id" />
+    <Tab title="Tab 2" icon={args.icon} data-testid="tabgroup-id" />
+    <Tab title="Tab 3" icon={args.icon} data-testid="tabgroup-id" />
   </TabGroup>
 )
 
 export const _TabGroup = Template.bind({})
+
+_TabGroup.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement)
+
+  await userEvent.click(canvas.getByText('Tab 1'))
+  expect(canvas.getByText('Tab 1')).toHaveProperty('selected', true)
+  await new Promise((r) => setTimeout(r, 1000))
+
+  await userEvent.click(canvas.getByText('Tab 2'))
+  expect(canvas.getByText('Tab 2')).toHaveProperty('selected', true)
+  await new Promise((r) => setTimeout(r, 1000))
+
+  await userEvent.click(canvas.getByText('Tab 3'))
+  expect(canvas.getByText('Tab 3')).toHaveProperty('selected', true)
+  await new Promise((r) => setTimeout(r, 1000))
+}
