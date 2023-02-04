@@ -40,13 +40,13 @@ const Disclosure: React.FC<
 
   return (
     <MainContainer id="container" {...props}>
-      <TitleContainer id="title" onClick={handleClick}>
+      <TitleContainer id="title" data-testid="title" onClick={handleClick}>
         <Title>{title}</Title>
         <StyledCaretIcon id="caret">
           <CaretIcon />
         </StyledCaretIcon>
       </TitleContainer>
-      <ChildrenContainer id="children">{children}</ChildrenContainer>
+      <ChildrenContainer id="children" data-testid='children'>{children}</ChildrenContainer>
     </MainContainer>
   )
 }
