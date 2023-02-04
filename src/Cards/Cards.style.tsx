@@ -13,7 +13,7 @@ export const Content = styled.div`
 `
 
 export const Title = styled.div`
-  font-weight: 400;
+  font-weight: 700;
   // font-size: 24px;
   line-height: 120%;
   color: #ffffff;
