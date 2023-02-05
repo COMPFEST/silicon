@@ -1,32 +1,34 @@
-import React, { useRef } from 'react'
+import React, { useRef, forwardRef, useImperativeHandle } from 'react'
 import { SearchIconProps, SearchInputProps } from './interface'
 import { SearchDiv, SearchIconDiv, StyledSearchInput } from './Search.style'
 
-const SearchInput: React.FC<SearchInputProps> = ({
-  align = 'left',
-  icon = 'none',
-  placeholder = 'Placeholder',
-  ...props
-}) => {
-  const inputRef = useRef<HTMLInputElement>(null)
+const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
+  (
+    { align = 'left', icon = 'none', placeholder = 'Placeholder', ...props },
+    ref
+  ) => {
+    const inputRef = useRef<HTMLInputElement>(null)
 
-  return (
-    <>
-      <SearchDiv onClick={() => inputRef.current?.focus()}>
-        {icon === 'left' && <SearchIcon />}
-        {icon === 'right' && align === 'center' && <SearchIcon hidden />}
-        <StyledSearchInput
-          ref={inputRef}
-          placeholder="Placeholder"
-          align={align}
-          {...props}
-        ></StyledSearchInput>
-        {icon === 'right' && <SearchIcon />}
-        {icon === 'left' && align === 'center' && <SearchIcon hidden />}
-      </SearchDiv>
-    </>
-  )
-}
+    useImperativeHandle(ref, () => inputRef.current as HTMLInputElement)
+
+    return (
+      <>
+        <SearchDiv onClick={() => inputRef.current?.focus()}>
+          {icon === 'left' && <SearchIcon />}
+          {icon === 'right' && align === 'center' && <SearchIcon hidden />}
+          <StyledSearchInput
+            ref={inputRef}
+            placeholder="Placeholder"
+            align={align}
+            {...props}
+          ></StyledSearchInput>
+          {icon === 'right' && <SearchIcon />}
+          {icon === 'left' && align === 'center' && <SearchIcon hidden />}
+        </SearchDiv>
+      </>
+    )
+  }
+)
 
 const SearchIcon: React.FC<SearchIconProps> = ({ hidden = false }) => (
   <SearchIconDiv hidden={hidden}>
@@ -44,5 +46,7 @@ const SearchIcon: React.FC<SearchIconProps> = ({ hidden = false }) => (
     </svg>
   </SearchIconDiv>
 )
+
+SearchInput.displayName = 'SearchInput'
 
 export default SearchInput

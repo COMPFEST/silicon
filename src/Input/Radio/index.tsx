@@ -1,19 +1,25 @@
-import React, { useRef } from 'react'
+import React, { forwardRef, useImperativeHandle, useRef } from 'react'
 import { RadioProps } from './interface'
 import { RadioDiv, RadioLabel, StyledRadio, SVGDiv } from './Radio.style'
 
-const Radio: React.FC<RadioProps> = ({ label, icon = null, ...props }) => {
-  const radioRef = useRef<HTMLInputElement>(null)
+const Radio = forwardRef<HTMLInputElement, RadioProps>(
+  ({ label, icon = null, ...props }, ref) => {
+    const radioRef = useRef<HTMLInputElement>(null)
 
-  return (
-    <>
-      <RadioDiv onClick={() => radioRef.current?.click()}>
-        <StyledRadio ref={radioRef} type="radio" {...props}></StyledRadio>
-        {icon && <SVGDiv>{icon}</SVGDiv>}
-        <RadioLabel>{label}</RadioLabel>
-      </RadioDiv>
-    </>
-  )
-}
+    useImperativeHandle(ref, () => radioRef.current as HTMLInputElement)
+
+    return (
+      <>
+        <RadioDiv onClick={() => radioRef.current?.click()}>
+          <StyledRadio ref={radioRef} type="radio" {...props}></StyledRadio>
+          {icon && <SVGDiv>{icon}</SVGDiv>}
+          <RadioLabel>{label}</RadioLabel>
+        </RadioDiv>
+      </>
+    )
+  }
+)
+
+Radio.displayName = 'Radio'
 
 export default Radio
