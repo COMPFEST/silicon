@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { TextInputProps } from './interface'
 import {
   StyledTextInput,
@@ -7,44 +7,50 @@ import {
   BottomTextDiv,
 } from './TextInput.style'
 
-const TextInput: React.FC<TextInputProps> = ({
-  label,
-  helper,
-  error,
-  placeholder = 'Placeholder',
-  isError = false,
-  type,
-  ...props
-}) => {
-  return (
-    <>
-      <TextInputContainer>
-        <LabelDiv>{label}</LabelDiv>
+const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
+  (
+    {
+      label,
+      helper,
+      error,
+      placeholder = 'Placeholder',
+      isError = false,
+      type,
+      ...props
+    },
+    ref
+  ) => {
+    return (
+      <>
+        <TextInputContainer>
+          <LabelDiv>{label}</LabelDiv>
 
-        <StyledTextInput
-          placeholder={placeholder}
-          isError={isError}
-          type={type}
-          {...props}
-        ></StyledTextInput>
+          <StyledTextInput
+            placeholder={placeholder}
+            isError={isError}
+            type={type}
+            ref={ref}
+            {...props}
+          ></StyledTextInput>
 
-        {!isError && helper && (
-          <BottomTextDiv>
-            <HelperIcon />
-            {helper}
-          </BottomTextDiv>
-        )}
+          {!isError && helper && (
+            <BottomTextDiv>
+              <HelperIcon />
+              {helper}
+            </BottomTextDiv>
+          )}
 
-        {isError && error && (
-          <BottomTextDiv error>
-            <ErrorIcon />
-            {error}
-          </BottomTextDiv>
-        )}
-      </TextInputContainer>
-    </>
-  )
-}
+          {isError && error && (
+            <BottomTextDiv error>
+              <ErrorIcon />
+              {error}
+            </BottomTextDiv>
+          )}
+        </TextInputContainer>
+      </>
+    )
+  }
+)
 
 const HelperIcon = () => (
   <svg
@@ -77,5 +83,7 @@ const ErrorIcon = () => (
     />
   </svg>
 )
+
+TextInput.displayName = 'TextInput'
 
 export default TextInput
