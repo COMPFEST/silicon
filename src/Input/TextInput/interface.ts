@@ -5,9 +5,9 @@ export interface StyledTextInputProps
   isError?: boolean
 }
 
-export interface TextInputProps extends StyledTextInputProps {
+export interface TextInputProps
+  extends React.ComponentPropsWithoutRef<'input'> {
   label?: string
   helper?: string
   error?: string
-  type: string
 }
