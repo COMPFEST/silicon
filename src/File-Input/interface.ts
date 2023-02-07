@@ -1,3 +1,5 @@
+import { ComponentPropsWithoutRef } from 'react'
+
 export interface StyledFileInputProps {
   isSuccess: boolean
 }
@@ -10,12 +12,13 @@ export interface HelperProps {
   setIsSuccess: (value: React.SetStateAction<boolean>) => void
 }
 
-export interface FileInputProps {
-  title: string
+export interface FileInputProps
+  extends Omit<ComponentPropsWithoutRef<'input'>, 'onDrop'> {
+  secondaryMessage?: string
   withLink?: boolean
   fileUrlLabel?: string
   value: string
-  onDrop: (acceptedFiles: any) => void
+  onDrop: (acceptedFiles: File[]) => void
   onReset: () => void
   fileId?: string
   fileUrlId?: string
