@@ -21,6 +21,7 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
             placeholder="Placeholder"
             align={align}
             {...props}
+            type="text"
           ></StyledSearchInput>
           {icon === 'right' && <SearchIcon />}
           {icon === 'left' && align === 'center' && <SearchIcon hidden />}
