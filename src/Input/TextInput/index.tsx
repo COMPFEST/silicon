@@ -8,7 +8,17 @@ import {
 } from './TextInput.style'
 
 const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
-  ({ label, helper, error, placeholder = 'Placeholder', ...props }, ref) => {
+  (
+    {
+      label,
+      helper,
+      error,
+      type = 'text',
+      placeholder = 'Placeholder',
+      ...props
+    },
+    ref
+  ) => {
     return (
       <>
         <TextInputContainer>
@@ -18,6 +28,7 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
             placeholder={placeholder}
             isError={!!error}
             ref={ref}
+            type={type}
             {...props}
           ></StyledTextInput>
 
