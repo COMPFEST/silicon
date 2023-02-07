@@ -16,18 +16,25 @@ const Tooltips: React.FC<TooltipsProps> = ({ id, text = '', children }) => {
   return (
     <TooltipsContainer
       ref={container}
-      onMouseEnter={() => {
+      onMouseEnter={(event) => {
         if (!tooltipRef.current || !container.current) return
         const windowHeight = window.innerHeight
         tooltipRef.current.style.visibility = 'visible'
-        const { top } = container.current.getBoundingClientRect()
+        const { bottom } = container.current.getBoundingClientRect()
         const { height } = container.current.getBoundingClientRect()
         const tooltipHeight = tooltipRef.current.getBoundingClientRect().height
-        if (windowHeight - (top + height + tooltipHeight) < 5) {
-          tooltipRef.current.style.bottom = height + 25 + 'px'
+
+        // const body = document.body
+        // const html = document.documentElement
+
+        // const tinggi = Math.max( body.scrollHeight, body.offsetHeight, 
+        //                html.clientHeight, html.scrollHeight, html.offsetHeight );
+        if (windowHeight - (bottom + height + tooltipHeight) < 5) {
+          tooltipRef.current.style.bottom = height + 'px'
           setPosition(false)
         } else {
-          tooltipRef.current.style.top = height + 25 + 'px'
+          tooltipRef.current.style.top = bottom + window.scrollY + 5 +'px'
+          setPosition(true)
         }
       }}
       onMouseLeave={() => {
@@ -37,7 +44,7 @@ const Tooltips: React.FC<TooltipsProps> = ({ id, text = '', children }) => {
     >
       <>{children}</>
 
-      {position ? (
+      {position == true ? (
         <TooltipsSpanBot ref={tooltipRef}>{text}</TooltipsSpanBot>
       ) : (
         <TooltipsSpanTop ref={tooltipRef}>{text}</TooltipsSpanTop>
