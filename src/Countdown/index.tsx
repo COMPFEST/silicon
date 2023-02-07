@@ -14,8 +14,9 @@ import {
 } from './Countdown.style'
 import { CountdownProps } from './interface'
 
-const Countdown: React.FC<CountdownProps> = ({
-  id,
+const Countdown: React.FC<
+  CountdownProps & React.ComponentPropsWithoutRef<'div'>
+> = ({
   title = '',
   targetDate,
   displayDate = false,
@@ -23,6 +24,7 @@ const Countdown: React.FC<CountdownProps> = ({
   titleClassName,
   timeDigitClassName,
   timeLabelClassName,
+  ...props
 }) => {
   const defaultRemainingTime = {
     days: 0,
@@ -83,7 +85,7 @@ const Countdown: React.FC<CountdownProps> = ({
     .replace('.', ':')
 
   return (
-    <CountdownContainer id={id}>
+    <CountdownContainer {...props}>
       {/* Title */}
       <Title className={titleClassName}>{title}</Title>
 
