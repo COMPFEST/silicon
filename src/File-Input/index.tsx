@@ -1,4 +1,4 @@
-import React, { ComponentPropsWithoutRef, forwardRef, useState } from 'react'
+import React, { forwardRef, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
 import {
   Line,
@@ -32,14 +32,11 @@ import {
 import { FileInputProps, HelperProps } from './interface'
 import Button from '../Button'
 
-const FileInput = forwardRef<
-  HTMLInputElement,
-  ComponentPropsWithoutRef<'input'> & FileInputProps
->(
+const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
   (
     {
       withLink = false,
-      title,
+      secondaryMessage,
       fileUrlLabel,
       onDrop,
       value,
@@ -54,7 +51,7 @@ const FileInput = forwardRef<
     const [isSuccess, setIsSuccess] = useState(false)
 
     const { getRootProps, open, getInputProps } = useDropzone({
-      onDrop: (acceptedFiles: any) => {
+      onDrop: (acceptedFiles: File[]) => {
         onDrop(acceptedFiles)
         setIsSuccess(true)
       },
@@ -89,7 +86,7 @@ const FileInput = forwardRef<
                 <OpenButton onClick={open}>upload</OpenButton>
                 file kamu di sini!
               </PrimaryMessageContainer>
-              <SecondaryMessage>{title}</SecondaryMessage>
+              <SecondaryMessage>{secondaryMessage}</SecondaryMessage>
             </DropzoneTextContainer>
             {withLink ? (
               <URLContainer>
