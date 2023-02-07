@@ -187,7 +187,7 @@ export const Input = styled.input`
     border-style: none;
   }
 `
-export const Message = styled.div`
+export const Message = styled.label`
   font-weight: 600;
   color: rgba(255, 255, 255, 0.8);
 `
