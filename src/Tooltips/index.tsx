@@ -16,7 +16,7 @@ const Tooltips: React.FC<TooltipsProps> = ({ id, text = '', children }) => {
   return (
     <TooltipsContainer
       ref={container}
-      onMouseEnter={(event) => {
+      onMouseEnter={() => {
         if (!tooltipRef.current || !container.current) return
         const windowHeight = window.innerHeight
         tooltipRef.current.style.visibility = 'visible'
@@ -24,11 +24,6 @@ const Tooltips: React.FC<TooltipsProps> = ({ id, text = '', children }) => {
         const { height } = container.current.getBoundingClientRect()
         const tooltipHeight = tooltipRef.current.getBoundingClientRect().height
 
-        // const body = document.body
-        // const html = document.documentElement
-
-        // const tinggi = Math.max( body.scrollHeight, body.offsetHeight,
-        //                html.clientHeight, html.scrollHeight, html.offsetHeight );
         if (windowHeight - (bottom + height + tooltipHeight) < 5) {
           tooltipRef.current.style.bottom = height + 'px'
           setPosition(false)
