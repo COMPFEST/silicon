@@ -42,7 +42,7 @@ const FileInput = forwardRef<
       title,
       fileUrlLabel,
       onDrop,
-      fileValue,
+      value,
       onReset,
       fileId,
       fileUrlId,
@@ -69,7 +69,7 @@ const FileInput = forwardRef<
           <Success
             isLink={isLink}
             setIsLink={setIsLink}
-            fileValue={fileValue}
+            value={value}
             setIsSuccess={setIsSuccess}
             onReset={onReset}
           />
@@ -99,12 +99,12 @@ const FileInput = forwardRef<
                   <Line></Line>
                 </LineContainer>
 
-                <Message>{fileUrlLabel}</Message>
+                <Message htmlFor={fileUrlId}>{fileUrlLabel}</Message>
 
                 <URLInputContainer>
                   <Input id={fileUrlId} ref={ref} {...props} />
                   <Button
-                    disabled={!fileValue}
+                    disabled={!value}
                     onClick={() => {
                       setIsSuccess(true)
                       setIsLink(true)
@@ -127,7 +127,7 @@ const FileInput = forwardRef<
 const Success: React.FC<HelperProps> = ({
   isLink,
   setIsLink,
-  fileValue,
+  value,
   setIsSuccess,
   onReset,
 }) => {
@@ -154,7 +154,7 @@ const Success: React.FC<HelperProps> = ({
 
         <FileUploaded>
           {isLink ? <LinkIcon /> : <FileIcon />}
-          <FileName>{fileValue}</FileName>
+          <FileName>{value}</FileName>
         </FileUploaded>
       </SuccessMessageContainer>
     </ContentContainer>

@@ -4,7 +4,7 @@ export interface StyledFileInputProps {
 
 export interface HelperProps {
   isLink: boolean
-  fileValue: string
+  value: string
   onReset: () => void
   setIsLink: (value: React.SetStateAction<boolean>) => void
   setIsSuccess: (value: React.SetStateAction<boolean>) => void
@@ -13,8 +13,8 @@ export interface HelperProps {
 export interface FileInputProps {
   title: string
   withLink?: boolean
-  fileUrlLabel: string
-  fileValue: string
+  fileUrlLabel?: string
+  value: string
   onDrop: (acceptedFiles: any) => void
   onReset: () => void
   fileId?: string
