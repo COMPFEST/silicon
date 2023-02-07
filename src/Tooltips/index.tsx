@@ -27,13 +27,13 @@ const Tooltips: React.FC<TooltipsProps> = ({ id, text = '', children }) => {
         // const body = document.body
         // const html = document.documentElement
 
-        // const tinggi = Math.max( body.scrollHeight, body.offsetHeight, 
+        // const tinggi = Math.max( body.scrollHeight, body.offsetHeight,
         //                html.clientHeight, html.scrollHeight, html.offsetHeight );
         if (windowHeight - (bottom + height + tooltipHeight) < 5) {
           tooltipRef.current.style.bottom = height + 'px'
           setPosition(false)
         } else {
-          tooltipRef.current.style.top = bottom + window.scrollY + 5 +'px'
+          tooltipRef.current.style.top = bottom + window.scrollY + 5 + 'px'
           setPosition(true)
         }
       }}
