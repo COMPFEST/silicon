@@ -15,7 +15,14 @@ export const StyledTextInput = styled.input<StyledTextInputProps>`
   &:focus {
     outline: none;
   }
-
+  ::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  ::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
   @media only screen and (max-width: 768px) {
     font-size: 12px;
   }
