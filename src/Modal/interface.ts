@@ -8,13 +8,10 @@ export interface ModalProps
   extends Partial<ModalExtensionProps>,
     Partial<ModalSizeProps> {
   title: string
-  children: ReactNode
-  imageUrl?: string
+  image?: ReactNode
   acceptButton: ReactNode
   cancelButton?: ReactNode
-  id: string
-  alt: string
-  handleState: () => void
+  onClose: () => void
 }
 
 export interface ModalWrapperProps extends Partial<ModalSizeProps> {
@@ -22,7 +19,7 @@ export interface ModalWrapperProps extends Partial<ModalSizeProps> {
   title: string
   content: ReactNode
   alt: string
-  imageUrl?: string
+  image?: ReactNode
   acceptButton: boolean
   cancelButton: boolean
 }
