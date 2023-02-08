@@ -8,7 +8,9 @@ export const Title = styled.div`
   text-overflow: ellipsis;
 `
 
-export const TitleContainer = styled.div`
+export const TitleContainer = styled.div<{
+  isShowed: boolean
+}>`
   color: #ffffff;
   border-radius: 8px;
   display: flex;
@@ -19,9 +21,13 @@ export const TitleContainer = styled.div`
   :hover {
     background: rgba(255, 255, 255, 0.1);
   }
+  background: ${(props) =>
+    props.isShowed ? 'rgba(255, 255, 255, 0.1)' : 'none'};
 `
 
-export const ChildrenContainer = styled.div`
+export const ChildrenContainer = styled.div<{
+  isShowed: boolean
+}>`
   width: 431px;
   padding: 8px 13px;
   font-weight: 600;
@@ -29,9 +35,21 @@ export const ChildrenContainer = styled.div`
   line-height: 150%;
   color: rgba(255, 255, 255, 0.8);
   width: 100%;
+  display: ${(props) => (props.isShowed ? 'block' : 'none')};
+  animation: fadeIn 100ms ease-out;
+  @keyframes fadeIn {
+    from {
+      transform: scale(0.95);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
 `
 
-export const MainContainer = styled.div`
+export const MainContainer = styled.div<{
+  isShowed: boolean
+}>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,6 +60,9 @@ export const MainContainer = styled.div`
   background: rgba(0, 0, 0, 0.1);
   border-radius: 24px;
   background: #373951;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.1);
+  border-width: ${(props) => (props.isShowed ? '4px' : ' 0px')};
   @media only screen and (min-width: 300px) {
     width: 280px;
   }
@@ -55,5 +76,5 @@ export const MainContainer = styled.div`
 `
 
 export const StyledCaretIcon = styled.div`
-  transition: transform 0.1s linear;
+  transition: all 1s linear;
 `

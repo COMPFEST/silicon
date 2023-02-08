@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState } from 'react'
 import { DisclosureProps } from './interface'
 import {
   TitleContainer,
@@ -11,48 +11,34 @@ import {
 const Disclosure: React.FC<
   DisclosureProps & React.ComponentPropsWithoutRef<'div'>
 > = ({ title, children, ...props }) => {
-  const handleClick = () => {
-    const children = document.getElementById('children')
-    const main = document.getElementById('container')
-    const caret = document.getElementById('caret')
-    const title = document.getElementById('title')
-
-    if (children!.style.display === 'none') {
-      children!.style.display = 'block'
-      caret!.setAttribute('style', 'transform: rotate(-180deg)')
-      main!.setAttribute('style', 'border: 4px solid rgba(255, 255, 255, 0.1)')
-      title!.setAttribute('style', 'background: rgba(255, 255, 255, 0.1)')
-    } else {
-      children!.style.display = 'none'
-      caret!.setAttribute('style', 'transform: rotate(-0deg)')
-      main!.setAttribute('style', 'border: 0px solid rgba(255, 255, 255, 0.1)')
-      title!.setAttribute(
-        'style',
-        ':hover {background: rgba(255, 255, 255, 0.1);}'
-      )
-    }
-  }
-
-  useEffect(() => {
-    const children = document.getElementById('children')
-    children!.style.display = 'none'
-  }, [])
+  const [isShowed, setIsShowed] = useState(false)
 
   return (
-    <MainContainer id="container" {...props}>
-      <TitleContainer id="title" onClick={handleClick}>
+    <MainContainer id="container" {...props} isShowed={isShowed}>
+      <TitleContainer
+        id="title"
+        onClick={() => setIsShowed(!isShowed)}
+        isShowed={isShowed}
+      >
         <Title>{title}</Title>
         <StyledCaretIcon id="caret">
-          <CaretIcon />
+          <CaretIcon isShowed={isShowed} />
         </StyledCaretIcon>
       </TitleContainer>
-      <ChildrenContainer id="children">{children}</ChildrenContainer>
+      <ChildrenContainer id="children" isShowed={isShowed}>
+        {children}
+      </ChildrenContainer>
     </MainContainer>
   )
 }
 
-const CaretIcon = () => (
+const CaretIcon = ({ isShowed }: { isShowed: boolean }) => (
   <svg
+    style={
+      isShowed
+        ? { transform: 'rotate(-180deg)' }
+        : { transform: 'rotate(-0deg)' }
+    }
     xmlns="http://www.w3.org/2000/svg"
     width="12"
     height="8"
