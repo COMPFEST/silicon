@@ -18,7 +18,6 @@ export interface ModalWrapperProps extends Partial<ModalSizeProps> {
   Display: boolean
   title: string
   content: ReactNode
-  alt: string
   image?: ReactNode
   acceptButton: boolean
   cancelButton: boolean
