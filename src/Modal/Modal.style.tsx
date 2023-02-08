@@ -53,8 +53,8 @@ export const ModalContentContainter = styled.div<ModalSizeProps>`
 `
 
 export const FillContainter = styled.div`
-  display : flex,
-  flex-direction : column,
+  display: flex;
+  flex-direction: column;
 `
 
 export const HeadingText = styled.p<ModalSizeProps>`
@@ -130,14 +130,4 @@ export const ButtonContainer = styled.div<ModalSizeProps>`
   justify-content: ${({ variant }) =>
     variant == 'lg' ? 'flex-end' : 'center'};
   flex-direction: ${({ variant }) => (variant == 'sm' ? 'column' : 'row')};
-`
-
-export const ImgContainer = styled.img<ModalSizeProps>`
-  height: 200px;
-  border-radius: 25px;
-  max-width: 300px;
-  @media only screen and (max-width: 1000px) {
-    width: 100%;
-  }
-  width: ${({ variant }) => (variant == 'lg' ? '' : '100%')};
 `

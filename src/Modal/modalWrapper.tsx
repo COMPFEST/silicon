@@ -7,7 +7,7 @@ import Button from '../Button'
 const ModalWrapper: React.FC<ModalWrapperProps> = ({
   title = '',
   content,
-  imageUrl,
+  image,
   alt,
   acceptButton,
   cancelButton,
@@ -38,7 +38,7 @@ const ModalWrapper: React.FC<ModalWrapperProps> = ({
         alt={alt}
         title={title}
         isDisplayed={displayState}
-        imageUrl={imageUrl}
+        image={image}
         acceptButton={
           acceptButton ? (
             <Button style={styles.button} size="regular">
@@ -58,7 +58,7 @@ const ModalWrapper: React.FC<ModalWrapperProps> = ({
             </Button>
           ) : null
         }
-        handleState={handleButton}
+        onClose={handleButton}
       >
         {content}
       </Modal>

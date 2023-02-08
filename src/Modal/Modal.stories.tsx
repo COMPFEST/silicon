@@ -32,16 +32,14 @@ export const LGSize = Template.bind({})
 
 LGSize.args = {
   title: 'Heading',
-  imageUrl: 'https://www.w3schools.com/tags/img_girl.jpg',
-  alt: 'tester',
+  image: <img src="https://www.w3schools.com/tags/img_girl.jpg" />,
   variant: 'lg',
 }
 export const MDSize = Template.bind({})
 
 MDSize.args = {
   title: 'Heading',
-  imageUrl: 'https://www.w3schools.com/tags/img_girl.jpg',
-  alt: 'tester',
+  image: <img src="https://www.w3schools.com/tags/img_girl.jpg" />,
   variant: 'md',
 }
 
@@ -49,7 +47,6 @@ export const SMSize = Template.bind({})
 
 SMSize.args = {
   title: 'Heading',
-  imageUrl: 'https://www.w3schools.com/tags/img_girl.jpg',
-  alt: 'tester',
+  image: <img src="https://www.w3schools.com/tags/img_girl.jpg" />,
   variant: 'sm',
 }
