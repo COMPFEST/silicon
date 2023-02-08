@@ -48,7 +48,12 @@ const ModalWrapper: React.FC<ModalWrapperProps> = ({
         }
         cancelButton={
           cancelButton ? (
-            <Button onClick={handleButton} style={styles.button} size="regular" variant="secondary">
+            <Button
+              onClick={handleButton}
+              style={styles.button}
+              size="regular"
+              variant="secondary"
+            >
               Cancel
             </Button>
           ) : null
