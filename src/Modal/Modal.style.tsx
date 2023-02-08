@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { ModalExtensionProps } from './interface'
 import { ModalSizeProps } from './interface'
 
-export const ModalContainter = styled.div<ModalExtensionProps>`
+export const ModalContainer = styled.div<ModalExtensionProps>`
   display: ${({ isDisplayed }) => (isDisplayed ? 'block' : ' none')};
   position: fixed;
   z-index: 1;
@@ -42,7 +42,7 @@ export const ModalContent = styled.div<ModalSizeProps>`
     variant == 'lg' ? '500px' : variant == 'md' ? '270px' : '230px'};
 `
 
-export const ModalContentContainter = styled.div<ModalSizeProps>`
+export const ModalContentContainer = styled.div<ModalSizeProps>`
   display: flex;
   flex-direction: row;
   @media only screen and (max-width: 1000px) {
@@ -52,7 +52,7 @@ export const ModalContentContainter = styled.div<ModalSizeProps>`
   flex-direction: ${({ variant }) => (variant == 'lg' ? 'row' : 'column')};
 `
 
-export const FillContainter = styled.div`
+export const FillContainer = styled.div`
   display: flex;
   flex-direction: column;
 `
@@ -86,7 +86,7 @@ export const ContentText = styled.div`
   margin: 16px 0px 0px 0px;
 `
 
-export const TextContainter = styled.div`
+export const TextContainer = styled.div`
   margin: 0;
 `
 
@@ -130,4 +130,13 @@ export const ButtonContainer = styled.div<ModalSizeProps>`
   justify-content: ${({ variant }) =>
     variant == 'lg' ? 'flex-end' : 'center'};
   flex-direction: ${({ variant }) => (variant == 'sm' ? 'column' : 'row')};
+`
+export const ImgContainer = styled.div<ModalSizeProps>`
+  max-width: 300px;
+  @media only screen and (max-width: 1000px) {
+    width: 100%;
+  }
+  width: ${({ variant }) => (variant == 'lg' ? '' : '100%')};
+  display: flex;
+  justify-content: center;
 `
