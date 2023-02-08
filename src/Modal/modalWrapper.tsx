@@ -16,6 +16,15 @@ const ModalWrapper: React.FC<ModalWrapperProps> = ({
 }) => {
   const [displayState, setDisplayState] = useState(Display)
   const handleButton = () => setDisplayState(!displayState)
+  const styles = {
+    button: {
+      width: '100%',
+      display: "flex",
+      justifyContent: 'center',
+      height:'fit',
+      alignItems: 'center',
+    },
+  };
 
   return (
     <div>
@@ -31,11 +40,13 @@ const ModalWrapper: React.FC<ModalWrapperProps> = ({
         isDisplayed={displayState}
         imageUrl={imageUrl}
         acceptButton={
-          acceptButton ? <Button size="regular">Accept</Button> : null
+          acceptButton ? <Button style={styles.button} size="regular">
+            Accept
+            </Button> : null
         }
         cancelButton={
           cancelButton ? (
-            <Button size="regular" variant="secondary">
+            <Button style={styles.button} size="regular" variant="secondary">
               Cancel
             </Button>
           ) : null
