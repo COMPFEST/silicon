@@ -30,9 +30,15 @@ const ModalWrapper: React.FC<ModalWrapperProps> = ({
         title={title}
         isDisplayed={displayState}
         imageUrl={imageUrl}
-        acceptButton={acceptButton ? <Button>Accept</Button> : null}
+        acceptButton={
+          acceptButton ? <Button size="regular">Accept</Button> : null
+        }
         cancelButton={
-          cancelButton ? <Button variant="secondary">Cancel</Button> : null
+          cancelButton ? (
+            <Button size="regular" variant="secondary">
+              Cancel
+            </Button>
+          ) : null
         }
         handleState={handleButton}
       >

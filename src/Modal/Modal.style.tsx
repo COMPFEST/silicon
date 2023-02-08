@@ -108,6 +108,7 @@ export const ButtonContent = styled.div<ModalSizeProps>`
   justify-content: flex-end;
   @media only screen and (max-width: 1000px) {
     justify-content: center;
+    width: full;
   }
   justify-content: ${({ variant }) =>
     variant == 'lg' ? 'flex-end' : 'center'};
