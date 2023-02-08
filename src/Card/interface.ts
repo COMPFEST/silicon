@@ -1,8 +1,8 @@
-export interface StyledCardsProps {
+export interface StyledCardProps {
   size: 'sm' | 'md' | 'lg'
 }
 
-export interface CardsProps extends Partial<StyledCardsProps> {
+export interface CardProps extends Partial<StyledCardProps> {
   imageUrl?: string
   title?: string
   body?: string

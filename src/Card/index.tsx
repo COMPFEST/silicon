@@ -1,8 +1,8 @@
 import React from 'react'
-import { CardsProps } from './interface'
-import { Content, Title, Body, Main, Image } from './Cards.style'
+import { CardProps } from './interface'
+import { Content, Title, Body, Main, Image } from './Card.style'
 
-const Cards: React.FC<CardsProps & React.ComponentPropsWithoutRef<'div'>> = ({
+const Card: React.FC<CardProps & React.ComponentPropsWithoutRef<'div'>> = ({
   imageUrl,
   title,
   body,
@@ -27,4 +27,4 @@ const Cards: React.FC<CardsProps & React.ComponentPropsWithoutRef<'div'>> = ({
   )
 }
 
-export default Cards
+export default Card

@@ -7,7 +7,7 @@ import Radio from './Input/Radio'
 import Checkbox from './Input/Checkbox'
 import Countdown from './Countdown'
 import Disclosure from './Disclosure'
-import Cards from './Cards'
+import Card from './Card'
 import { Toast, useToast } from './Toast'
 
 export {
@@ -22,5 +22,5 @@ export {
   Disclosure,
   Toast,
   useToast,
-    Cards,
+    Card,
 }
