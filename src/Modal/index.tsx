@@ -1,23 +1,20 @@
 import { ModalProps } from './interface'
 import React, { useEffect } from 'react'
 import {
-  ModalContainter,
+  ModalContainer,
   ModalContent,
   ButtonContent,
-  TextContainter,
+  TextContainer,
   HeadingText,
   ContentText,
   HeadingContainer,
-  ModalContentContainter,
-  FillContainter,
+  ModalContentContainer,
+  FillContainer,
   ButtonContainer,
+  ImgContainer,
 } from './Modal.style'
 
-const Modal: React.FC<
-  React.ComponentPropsWithoutRef<'div'> &
-    React.ComponentPropsWithoutRef<'img'> &
-    ModalProps
-> = ({
+const Modal: React.FC<React.ComponentPropsWithoutRef<'div'> & ModalProps> = ({
   id,
   title,
   image,
@@ -26,7 +23,6 @@ const Modal: React.FC<
   isDisplayed = false,
   onClose,
   variant = 'sm',
-  alt,
   children,
   ...props
 }) => {
@@ -39,7 +35,7 @@ const Modal: React.FC<
   }, [isDisplayed])
 
   return (
-    <ModalContainter
+    <ModalContainer
       onClick={function () {
         window.onclick = function (event) {
           const modal = document.getElementById('container')
@@ -51,25 +47,26 @@ const Modal: React.FC<
       isDisplayed={isDisplayed}
     >
       <ModalContent id={id} variant={variant} {...props}>
-        <ModalContentContainter variant={variant}>
-          {!!image ? image : <CheckIcon />}
-
-          <FillContainter>
+        <ModalContentContainer variant={variant}>
+          <ImgContainer variant={variant}>
+            {!!image ? image : <CheckIcon />}
+          </ImgContainer>
+          <FillContainer>
             <HeadingContainer variant={variant}>
               <HeadingText variant={variant}>{title}</HeadingText>
             </HeadingContainer>
 
-            <TextContainter>
+            <TextContainer>
               <ContentText>{children}</ContentText>
-            </TextContainter>
-          </FillContainter>
-        </ModalContentContainter>
+            </TextContainer>
+          </FillContainer>
+        </ModalContentContainer>
         <ButtonContainer variant={variant}>
           <ButtonContent variant={variant}>{acceptButton}</ButtonContent>
           <ButtonContent variant={variant}>{cancelButton}</ButtonContent>
         </ButtonContainer>
       </ModalContent>
-    </ModalContainter>
+    </ModalContainer>
   )
 }
 
