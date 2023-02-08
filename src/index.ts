@@ -1,4 +1,4 @@
 import Button from './Button'
-import Cards from './Cards'
+import Card from './Card'
 
-export { Button, Cards }
+export { Button, Card }

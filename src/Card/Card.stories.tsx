@@ -1,12 +1,12 @@
 import React from 'react'
 import { Meta, Story } from '@storybook/react'
-import { CardsProps } from './interface'
-import Cards from '.'
+import { CardProps } from './interface'
+import Card from '.'
 
 export default {
-  id: 'cards',
-  title: 'Cards',
-  component: Cards,
+  id: 'card',
+  title: 'Card',
+  component: Card,
   argTypes: {
     size: {
       control: 'radio',
@@ -83,7 +83,7 @@ export default {
   },
 } as Meta
 
-const Template: Story<CardsProps> = (args) => <Cards {...args} />
+const Template: Story<CardProps> = (args) => <Card {...args} />
 
 export const Normal = Template.bind({})
 Normal.args = {
