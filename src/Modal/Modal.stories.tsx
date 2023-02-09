@@ -11,8 +11,8 @@ export default {
   id: 'modal',
   title: 'Modal',
   component: ModalWrapper,
-  argTypes: {acceptButton: {control: 'boolean',
-    },
+  argTypes: {
+    acceptButton: { control: 'boolean' },
     cancelButton: {
       control: 'boolean',
     },
