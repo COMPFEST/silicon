@@ -3,7 +3,7 @@ import React from 'react'
 import ModalWrapper from './modalWrapper'
 
 export const imageSytle = {
-  borderRadius: '5px',
+  borderRadius: '25px',
   height: '100%',
 }
 
