@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { SIZES } from './constants'
 import { StyledCardProps } from './interface'
 
-export const Content = styled.div`
+export const Description = styled.div`
   display: flex;
   flex-direction: column;
   background: #3e405b;
@@ -14,6 +14,7 @@ export const Content = styled.div`
 
 export const Title = styled.div`
   font-weight: 700;
+  font-size: 20px;
   line-height: 120%;
   color: #ffffff;
   padding: 24px 24px 20px 24px;
@@ -42,10 +43,11 @@ export const Main = styled.div<StyledCardProps>`
   transition: 0.2s;
 `
 
-export const Image = styled.img`
-  border-radius: 24px;
-  overflow: hidden;
-  object-fit: cover;
-  position: relative;
+export const Content = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  height: 250px;
+  position: relative;
 `

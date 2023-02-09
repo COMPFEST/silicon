@@ -1,27 +1,22 @@
 import React from 'react'
 import { CardProps } from './interface'
-import { Content, Title, Body, Main, Image } from './Card.style'
+import { Content, Title, Body, Main, Description } from './Card.style'
 
 const Card: React.FC<CardProps & React.ComponentPropsWithoutRef<'div'>> = ({
-  imageUrl,
+  content,
   title,
   body,
-  titleClassName,
-  bodyClassName,
-  imgClassName,
-  contentClassName,
-  idContent,
   size = 'md',
   ...props
 }) => {
   return (
-    <Main size={size} {...props}>
-      {imageUrl && <Image src={imageUrl} className={imgClassName}></Image>}
+    <Main size={size}>
+      {!!content && <Content>{content}</Content>}
       {(title || body) && (
-        <Content className={contentClassName} id={idContent}>
-          {title && <Title className={titleClassName}>{title}</Title>}
-          {body && <Body className={bodyClassName}>{body}</Body>}
-        </Content>
+        <Description {...props}>
+          {title && <Title>{title}</Title>}
+          {body && <Body>{body}</Body>}
+        </Description>
       )}
     </Main>
   )
