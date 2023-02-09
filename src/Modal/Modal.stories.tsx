@@ -4,6 +4,11 @@ import ModalWrapper from './modalWrapper'
 import { expect } from '@storybook/jest'
 import { within, userEvent } from '@storybook/testing-library'
 
+export const imageSytle = {
+  borderRadius: '5px',
+  height: '100%',
+}
+
 export default {
   id: 'modal',
   title: 'Modal',
@@ -34,14 +39,14 @@ export const LGSize = Template.bind({})
 
 LGSize.args = {
   title: 'Heading',
-  image: <img src="https://www.w3schools.com/tags/img_girl.jpg" />,
+  image: <img style={imageSytle} src="https://www.w3schools.com/tags/img_girl.jpg" />,
   variant: 'lg',
 }
 export const MDSize = Template.bind({})
 
 MDSize.args = {
   title: 'Heading',
-  image: <img src="https://www.w3schools.com/tags/img_girl.jpg" />,
+  image: <img style={imageSytle} src="https://www.w3schools.com/tags/img_girl.jpg" />,
   variant: 'md',
 }
 
@@ -49,7 +54,7 @@ export const SMSize = Template.bind({})
 
 SMSize.args = {
   title: 'Heading',
-  image: <img src="https://www.w3schools.com/tags/img_girl.jpg" />,
+  image: <img style={imageSytle} src="https://www.w3schools.com/tags/img_girl.jpg" />,
   variant: 'sm',
 }
 
