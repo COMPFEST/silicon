@@ -36,9 +36,10 @@ const Modal: React.FC<React.ComponentPropsWithoutRef<'div'> & ModalProps> = ({
 
   return (
     <ModalContainer
+      id='modal-overlay'
       onClick={function () {
         window.onclick = function (event) {
-          const modal = document.getElementById('container')
+          const modal = document.getElementById("modal-overlay")
           if (event.target == modal) {
             onClose()
           }

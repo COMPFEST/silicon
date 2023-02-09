@@ -132,11 +132,13 @@ export const ButtonContainer = styled.div<ModalSizeProps>`
   flex-direction: ${({ variant }) => (variant == 'sm' ? 'column' : 'row')};
 `
 export const ImgContainer = styled.div<ModalSizeProps>`
-  max-width: 300px;
   @media only screen and (max-width: 1000px) {
     width: 100%;
   }
   width: ${({ variant }) => (variant == 'lg' ? '' : '100%')};
   display: flex;
   justify-content: center;
+  height: 200px;
+  border-radius: 25px;
+  max-width: ${({ variant }) => (variant == 'lg' ? '200px' : '300px')};
 `
