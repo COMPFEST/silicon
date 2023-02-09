@@ -1,7 +1,7 @@
 import React from 'react'
 import { Meta } from '@storybook/react/types-6-0'
 import { Story } from '@storybook/react'
-import Button from './'
+import Button from '.'
 import { ButtonProps } from './interface'
 
 const ExampleIcon: React.FC = () => (
