@@ -13,10 +13,10 @@ export default {
       options: ['sm', 'md', 'lg'],
       defaultValue: 'sm',
     },
-    imageUrl: {
-      control: 'text',
-      defaultValue: 'https://i.imgur.com/2XpTBZa.png',
-    },
+    // imageUrl: {
+    //   control: 'text',
+    //   defaultValue: 'https://i.imgur.com/2XpTBZa.png',
+    // },
     title: {
       control: 'text',
     },
@@ -87,7 +87,16 @@ const Template: Story<CardProps> = (args) => <Card {...args} />
 
 export const Normal = Template.bind({})
 Normal.args = {
-  imageUrl: 'https://i.imgur.com/2XpTBZa.png',
+  content: (
+    <img
+      src={'https://land-stg.virgoku.dev/static/media/logo.e6ea0f3a.png'}
+      alt="test"
+      style={{
+        width: '240px',
+        height: '120px',
+      }}
+    />
+  ),
   title: 'A title',
   body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non ac mi nunc volutpat gravida malesuada eu massa vestibulum.',
 }
@@ -102,7 +111,6 @@ WithoutContent.args = {
 export const WithoutImage = Template.bind({})
 WithoutImage.args = {
   ...Normal.args,
-  imageUrl: '',
 }
 
 export const ImageOnly = Template.bind({})
@@ -110,4 +118,14 @@ ImageOnly.args = {
   ...Normal.args,
   body: '',
   title: '',
+  content: (
+    <img
+      src={'https://land-stg.virgoku.dev/static/media/logo.e6ea0f3a.png'}
+      alt="test"
+      style={{
+        width: '240px',
+        height: '120px',
+      }}
+    />
+  ),
 }
