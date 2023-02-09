@@ -20,7 +20,7 @@ export {
   Countdown,
   FileInput,
   Disclosure,
+  Card,
   Toast,
   useToast,
-    Card,
 }
