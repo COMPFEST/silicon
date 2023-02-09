@@ -1,4 +1,5 @@
 import Button from './Button'
+import Modal from './Modal'
 import Disclosure from './Disclosure'
 import TextInput from './Input/TextInput'
 import SearchInput from './Input/Search'
@@ -8,4 +9,4 @@ import Countdown from './Countdown'
 import FileInput from './File-Input'
 import Card from './Card'
 
-export { Button, TextInput, SearchInput, Radio, Checkbox, Countdown, FileInput, Disclosure, Card, Toast, useToast }
+export { Button,  Modal, TextInput, SearchInput, Radio, Checkbox, Countdown, FileInput, Disclosure, Card, Toast, useToast }
