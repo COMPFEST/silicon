@@ -16,7 +16,8 @@
   "rules": {
     "require-jsdoc": "off",
     "new-cap": "off",
-    "valid-jsdoc": "off"
+    "valid-jsdoc": "off",
+    "react/prop-types": "off"
   },
   "settings": { "react": { "version": "detect" } }
 }
