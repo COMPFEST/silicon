@@ -22,7 +22,7 @@ const Modal: React.FC<React.ComponentPropsWithoutRef<'div'> & ModalProps> = ({
   cancelButton,
   isDisplayed = false,
   onClose,
-  variant ='lg',
+  variant = 'lg',
   children,
   ...props
 }) => {

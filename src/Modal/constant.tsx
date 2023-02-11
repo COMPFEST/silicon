@@ -1,4 +1,4 @@
 export const imageSytle = {
-    borderRadius: '25px',
-    height: '100%',
-  }
+  borderRadius: '25px',
+  height: '100%',
+}
