@@ -55,7 +55,9 @@ const Modal: React.FC<React.ComponentPropsWithoutRef<'div'> & ModalProps> = ({
           </ImgContainer>
           <FillContainer>
             <HeadingContainer variant={variant}>
-              <HeadingText className={titleClassName} variant={variant}>{title}</HeadingText>
+              <HeadingText className={titleClassName} variant={variant}>
+                {title}
+              </HeadingText>
             </HeadingContainer>
 
             <TextContainer>
