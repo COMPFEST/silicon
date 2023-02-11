@@ -59,7 +59,6 @@ export const FillContainer = styled.div`
 
 export const HeadingText = styled.p<ModalSizeProps>`
   color: #ffffff;
-  font-family: 'R-Flex';
   word-wrap: break-word;
   white-space: pre-wrap;
   word-break: break-word;
@@ -76,7 +75,6 @@ export const HeadingText = styled.p<ModalSizeProps>`
 
 export const ContentText = styled.div`
   color: rgba(255, 255, 255, 0.6);
-  font-family: 'Inter';
   font-style: normal;
   word-wrap: break-word;
   white-space: pre-wrap;
