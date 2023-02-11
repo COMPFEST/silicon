@@ -13,4 +13,5 @@ export const SIZES: SizesInterface = {
     @media only screen and (max-width: 320px){
         width: 240px;
     }`,
+  full: `width: 100%;`,
 }

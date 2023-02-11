@@ -10,8 +10,8 @@ export default {
   argTypes: {
     size: {
       control: 'radio',
-      options: ['sm', 'md', 'lg'],
-      defaultValue: 'sm',
+      options: ['sm', 'md', 'lg', 'full'],
+      defaultValue: 'md',
     },
     // imageUrl: {
     //   control: 'text',
@@ -45,6 +45,15 @@ export default {
       if: {
         arg: 'size',
         eq: 'lg',
+      },
+      table: {
+        disable: true,
+      },
+    },
+    full: {
+      if: {
+        arg: 'size',
+        eq: 'full',
       },
       table: {
         disable: true,
