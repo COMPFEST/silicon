@@ -139,6 +139,5 @@ export const ImgContainer = styled.div<ModalSizeProps>`
   @media (max-width: 1000px) {
     width: 100%;
     max-width: 300px;
-
   }
 `
