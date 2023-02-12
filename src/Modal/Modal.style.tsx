@@ -130,7 +130,6 @@ export const ButtonContainer = styled.div<ModalSizeProps>`
   flex-direction: ${({ variant }) => (variant == 'sm' ? 'column' : 'row')};
 `
 export const ImgContainer = styled.div<ModalSizeProps>`
-  width: ${({ variant }) => (variant == 'lg' ? '' : '100%')};
   display: flex;
   justify-content: center;
   max-height: 200px;
@@ -138,8 +137,7 @@ export const ImgContainer = styled.div<ModalSizeProps>`
   border-radius: 25px;
   max-width: ${({ variant }) => (variant == 'lg' ? '200px' : '300px')};
   @media only screen and (max-width: 1000px) {
-    width: 100%;
-    max-width: 300px;
-    align-items: center;
+    width:100%;
+    max-width:300px;
   }
 `
