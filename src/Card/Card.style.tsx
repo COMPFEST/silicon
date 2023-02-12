@@ -33,7 +33,8 @@ export const Body = styled.div`
 
 export const Main = styled.div<StyledCardProps>`
   display: flex;
-  flex-direction: ${({ direction }) => direction == 'horizontal' ? 'column' : 'row'};
+  flex-direction: ${({ direction }) =>
+    direction == 'horizontal' ? 'column' : 'row'};
   justify-content: flex-end;
   align-items: center;
   background: #373951;
@@ -50,6 +51,6 @@ export const Content = styled.div<{
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: ${({ direction }) => direction == 'horizontal' ? '250px' : '100%'};
+  height: ${({ direction }) => (direction == 'horizontal' ? '250px' : '100%')};
   position: relative;
 `
