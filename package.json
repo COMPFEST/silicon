@@ -19,7 +19,7 @@
     "@storybook/addon-actions": "^6.5.15",
     "@storybook/addon-coverage": "^0.0.7",
     "@storybook/addon-essentials": "^6.5.15",
-    "@storybook/addon-interactions": "^6.5.15",
+    "@storybook/addon-interactions": "^6.5.16",
     "@storybook/addon-links": "^6.5.15",
     "@storybook/builder-webpack4": "^6.5.15",
     "@storybook/jest": "^0.0.10",

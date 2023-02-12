@@ -3,10 +3,8 @@ module.exports = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    '@storybook/addon-interactions',
-    '@storybook/addon-a11y',
-    '@storybook/addon-coverage',
     '@storybook/addon-actions',
+    '@storybook/addon-interactions',
     '@storybook/addon-a11y',
     '@storybook/addon-coverage',
 
@@ -15,6 +13,6 @@ module.exports = {
   framework: '@storybook/react',
   features: {
     interactionsDebugger: true,
-  },
+  }, 
 
 }

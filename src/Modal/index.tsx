@@ -36,6 +36,7 @@ const Modal: React.FC<React.ComponentPropsWithoutRef<'div'> & ModalProps> = ({
 
   return (
     <ModalContainer
+      data-testid="modal"
       className="modal-overlay"
       onClick={function () {
         window.onclick = function (event) {
