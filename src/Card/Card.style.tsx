@@ -33,21 +33,23 @@ export const Body = styled.div`
 
 export const Main = styled.div<StyledCardProps>`
   display: flex;
-  flex-direction: column;
+  flex-direction: ${({ direction }) => direction == 'horizontal' ? 'column' : 'row'};
   justify-content: flex-end;
   align-items: center;
   background: #373951;
   border-radius: 24px;
-  ${({ size }) => SIZES[size]};
+  ${({ size, direction }) => SIZES[size][direction]};
   text-align: start;
   transition: 0.2s;
 `
 
-export const Content = styled.div`
+export const Content = styled.div<{
+  direction: 'vertical' | 'horizontal'
+}>`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 250px;
+  height: ${({ direction }) => direction == 'horizontal' ? '250px' : '100%'};
   position: relative;
 `
