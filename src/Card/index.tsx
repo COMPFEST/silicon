@@ -7,11 +7,12 @@ const Card: React.FC<CardProps & React.ComponentPropsWithoutRef<'div'>> = ({
   title,
   body,
   size = 'md',
+  direction = 'horizontal',
   ...props
 }) => {
   return (
-    <Main size={size}>
-      {!!content && <Content>{content}</Content>}
+    <Main size={size} direction={direction}>
+      {!!content && <Content direction={direction}>{content}</Content>}
       {(title || body) && (
         <Description {...props}>
           {title && <Title>{title}</Title>}
