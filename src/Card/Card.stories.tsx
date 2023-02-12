@@ -64,6 +64,11 @@ export default {
         disable: true,
       },
     },
+    content: {
+      table: {
+        disable: true,
+      },
+    },
     imgClassName: {
       table: {
         disable: true,
