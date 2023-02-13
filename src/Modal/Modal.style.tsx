@@ -39,7 +39,7 @@ export const ModalContent = styled.div<ModalSizeProps>`
     width: 230px;
   }
   width: ${({ variant }) =>
-    variant == 'lg' ? '500px' : variant == 'md' ? '270px' : '230px'};
+    variant == 'lg' ? '500px' : variant == 'md' ? '330px' : '280px'};
 `
 
 export const ModalContentContainer = styled.div<ModalSizeProps>`
