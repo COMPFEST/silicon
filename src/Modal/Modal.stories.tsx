@@ -27,6 +27,13 @@ const Template: ComponentStory<typeof ModalWrapper> = (args) => (
   <ModalWrapper {...args} />
 )
 
+export const WithoutImage = Template.bind({})
+
+WithoutImage.args = {
+  title: 'Heading',
+  variant: 'lg',
+}
+
 export const LGSize = Template.bind({})
 
 LGSize.args = {
