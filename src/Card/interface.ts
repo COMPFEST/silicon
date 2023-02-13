@@ -1,7 +1,8 @@
 import { ReactNode } from 'react'
 
 export interface StyledCardProps {
-  size: 'sm' | 'md' | 'lg'
+  size: 'sm' | 'md' | 'lg' | 'full'
+  direction: 'vertical' | 'horizontal'
 }
 
 export interface CardProps extends Partial<StyledCardProps> {
@@ -11,7 +12,13 @@ export interface CardProps extends Partial<StyledCardProps> {
 }
 
 export interface SizesInterface {
-  sm: string
-  md: string
-  lg: string
+  sm: DirectionsInterface
+  md: DirectionsInterface
+  lg: DirectionsInterface
+  full: DirectionsInterface
+}
+
+export interface DirectionsInterface {
+  vertical: string
+  horizontal: string
 }
