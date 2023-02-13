@@ -39,7 +39,7 @@ export const ModalContent = styled.div<ModalSizeProps>`
     width: 230px;
   }
   width: ${({ variant }) =>
-    variant == 'lg' ? '500px' : variant == 'md' ? '270px' : '230px'};
+    variant == 'lg' ? '500px' : variant == 'md' ? '330px' : '280px'};
 `
 
 export const ModalContentContainer = styled.div<ModalSizeProps>`
@@ -135,9 +135,9 @@ export const ImgContainer = styled.div<ModalSizeProps>`
   max-height: 200px;
   padding: 10px 0px 0px 0px;
   border-radius: 25px;
-  max-width: ${({ variant }) => (variant == 'lg' ? '200px' : '300px')};
+  max-width: ${({ variant }) => (variant == 'lg' ? '200px' : '100%')};
   @media (max-width: 1000px) {
     width: 100%;
-    max-width: 300px;
+    max-width: 100%;
   }
 `
