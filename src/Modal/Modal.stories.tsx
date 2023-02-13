@@ -1,11 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
 import ModalWrapper from './modalWrapper'
-
-export const imageSytle = {
-  borderRadius: '25px',
-  height: '100%',
-}
+import { imageSytle } from './constant'
 
 export default {
   id: 'modal',
@@ -30,6 +26,13 @@ export default {
 const Template: ComponentStory<typeof ModalWrapper> = (args) => (
   <ModalWrapper {...args} />
 )
+
+export const WithoutImage = Template.bind({})
+
+WithoutImage.args = {
+  title: 'Heading',
+  variant: 'lg',
+}
 
 export const LGSize = Template.bind({})
 

@@ -18,11 +18,12 @@ const Modal: React.FC<React.ComponentPropsWithoutRef<'div'> & ModalProps> = ({
   id,
   title,
   image,
+  titleClassName,
   acceptButton,
   cancelButton,
   isDisplayed = false,
   onClose,
-  variant = 'sm',
+  variant = 'lg',
   children,
   ...props
 }) => {
@@ -54,7 +55,9 @@ const Modal: React.FC<React.ComponentPropsWithoutRef<'div'> & ModalProps> = ({
           </ImgContainer>
           <FillContainer>
             <HeadingContainer variant={variant}>
-              <HeadingText variant={variant}>{title}</HeadingText>
+              <HeadingText className={titleClassName} variant={variant}>
+                {title}
+              </HeadingText>
             </HeadingContainer>
 
             <TextContainer>
@@ -70,7 +73,6 @@ const Modal: React.FC<React.ComponentPropsWithoutRef<'div'> & ModalProps> = ({
     </ModalContainer>
   )
 }
-
 const CheckIcon = () => (
   <svg
     width="72"
@@ -87,5 +89,4 @@ const CheckIcon = () => (
     />
   </svg>
 )
-
 export default Modal
