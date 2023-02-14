@@ -2,6 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
 import ModalWrapper from './modalWrapper'
 import { expect } from '@storybook/jest'
+import { imageSytle } from './constant'
 import { within, userEvent } from '@storybook/testing-library'
 
 export const imageSytle = {
@@ -32,6 +33,13 @@ export default {
 const Template: ComponentStory<typeof ModalWrapper> = (args) => (
   <ModalWrapper {...args} />
 )
+
+export const WithoutImage = Template.bind({})
+
+WithoutImage.args = {
+  title: 'Heading',
+  variant: 'lg',
+}
 
 export const LGSize = Template.bind({})
 

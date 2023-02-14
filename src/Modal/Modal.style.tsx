@@ -39,7 +39,7 @@ export const ModalContent = styled.div<ModalSizeProps>`
     width: 230px;
   }
   width: ${({ variant }) =>
-    variant == 'lg' ? '500px' : variant == 'md' ? '270px' : '230px'};
+    variant == 'lg' ? '500px' : variant == 'md' ? '330px' : '280px'};
 `
 
 export const ModalContentContainer = styled.div<ModalSizeProps>`
@@ -59,7 +59,6 @@ export const FillContainer = styled.div`
 
 export const HeadingText = styled.p<ModalSizeProps>`
   color: #ffffff;
-  font-family: 'R-Flex';
   word-wrap: break-word;
   white-space: pre-wrap;
   word-break: break-word;
@@ -76,7 +75,6 @@ export const HeadingText = styled.p<ModalSizeProps>`
 
 export const ContentText = styled.div`
   color: rgba(255, 255, 255, 0.6);
-  font-family: 'Inter';
   font-style: normal;
   word-wrap: break-word;
   white-space: pre-wrap;
@@ -132,13 +130,14 @@ export const ButtonContainer = styled.div<ModalSizeProps>`
   flex-direction: ${({ variant }) => (variant == 'sm' ? 'column' : 'row')};
 `
 export const ImgContainer = styled.div<ModalSizeProps>`
-  @media only screen and (max-width: 1000px) {
-    width: 100%;
-  }
-  width: ${({ variant }) => (variant == 'lg' ? '' : '100%')};
   display: flex;
   justify-content: center;
-  height: 200px;
+  max-height: 200px;
+  padding: 10px 0px 0px 0px;
   border-radius: 25px;
-  max-width: ${({ variant }) => (variant == 'lg' ? '200px' : '300px')};
+  max-width: ${({ variant }) => (variant == 'lg' ? '200px' : '100%')};
+  @media (max-width: 1000px) {
+    width: 100%;
+    max-width: 100%;
+  }
 `

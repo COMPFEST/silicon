@@ -9,9 +9,10 @@ export interface ModalProps
     Partial<ModalSizeProps> {
   title: string
   image?: ReactNode
-  acceptButton: ReactNode
+  acceptButton?: ReactNode
   cancelButton?: ReactNode
   onClose: () => void
+  titleClassName: string
 }
 
 export interface ModalWrapperProps extends Partial<ModalSizeProps> {

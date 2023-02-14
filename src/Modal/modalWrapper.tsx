@@ -37,6 +37,7 @@ const ModalWrapper: React.FC<ModalWrapperProps> = ({
         title={title}
         isDisplayed={displayState}
         image={image}
+        titleClassName="test"
         acceptButton={
           acceptButton ? (
             <Button style={styles.button} size="regular">
