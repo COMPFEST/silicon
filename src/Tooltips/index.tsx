@@ -15,6 +15,7 @@ const Tooltips: React.FC<TooltipsProps> = ({ id, text = '', children }) => {
 
   return (
     <TooltipsContainer
+      data-testid="tooltip-container"
       ref={container}
       onMouseEnter={() => {
         if (!tooltipRef.current || !container.current) return
@@ -40,7 +41,9 @@ const Tooltips: React.FC<TooltipsProps> = ({ id, text = '', children }) => {
       <>{children}</>
 
       {position == true ? (
-        <TooltipsSpanBot ref={tooltipRef}>{text}</TooltipsSpanBot>
+        <TooltipsSpanBot data-testid="tooltip" ref={tooltipRef}>
+          {text}
+        </TooltipsSpanBot>
       ) : (
         <TooltipsSpanTop ref={tooltipRef}>{text}</TooltipsSpanTop>
       )}

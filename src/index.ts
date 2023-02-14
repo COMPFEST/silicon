@@ -11,7 +11,6 @@ import Card from './Card'
 import { Toast, useToast } from './Toast'
 import Tooltips from './Tooltips'
 
-
 export {
   Button,
   Modal,
@@ -25,7 +24,5 @@ export {
   Card,
   Toast,
   useToast,
-  Tooltips
+  Tooltips,
 }
-
-
