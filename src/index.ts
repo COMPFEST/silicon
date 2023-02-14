@@ -9,6 +9,8 @@ import Countdown from './Countdown'
 import FileInput from './File-Input'
 import Card from './Card'
 import { Toast, useToast } from './Toast'
+import Tooltips from './Tooltips'
+
 
 export {
   Button,
@@ -23,4 +25,7 @@ export {
   Card,
   Toast,
   useToast,
+  Tooltips
 }
+
+
