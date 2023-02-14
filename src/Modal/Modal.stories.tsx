@@ -5,11 +5,6 @@ import { expect } from '@storybook/jest'
 import { imageSytle } from './constant'
 import { within, userEvent } from '@storybook/testing-library'
 
-export const imageSytle = {
-  borderRadius: '5px',
-  height: '100%',
-}
-
 export default {
   id: 'modal',
   title: 'Modal',
