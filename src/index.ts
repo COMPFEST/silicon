@@ -8,7 +8,10 @@ import Checkbox from './Input/Checkbox'
 import Countdown from './Countdown'
 import FileInput from './File-Input'
 import Card from './Card'
+import TipCard from './TipCard'
 import { Toast, useToast } from './Toast'
+import Tab from './Tabs/Tab'
+import TabGroup from './Tabs/TabGroup'
 
 export {
   Button,
@@ -23,4 +26,7 @@ export {
   Card,
   Toast,
   useToast,
+  TipCard,
+  Tab,
+  TabGroup
 }
