@@ -13,14 +13,14 @@ const Card: React.FC<CardProps & React.ComponentPropsWithoutRef<'div'>> = ({
   ...props
 }) => {
   return (
-    <Main size={size} direction={direction}>
+    <Main size={size} direction={direction} {...props}>
       {!!content && (
         <Content direction={direction} className={contentClassName}>
           {content}
         </Content>
       )}
       {(title || body) && (
-        <Description {...props} className={descriptionClassName}>
+        <Description className={descriptionClassName}>
           {title && <Title>{title}</Title>}
           {body && <Body>{body}</Body>}
         </Description>
