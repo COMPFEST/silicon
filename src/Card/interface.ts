@@ -11,6 +11,8 @@ export interface CardProps extends Partial<StyledCardProps> {
   body?: string
   descriptionClassName?: string
   contentClassName?: string
+  titleClassName?: string
+  bodyClassName?: string
 }
 
 export interface SizesInterface {
