@@ -28,5 +28,5 @@ export {
   useToast,
   TipCard,
   Tab,
-  TabGroup
+  TabGroup,
 }

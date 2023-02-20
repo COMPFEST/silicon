@@ -4,8 +4,8 @@ import { Story } from '@storybook/react'
 import { RadioProps } from './interface'
 import Radio from '.'
 import styled from 'styled-components'
-import { within, userEvent } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+import { within, userEvent } from '@storybook/testing-library'
+import { expect } from '@storybook/jest'
 
 const ExampleIcon: React.FC = () => (
   <svg
@@ -51,8 +51,8 @@ export default {
 const Template: Story<RadioProps> = (args) => (
   <ColDiv>
     <Radio name="radio-name" data-testid="radio-id" {...args} />
-    <Radio name="radio-name" data-testid="radio-id"  {...args} />
-    <Radio name="radio-name" data-testid="radio-id"  {...args} />
+    <Radio name="radio-name" data-testid="radio-id" {...args} />
+    <Radio name="radio-name" data-testid="radio-id" {...args} />
   </ColDiv>
 )
 
@@ -68,16 +68,16 @@ const ColDiv = styled.div`
 `
 
 _Radio.play = async ({ canvasElement }) => {
-  const canvas = within(canvasElement);
+  const canvas = within(canvasElement)
 
   await userEvent.click(canvas.getAllByTestId('radio-id')[0])
   expect(canvas.getAllByTestId('radio-id')[0]).toHaveProperty('checked', true)
-  await new Promise((r) => setTimeout(r, 1000));
+  await new Promise((r) => setTimeout(r, 1000))
 
   await userEvent.click(canvas.getAllByTestId('radio-id')[1])
   expect(canvas.getAllByTestId('radio-id')[1]).toHaveProperty('checked', true)
   expect(canvas.getAllByTestId('radio-id')[0]).toHaveProperty('checked', false)
-  await new Promise((r) => setTimeout(r, 1000));
+  await new Promise((r) => setTimeout(r, 1000))
 
   await userEvent.click(canvas.getAllByTestId('radio-id')[2])
   expect(canvas.getAllByTestId('radio-id')[2]).toHaveProperty('checked', true)

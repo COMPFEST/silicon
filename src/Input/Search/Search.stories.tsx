@@ -3,8 +3,8 @@ import { Meta } from '@storybook/react/types-6-0'
 import { Story } from '@storybook/react'
 import { SearchInputProps } from './interface'
 import SearchInput from '.'
-import { within, userEvent } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+import { within, userEvent } from '@storybook/testing-library'
+import { expect } from '@storybook/jest'
 
 export default {
   id: 'input',
@@ -24,14 +24,21 @@ export default {
   },
 } as Meta
 
-const Template: Story<SearchInputProps> = (args) => <SearchInput data-testid="search-id" {...args} />
+const Template: Story<SearchInputProps> = (args) => (
+  <SearchInput data-testid="search-id" {...args} />
+)
 
 export const _SearchInput = Template.bind({})
 _SearchInput.args = {}
 
 _SearchInput.play = async ({ canvasElement }) => {
-  const canvas = within(canvasElement);
+  const canvas = within(canvasElement)
 
-  await userEvent.type(canvas.getByTestId('search-id'), 'Lorem ipsum dolor sit amet')
-  expect(canvas.getByTestId('search-id')).toHaveDisplayValue('Lorem ipsum dolor sit amet')
+  await userEvent.type(
+    canvas.getByTestId('search-id'),
+    'Lorem ipsum dolor sit amet'
+  )
+  expect(canvas.getByTestId('search-id')).toHaveDisplayValue(
+    'Lorem ipsum dolor sit amet'
+  )
 }

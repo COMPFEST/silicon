@@ -4,8 +4,8 @@ import { Story } from '@storybook/react'
 import { CheckboxProps } from './interface'
 import Checkbox from '.'
 import styled from 'styled-components'
-import { within, userEvent } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+import { within, userEvent } from '@storybook/testing-library'
+import { expect } from '@storybook/jest'
 
 const ExampleIcon: React.FC = () => (
   <svg
@@ -66,12 +66,11 @@ const ColDiv = styled.div`
 `
 
 _Checkbox.play = async ({ canvasElement }) => {
-  const canvas = within(canvasElement);
+  const canvas = within(canvasElement)
 
   await userEvent.click(canvas.getByTestId('checkbox-id'))
   expect(canvas.getByTestId('checkbox-id')).toHaveProperty('checked', true)
 
   await userEvent.click(canvas.getByTestId('checkbox-id'))
   expect(canvas.getByTestId('checkbox-id')).toHaveProperty('checked', false)
-
 }
