@@ -22,11 +22,11 @@ Primary.args = {
 
 Primary.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement)
-  await new Promise(r => setTimeout(r, 1000))
-  await expect (canvas.getByTestId('children')).toHaveStyle('display : none')
+  await new Promise((r) => setTimeout(r, 1000))
+  await expect(canvas.getByTestId('children')).toHaveStyle('display : none')
   await userEvent.click(canvas.getByTestId('title'))
-  await expect (canvas.getByTestId('children')).toHaveStyle('display : block')
-  await new Promise(r => setTimeout(r, 1000))
+  await expect(canvas.getByTestId('children')).toHaveStyle('display : block')
+  await new Promise((r) => setTimeout(r, 1000))
   await userEvent.click(canvas.getByTestId('title'))
-  await expect (canvas.getByTestId('children')).toHaveStyle('display : none')
+  await expect(canvas.getByTestId('children')).toHaveStyle('display : none')
 }

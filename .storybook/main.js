@@ -13,5 +13,4 @@ module.exports = {
     interactionsDebugger: true,
   },
   staticDirs: [{ from: '../public/fonts', to: '/static/media' }],
-
 }
