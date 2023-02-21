@@ -12,6 +12,8 @@ import TipCard from './TipCard'
 import { Toast, useToast } from './Toast'
 import Tab from './Tabs/Tab'
 import TabGroup from './Tabs/TabGroup'
+import Dropdown from './Dropdown'
+import DropdownItem from './Dropdown/DropdownItem'
 
 export {
   Button,
@@ -29,4 +31,6 @@ export {
   TipCard,
   Tab,
   TabGroup,
+  Dropdown,
+  DropdownItem
 }
