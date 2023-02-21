@@ -3,6 +3,7 @@ module.exports = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
+    '@storybook/addon-actions',
     '@storybook/addon-interactions',
     '@storybook/addon-a11y',
     '@storybook/addon-coverage',
@@ -11,4 +12,6 @@ module.exports = {
   features: {
     interactionsDebugger: true,
   },
+  staticDirs: [{ from: '../public/fonts', to: '/static/media' }],
+
 }
