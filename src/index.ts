@@ -14,6 +14,7 @@ import Tab from './Tabs/Tab'
 import TabGroup from './Tabs/TabGroup'
 import Dropdown from './Dropdown'
 import DropdownItem from './Dropdown/DropdownItem'
+import Tooltips from './Tooltips'
 
 export {
   Button,
@@ -33,4 +34,5 @@ export {
   TabGroup,
   Dropdown,
   DropdownItem,
+  Tooltips,
 }
