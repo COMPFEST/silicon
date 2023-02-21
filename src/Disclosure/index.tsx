@@ -26,7 +26,11 @@ const Disclosure: React.FC<
           <CaretIcon isShowed={isShowed} />
         </StyledCaretIcon>
       </TitleContainer>
-      <ChildrenContainer id="children" data-testid="children" isShowed={isShowed}>
+      <ChildrenContainer
+        id="children"
+        data-testid="children"
+        isShowed={isShowed}
+      >
         {children}
       </ChildrenContainer>
     </MainContainer>
