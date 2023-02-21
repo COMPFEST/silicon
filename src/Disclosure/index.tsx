@@ -17,6 +17,7 @@ const Disclosure: React.FC<
     <MainContainer id="container" {...props} isShowed={isShowed}>
       <TitleContainer
         id="title"
+        data-testid="title"
         onClick={() => setIsShowed(!isShowed)}
         isShowed={isShowed}
       >
@@ -25,7 +26,11 @@ const Disclosure: React.FC<
           <CaretIcon isShowed={isShowed} />
         </StyledCaretIcon>
       </TitleContainer>
-      <ChildrenContainer id="children" isShowed={isShowed}>
+      <ChildrenContainer
+        id="children"
+        data-testid="children"
+        isShowed={isShowed}
+      >
         {children}
       </ChildrenContainer>
     </MainContainer>
