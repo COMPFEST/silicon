@@ -32,5 +32,5 @@ export {
   Tab,
   TabGroup,
   Dropdown,
-  DropdownItem
+  DropdownItem,
 }
