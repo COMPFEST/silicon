@@ -87,7 +87,7 @@ const Countdown: React.FC<
   return (
     <CountdownContainer {...props}>
       {/* Title */}
-      <Title className={titleClassName}>{title}</Title>
+      {title && <Title className={titleClassName}>{title}</Title>}
 
       {/* Countdown */}
       <TimeContainer>
