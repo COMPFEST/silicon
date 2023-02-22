@@ -20,6 +20,7 @@ import {
   SuccessImageContainer,
   PrimaryMessageContainer,
   SuccessMessageContainer,
+  Dropzone,
 } from './FileInput.style'
 import {
   FileIcon,
@@ -72,12 +73,15 @@ const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
           />
         ) : (
           <ContentContainer {...getRootProps()}>
-            <input
+            <Dropzone
+              {...getInputProps()}
               id={fileId}
               ref={ref}
               {...props}
               name="file"
-              {...getInputProps()}
+              style={{
+                display: 'none',
+              }}
             />
             <UploadImg />
             <DropzoneTextContainer>
