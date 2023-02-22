@@ -22,4 +22,5 @@ export interface FileInputProps
   onReset: () => void
   fileId?: string
   fileUrlId?: string
+  success?: boolean
 }

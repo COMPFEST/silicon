@@ -44,12 +44,13 @@ const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
       onReset,
       fileId,
       fileUrlId,
+      success = false,
       ...props
     },
     ref
   ) => {
     const [isLink, setIsLink] = useState(false)
-    const [isSuccess, setIsSuccess] = useState(false)
+    const [isSuccess, setIsSuccess] = useState(success)
 
     const { getRootProps, open, getInputProps } = useDropzone({
       onDrop: (acceptedFiles: File[]) => {
