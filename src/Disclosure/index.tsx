@@ -35,7 +35,7 @@ const Disclosure: React.FC<
 const CaretIcon = ({ isShowed }: { isShowed: boolean }) => (
   <svg
     style={
-      isShowed
+      !isShowed
         ? { transform: 'rotate(-180deg)' }
         : { transform: 'rotate(-0deg)' }
     }
