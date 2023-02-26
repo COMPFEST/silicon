@@ -57,11 +57,6 @@ export const TimeDigit = styled.p`
   font-size: 36px;
   margin-top: -10px;
   margin-bottom: -5px;
-
-  @media only screen and (max-width: 768px) {
-    font-size: 28px;
-    margin-top: 0px;
-  }
 `
 
 export const TimeLabel = styled.p`
