@@ -32,6 +32,10 @@ export const TimeBox = styled.div`
   border-radius: 12px;
   width: 93px;
   height: 111px;
+  @media only screen and (max-width: 768px) {
+    width: 70px;
+    height: 90px;
+  }
   text-align: center;
 `
 
@@ -57,4 +61,7 @@ export const TimeDigit = styled.p`
 
 export const TimeLabel = styled.p`
   font-size: 16px;
+  @media only screen and (max-width: 768px) {
+    font-size: 14px;
+  }
 `
