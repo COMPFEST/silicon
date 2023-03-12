@@ -1,13 +1,17 @@
-import React, { forwardRef } from 'react'
+import React, { ComponentPropsWithoutRef, forwardRef } from 'react'
 import { TextInputProps } from './interface'
 import {
   StyledTextInput,
   TextInputContainer,
   LabelDiv,
   BottomTextDiv,
+  TextInputDiv,
 } from './TextInput.style'
 
-const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
+const TextInput = forwardRef<
+  HTMLInputElement,
+  TextInputProps & ComponentPropsWithoutRef<'input'>
+>(
   (
     {
       label,
@@ -15,6 +19,8 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
       error,
       type = 'text',
       placeholder = 'Placeholder',
+      leftIcon,
+      rightIcon,
       ...props
     },
     ref
@@ -24,13 +30,16 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
         <TextInputContainer>
           <LabelDiv>{label}</LabelDiv>
 
-          <StyledTextInput
-            placeholder={placeholder}
-            isError={!!error}
-            ref={ref}
-            type={type}
-            {...props}
-          ></StyledTextInput>
+          <TextInputDiv isError={!!error}>
+            {leftIcon}
+            <StyledTextInput
+              placeholder={placeholder}
+              ref={ref}
+              type={type}
+              {...props}
+            />
+            {rightIcon}
+          </TextInputDiv>
 
           {!error && helper && (
             <BottomTextDiv>
