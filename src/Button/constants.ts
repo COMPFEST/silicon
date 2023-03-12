@@ -1,18 +1,18 @@
 import { VariantsInterface } from './interface'
 
 export const VARIANTS: VariantsInterface = {
-  primary: `background: linear-gradient(180deg, #5561ff 0%, #3643fc 100%);
+  primary: `background-color: #3643fc;
   &:hover {
-    background: linear-gradient(180deg, #6b75ff 0%, #535fff 100%);
+    background-color: #535fff;
     cursor: pointer;
     box-shadow: 0 4px 16px 0 #0000004d;
   }
   &:focus {
-    background: linear-gradient(180deg, #4b4fa0 0%, #44488b 100%);
+    background-color: #44488b;
     box-shadow: none;
   }
   &:disabled {
-    background: #35374f;
+    background-color: #35374f;
     color: rgba(255, 255, 255, 0.6);
     cursor: not-allowed;
     box-shadow: none;
@@ -23,7 +23,7 @@ export const VARIANTS: VariantsInterface = {
       box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.3);
     }
     &:disabled {
-      background: #35374f;
+      background-image: #35374f;
       color: rgba(255, 255, 255, 0.6);
       cursor: not-allowed;
       box-shadow: none;
@@ -34,18 +34,18 @@ export const VARIANTS: VariantsInterface = {
   tertiary: `background-color: transparent;
     color: white;
     &:hover {
-        background: #323347;
+        background-image: #323347;
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
         cursor: pointer;
     }
     &:focus {
-        background: #242537;
+        background-image: #242537;
         box-shadow: none;
     }
     &:disabled {
         cursor: not-allowed;
         box-shadow: none;
-        background: #28293d;
+        background-image: #28293d;
         color: rgba(255, 255, 255, 0.6);
     }`,
   ghost: `background-color: transparent;
