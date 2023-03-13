@@ -111,6 +111,10 @@ export const DeleteButton = styled.button`
     transition-duration: 0.5s;
   }
 `
+export const DeleteIconContainer = styled.div`
+  position: relative;
+  left: -6px;
+`
 export const SuccessImageContainer = styled.div`
   padding-top: 32px;
 `
