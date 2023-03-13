@@ -11,7 +11,7 @@ export const StyledButton = styled.button<
   padding: 12px 32px;
   color: white;
   box-shadow: none;
-  font-weight: 600px;
+  font-weight: 600;
   font-size: ${({ size }) => (size === 'regular' ? '16px' : '12px')};
   transition: all 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
   display: flex;
