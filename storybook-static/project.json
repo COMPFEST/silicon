@@ -1,1 +1,25 @@
-{"generatedAt":1678595230256,"builder":{"name":"webpack4"},"hasCustomBabel":false,"hasCustomWebpack":false,"hasStaticDirs":true,"hasStorybookEslint":false,"refCount":0,"packageManager":{"type":"yarn","version":"1.22.19"},"storybookVersion":"6.5.15","language":"typescript","storybookPackages":{"@storybook/builder-webpack4":{"version":"6.5.15"},"@storybook/manager-webpack4":{"version":"6.5.15"},"@storybook/react":{"version":"6.5.15"},"@storybook/testing-library":{"version":"0.0.13"}},"framework":{"name":"react"},"addons":{"@storybook/addon-links":{"version":"6.5.15"},"@storybook/addon-essentials":{"version":"6.5.15"},"@storybook/addon-interactions":{"version":"6.5.15"},"@storybook/addon-actions":{"version":"6.5.15"}}}
+{
+  "generatedAt": 1678595230256,
+  "builder": { "name": "webpack4" },
+  "hasCustomBabel": false,
+  "hasCustomWebpack": false,
+  "hasStaticDirs": true,
+  "hasStorybookEslint": false,
+  "refCount": 0,
+  "packageManager": { "type": "yarn", "version": "1.22.19" },
+  "storybookVersion": "6.5.15",
+  "language": "typescript",
+  "storybookPackages": {
+    "@storybook/builder-webpack4": { "version": "6.5.15" },
+    "@storybook/manager-webpack4": { "version": "6.5.15" },
+    "@storybook/react": { "version": "6.5.15" },
+    "@storybook/testing-library": { "version": "0.0.13" }
+  },
+  "framework": { "name": "react" },
+  "addons": {
+    "@storybook/addon-links": { "version": "6.5.15" },
+    "@storybook/addon-essentials": { "version": "6.5.15" },
+    "@storybook/addon-interactions": { "version": "6.5.15" },
+    "@storybook/addon-actions": { "version": "6.5.15" }
+  }
+}
