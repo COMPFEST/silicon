@@ -65,7 +65,6 @@ export const Toast: React.FC<ToasterProps> = (props) => {
           alignItems: 'center',
           boxShadow: '0px 12px 16px rgba(0, 0, 0, 0.3)',
           borderRadius: '12px',
-          fontFamily: 'Inter',
           fontWeight: '600',
           fontSize: '16px',
         },
