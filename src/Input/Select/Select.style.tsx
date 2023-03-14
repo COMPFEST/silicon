@@ -1,55 +1,118 @@
 import styled from 'styled-components'
-import { StyledSelectProps, DropdownIconProps } from './interface'
 
-export const StyledSelect = styled.div`
-  position: absolute;
-  top: 0;
-  border-radius: 12px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  overflow: hidden;
-  width: 100%;
+export const StyledSelect = styled.input`
+  /* Hide the Native Radio Input */
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  margin: 0;
+
+  color: transparent;
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+
+  display: grid;
+  place-content: center;
+
+  ::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transform: scale(0);
+    outline: 4px solid rgba(54, 67, 252, 1);
+    transition: transform 120ms ease-in-out;
+  }
+
+  :enabled {
+    :checked::before {
+      background-color: white;
+      transform: scale(1);
+    }
+
+    :hover {
+      cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+  }
+
+  :disabled {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: not-allowed;
+
+    :checked {
+      border: none;
+
+      ::before {
+        background-color: rgba(255, 255, 255, 0.8);
+        outline: 0.25em solid rgba(255, 255, 255, 0.1);
+        transform: scale(1);
+      }
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 12px;
+    height: 12px;
+
+    ::before {
+      width: 6px;
+      height: 6px;
+      outline: 4px solid rgba(54, 67, 252, 1);
+    }
+  }
+`
+
+export const Option = styled.div`
   color: white;
   font-size: 16px;
+  line-height: 18px;
+
   @media only screen and (max-width: 768px) {
     font-size: 12px;
   }
 `
 
-export const SelectedOption = styled.div<StyledSelectProps>`
+export const SelectDiv = styled.div`
   display: flex;
-  justify-content: space-between;
+  gap: 8px;
   align-items: center;
-  width: 100%;
-  box-sizing: border-box;
-  background-color: ${({ optionHidden }) =>
-    optionHidden ? 'transparent' : '#3E405B'};
-  padding: 8px 12px;
+
+  :hover {
+    cursor: pointer;
+
+    :has(${Option}:disabled) {
+      cursor: not-allowed;
+    }
+
+    > ${Option}:enabled {
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+  }
+
+  & > ${Option}:disabled ~ * {
+    color: rgba(255, 255, 255, 0.8);
+
+    svg path {
+      fill: currentColor;
+    }
+  }
 `
 
-export const Options = styled.ul`
-  list-style: none;
-  margin: 0;
-  padding: 0;
-`
-
-export const StyledOption = styled.li<StyledSelectProps>`
-  padding: 8px 12px 8px 12px;
-  background-color: ${({ optionHidden }) =>
-    optionHidden ? 'transparent' : '#373951'};
-`
-
-export const SelectContainer = styled.div`
-  position: relative;
-  width: 300px;
-`
-
-export const Label = styled.div`
-  color: white;
-`
-
-export const DropdownIconDiv = styled.div<DropdownIconProps>`
-  transform: rotate(${({ isFlipped }) => (isFlipped ? '180' : '0')}deg);
+export const SVGDiv = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
 `
