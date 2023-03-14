@@ -3,6 +3,7 @@ import Modal from './Modal'
 import Disclosure from './Disclosure'
 import TextInput from './Input/TextInput'
 import SearchInput from './Input/Search'
+import SelectInput from './Input/Select'
 import Radio from './Input/Radio'
 import Checkbox from './Input/Checkbox'
 import Countdown from './Countdown'
@@ -21,6 +22,7 @@ export {
   Modal,
   TextInput,
   SearchInput,
+  SelectInput,
   Radio,
   Checkbox,
   Countdown,
