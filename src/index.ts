@@ -9,13 +9,14 @@ import Checkbox from './Input/Checkbox'
 import Countdown from './Countdown'
 import FileInput from './File-Input'
 import Card from './Card'
+import Tooltips from './Tooltips'
 import TipCard from './TipCard'
 import { Toast, useToast } from './Toast'
 import Tab from './Tabs/Tab'
 import TabGroup from './Tabs/TabGroup'
 import Dropdown from './Dropdown'
 import DropdownItem from './Dropdown/DropdownItem'
-import Tooltips from './Tooltips'
+
 
 export {
   Button,
