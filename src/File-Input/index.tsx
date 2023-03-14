@@ -20,6 +20,7 @@ import {
   SuccessImageContainer,
   PrimaryMessageContainer,
   SuccessMessageContainer,
+  Dropzone,
 } from './FileInput.style'
 import {
   FileIcon,
@@ -43,12 +44,13 @@ const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
       onReset,
       fileId,
       fileUrlId,
+      success = false,
       ...props
     },
     ref
   ) => {
     const [isLink, setIsLink] = useState(false)
-    const [isSuccess, setIsSuccess] = useState(false)
+    const [isSuccess, setIsSuccess] = useState(success)
 
     const { getRootProps, open, getInputProps } = useDropzone({
       onDrop: (acceptedFiles: File[]) => {
@@ -72,12 +74,15 @@ const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
           />
         ) : (
           <ContentContainer {...getRootProps()}>
-            <input
+            <Dropzone
+              {...getInputProps()}
               id={fileId}
               ref={ref}
               {...props}
               name="file"
-              {...getInputProps()}
+              style={{
+                display: 'none',
+              }}
             />
             <UploadImg />
             <DropzoneTextContainer>

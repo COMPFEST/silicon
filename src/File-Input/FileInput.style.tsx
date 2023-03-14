@@ -41,6 +41,10 @@ export const DropzoneTextContainer = styled.div`
   justify-content: center;
 `
 
+export const Dropzone = styled.input`
+  display: none !important;
+`
+
 export const PrimaryMessageContainer = styled.div`
   color: #ffffff;
   display: flex;
