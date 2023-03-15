@@ -1,7 +1,11 @@
 import React from 'react'
 import { Meta, Story } from '@storybook/react'
 import { CardProps } from './interface'
-import Card from '.'
+import Card from './index'
+import CardContent from './CardContent'
+import CardDescription from './CardDescription'
+import CardTitle from './CardTitile'
+import CardBody from './CardBody'
 
 export default {
   id: 'card',
@@ -13,10 +17,6 @@ export default {
       options: ['sm', 'md', 'lg', 'full'],
       defaultValue: 'md',
     },
-    // imageUrl: {
-    //   control: 'text',
-    //   defaultValue: 'https://i.imgur.com/2XpTBZa.png',
-    // },
     title: {
       control: 'text',
     },
@@ -97,7 +97,26 @@ export default {
   },
 } as Meta
 
-const Template: Story<CardProps> = (args) => <Card {...args} />
+const Template: Story<CardProps> = (args) =>{
+  return(
+    <>
+      <Card size={args.size} direction={args.direction} backgroundColor={args.backgroundColor}>
+        {(args.content != undefined) &&
+          <CardContent>
+            {args.content}
+          </CardContent>
+        }
+        
+        {((args.title != undefined) || (args.body != undefined)) && 
+          <CardDescription descriptionClassName={args.descriptionClassName}>
+          {(args.title != undefined) && <CardTitle>{args.title}</CardTitle>}
+          {(args.body != undefined) && <CardBody>{args.body}</CardBody>}
+          </CardDescription>
+        }
+      </Card>
+    </>
+  )
+}
 
 export const Normal = Template.bind({})
 Normal.args = {
@@ -118,20 +137,21 @@ Normal.args = {
 export const WithoutContent = Template.bind({})
 WithoutContent.args = {
   ...Normal.args,
-  body: '',
+  body: undefined,
   size: 'sm',
 }
 
 export const WithoutImage = Template.bind({})
 WithoutImage.args = {
   ...Normal.args,
+  content: undefined
 }
 
 export const ImageOnly = Template.bind({})
 ImageOnly.args = {
   ...Normal.args,
-  body: '',
-  title: '',
+  body: undefined,
+  title: undefined,
   content: (
     <img
       src={'https://land-stg.virgoku.dev/static/media/logo.e6ea0f3a.png'}
