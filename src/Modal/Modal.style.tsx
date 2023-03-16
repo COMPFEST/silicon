@@ -55,9 +55,11 @@ export const ModalImageDiv = styled.div<ModalContentProps>`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 32px;
   @media only screen and (min-width: 768px) {
     margin-top: ${({ variant }) => (variant === 'lg' ? '-24px' : '')};
     margin-right: ${({ variant }) => (variant === 'lg' ? '24px' : '')};
+    margin-bottom: ${({ variant }) => (variant === 'lg' ? '' : '32px')};
   }
   grid-row: 2/5;
 `
@@ -67,11 +69,9 @@ export const ModalHeaderDiv = styled.div<ModalContentProps>`
   font-weight: 700;
   color: white;
   text-align: center;
-  margin-top: 32px;
   margin-bottom: 12px;
   @media only screen and (min-width: 768px) {
     text-align: ${({ variant }) => (variant === 'lg' ? 'left' : 'center')};
-    margin-top: ${({ variant }) => (variant === 'lg' ? '' : '32px')};
     margin-bottom: ${({ variant }) => (variant === 'lg' ? '' : '12px')};
   }
   width: 100%;
