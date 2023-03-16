@@ -8,6 +8,7 @@ import Checkbox from './Input/Checkbox'
 import Countdown from './Countdown'
 import FileInput from './File-Input'
 import Card from './Card'
+import Tooltips from './Tooltips'
 import { Toast, useToast } from './Toast'
 
 export {
@@ -21,6 +22,7 @@ export {
   FileInput,
   Disclosure,
   Card,
+  Tooltips,
   Toast,
   useToast,
 }
