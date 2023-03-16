@@ -23,6 +23,9 @@ export default {
     body: {
       control: 'text',
     },
+    backgroundColor: {
+      control: 'text',
+    },
     sm: {
       if: {
         arg: 'size',
@@ -97,22 +100,22 @@ export default {
   },
 } as Meta
 
-const Template: Story<CardProps> = (args) =>{
-  return(
+const Template: Story<CardProps> = (args) => {
+  return (
     <>
-      <Card size={args.size} direction={args.direction} backgroundColor={args.backgroundColor}>
-        {(args.content != undefined) &&
-          <CardContent>
-            {args.content}
-          </CardContent>
-        }
-        
-        {((args.title != undefined) || (args.body != undefined)) && 
+      <Card
+        size={args.size}
+        direction={args.direction}
+        backgroundColor={args.backgroundColor}
+      >
+        {args.content != undefined && <CardContent>{args.content}</CardContent>}
+
+        {(args.title != undefined || args.body != undefined) && (
           <CardDescription descriptionClassName={args.descriptionClassName}>
-          {(args.title != undefined) && <CardTitle>{args.title}</CardTitle>}
-          {(args.body != undefined) && <CardBody>{args.body}</CardBody>}
+            {args.title != undefined && <CardTitle>{args.title}</CardTitle>}
+            {args.body != undefined && <CardBody>{args.body}</CardBody>}
           </CardDescription>
-        }
+        )}
       </Card>
     </>
   )
@@ -144,7 +147,7 @@ WithoutContent.args = {
 export const WithoutImage = Template.bind({})
 WithoutImage.args = {
   ...Normal.args,
-  content: undefined
+  content: undefined,
 }
 
 export const ImageOnly = Template.bind({})

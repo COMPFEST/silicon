@@ -31,7 +31,7 @@ export const Body = styled.div`
   transition: all 2s linear;
 `
 
-export const Main = styled.div<StyledCardProps>`
+export const Container = styled.div<StyledCardProps>`
   display: flex;
   flex-direction: ${({ direction }) =>
     direction == 'horizontal' ? 'column' : 'row'};

@@ -1,17 +1,23 @@
 import React from 'react'
 import { CardProps } from './interface'
-import { Main } from './Card.style'
+import { Container } from './Card.style'
 
 const Card: React.FC<CardProps & React.ComponentPropsWithoutRef<'div'>> = ({
   size = 'md',
   direction = 'horizontal',
   backgroundColor,
   children,
+  ...props
 }) => {
   return (
-    <Main size={size} direction={direction}  style={{background:backgroundColor}}>
+    <Container
+      size={size}
+      direction={direction}
+      style={{ background: backgroundColor }}
+      {...props}
+    >
       {children}
-    </Main>
+    </Container>
   )
 }
 
