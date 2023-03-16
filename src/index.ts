@@ -7,6 +7,7 @@ import Checkbox from './Input/Checkbox'
 import Countdown from './Countdown'
 import FileInput from './File-Input'
 import Card from './Card'
+import Tooltips from './Tooltips'
 import { Toast, useToast } from './Toast'
 import Modal from './Modal/Modal'
 import ModalBody from './Modal/ModalBody'
@@ -16,6 +17,8 @@ import ModalFooter from './Modal/ModalFooter'
 import ModalHeader from './Modal/ModalHeader'
 import ModalImage from './Modal/ModalImage'
 import ModalOverlay from './Modal/ModalOverlay'
+import Dropdown from './Dropdown'
+import DropdownItem from './Dropdown/DropdownItem'
 
 export {
   Button,
@@ -35,6 +38,9 @@ export {
   FileInput,
   Disclosure,
   Card,
+  Tooltips,
   Toast,
   useToast,
+  Dropdown,
+  DropdownItem,
 }
