@@ -1,64 +1,58 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-import React from 'react'
-import ModalWrapper from './modalWrapper'
-import { imageSytle } from './constant'
+import { ComponentStory } from '@storybook/react'
+import React, { useState } from 'react'
+import Button from '../Button'
+import Modal from './Modal'
+import ModalBody from './ModalBody'
+import ModalCloseButton from './ModalCloseButton'
+import ModalContent from './ModalContent'
+import ModalFooter from './ModalFooter'
+import ModalHeader from './ModalHeader'
+import ModalImage from './ModalImage'
+import ModalOverlay from './ModalOverlay'
 
 export default {
-  id: 'modal',
   title: 'Modal',
-  component: ModalWrapper,
+  component: Modal,
   argTypes: {
-    acceptButton: { control: 'boolean' },
-    cancelButton: {
-      control: 'boolean',
-    },
-    content: {
-      control: 'text',
-    },
     variant: {
       control: 'radio',
       options: ['lg', 'md', 'sm'],
       defaultValue: 'None',
     },
   },
-} as ComponentMeta<typeof ModalWrapper>
-
-const Template: ComponentStory<typeof ModalWrapper> = (args) => (
-  <ModalWrapper {...args} />
-)
-
-export const WithoutImage = Template.bind({})
-
-WithoutImage.args = {
-  title: 'Heading',
-  variant: 'lg',
 }
 
-export const LGSize = Template.bind({})
+const Template: ComponentStory<typeof Modal> = (args) => {
+  const [display, setDisplay] = useState(false)
 
-LGSize.args = {
-  title: 'Heading',
-  image: (
-    <img style={imageSytle} src="https://www.w3schools.com/tags/img_girl.jpg" />
-  ),
-  variant: 'lg',
+  function handleClick() {
+    setDisplay((prev) => !prev)
+  }
+
+  return (
+    <>
+      <Button onClick={handleClick}>Click Me</Button>
+      <Modal isDisplayed={display} onClose={handleClick} variant={args.variant}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalCloseButton />
+          <ModalImage>
+            <img src="https://cdn-icons-png.flaticon.com/128/4139/4139532.png" />
+            {/* <img src="https://endlessicons.com/wp-content/uploads/2014/11/wifi-icon-2-214x214.png" /> */}
+          </ModalImage>
+          <ModalHeader>Halo</ModalHeader>
+          <ModalBody>Body</ModalBody>
+          <ModalFooter>
+            <Button onClick={handleClick}>Loh</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+    </>
+  )
 }
-export const MDSize = Template.bind({})
 
-MDSize.args = {
-  title: 'Heading',
-  image: (
-    <img style={imageSytle} src="https://www.w3schools.com/tags/img_girl.jpg" />
-  ),
+export const ModalTest = Template.bind({})
+
+ModalTest.args = {
   variant: 'md',
-}
-
-export const SMSize = Template.bind({})
-
-SMSize.args = {
-  title: 'Heading',
-  image: (
-    <img style={imageSytle} src="https://www.w3schools.com/tags/img_girl.jpg" />
-  ),
-  variant: 'sm',
 }
