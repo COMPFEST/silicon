@@ -10,6 +10,8 @@ import FileInput from './File-Input'
 import Card from './Card'
 import Tooltips from './Tooltips'
 import { Toast, useToast } from './Toast'
+import Dropdown from './Dropdown'
+import DropdownItem from './Dropdown/DropdownItem'
 
 export {
   Button,
@@ -25,4 +27,6 @@ export {
   Tooltips,
   Toast,
   useToast,
+  Dropdown,
+  DropdownItem,
 }
