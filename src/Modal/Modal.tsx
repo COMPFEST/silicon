@@ -1,10 +1,18 @@
-import React, { createContext, useContext } from 'react'
+import React, { createContext, useContext, useEffect } from 'react'
 import { ModalContextProps } from './interface'
 import { ModalDiv } from './Modal.style'
 
 const Modal: React.FC<
   React.ComponentPropsWithoutRef<'div'> & ModalContextProps
 > = ({ children, isDisplayed, variant, onClose }) => {
+  useEffect(() => {
+    if (isDisplayed) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'visible'
+    }
+  }, [isDisplayed])
+
   return (
     <ModalProvider
       isDisplayed={isDisplayed}
