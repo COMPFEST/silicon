@@ -1,8 +1,8 @@
+import { Meta, Story } from '@storybook/react/types-6-0'
 import React from 'react'
-import { Meta } from '@storybook/react/types-6-0'
-import { Story } from '@storybook/react'
-import Button from '.'
-import { ButtonProps } from './interface'
+import Dropdown from './'
+import DropdownItem from './DropdownItem'
+import { DropdownItemProps, DropdownProps } from './interface'
 
 const ExampleIcon: React.FC = () => (
   <svg
@@ -20,69 +20,91 @@ const ExampleIcon: React.FC = () => (
 )
 
 export default {
-  id: 'button',
-  title: 'Button',
-  component: Button,
+  id: 'dropdown',
+  title: 'Dropdown',
+  component: Dropdown,
+  subcomponents: { DropdownItem },
   argTypes: {
+    isActive: {
+      table: {
+        disable: true,
+      },
+    },
+    mobile: {
+      table: {
+        disable: true,
+      },
+    },
+    isButton: {
+      control: 'boolean',
+      defaultValue: true,
+    },
+    showIcon: {
+      control: 'boolean',
+    },
     icon: {
-      control: 'radio',
-      options: ['None', 'Left Icon', 'Right Icon'],
-      defaultValue: 'None',
-    },
-    size: {
-      defaultValue: 'regular',
-    },
-    disabled: {
-      defaultValue: false,
-    },
-    isLoading: {
-      defaultValue: false,
-    },
-    leftIcon: {
       if: {
-        arg: 'icon',
-        eq: 'Left Icon',
+        arg: 'showIcon',
       },
       defaultValue: <ExampleIcon />,
       table: {
         disable: true,
       },
     },
-    rightIcon: {
+    href: {
+      control: 'text',
       if: {
-        arg: 'icon',
-        eq: 'Right Icon',
+        arg: 'isButton',
+        eq: false,
       },
-      defaultValue: <ExampleIcon />,
-      table: {
-        disable: true,
-      },
+      defaultValue: '',
     },
   },
 } as Meta
 
-const Template: Story<ButtonProps> = (args) => <Button {...args} />
+const DropdownTemplate: Story<DropdownProps & DropdownItemProps> = (args) => (
+  <Dropdown>
+    <DropdownItem
+      isButton={args.isButton}
+      icon={args.icon}
+      href={args.href}
+      onClick={args.onClick}
+    >
+      Child 1
+    </DropdownItem>
+    <DropdownItem
+      isButton={args.isButton}
+      icon={args.icon}
+      href={args.href}
+      onClick={args.onClick}
+    >
+      Child 2
+    </DropdownItem>
+    <DropdownItem
+      isButton={args.isButton}
+      icon={args.icon}
+      href={args.href}
+      onClick={args.onClick}
+    >
+      Child 3
+    </DropdownItem>
+    <DropdownItem
+      isButton={args.isButton}
+      icon={args.icon}
+      href={args.href}
+      onClick={args.onClick}
+    >
+      Child 4
+    </DropdownItem>
+    <DropdownItem
+      isButton={args.isButton}
+      icon={args.icon}
+      href={args.href}
+      onClick={args.onClick}
+    >
+      Child 5
+    </DropdownItem>
+  </Dropdown>
+)
 
-export const Primary = Template.bind({})
-Primary.args = { children: 'Primary' }
-
-export const Secondary = Template.bind({})
-Secondary.args = {
-  ...Primary.args,
-  children: 'Secondary',
-  variant: 'secondary',
-}
-
-export const Tertiary = Template.bind({})
-Tertiary.args = {
-  ...Primary.args,
-  children: 'Tertiary',
-  variant: 'tertiary',
-}
-
-export const Ghost = Template.bind({})
-Ghost.args = {
-  ...Primary.args,
-  children: 'Tertiary',
-  variant: 'ghost',
-}
+export const _Dropdown = DropdownTemplate.bind({})
