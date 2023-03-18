@@ -1,143 +1,106 @@
 import styled from 'styled-components'
-import { ModalExtensionProps } from './interface'
-import { ModalSizeProps } from './interface'
+import { ModalContentProps, ModalProps } from './interface'
 
-export const ModalContainer = styled.div<ModalExtensionProps>`
+export const ModalDiv = styled.div<ModalProps>`
   display: ${({ isDisplayed }) => (isDisplayed ? 'block' : ' none')};
+  width: 100vw;
+  height: 100vh;
   position: fixed;
-  z-index: 1;
-  padding-top: 28vh;
   left: 0;
   top: 0;
+  z-index: 9;
+`
+
+export const ModalOverlayDiv = styled.div`
   width: 100%;
   height: 100%;
-  overflow: auto;
   background: rgb(40, 41, 61, 0.2);
   backdrop-filter: blur(1px);
+  z-index: 99;
 `
 
-export const ModalContent = styled.div<ModalSizeProps>`
-  display: block;
-  background-color: #373951;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #373951;
-  justify-content: center;
-  gap: 2;
-  border-radius: 25px;
-  box-shadow: 0px 100px 126px rgba(0, 0, 0, 0.15),
-    0px 41.7776px 52.6398px rgba(0, 0, 0, 0.107828),
-    0px 22.3363px 28.1437px rgba(0, 0, 0, 0.0894161),
-    0px 12.5216px 15.7772px rgba(0, 0, 0, 0.075),
-    0px 6.6501px 8.37913px rgba(0, 0, 0, 0.0605839),
-    0px 2.76726px 3.48674px rgba(0, 0, 0, 0.0421718);
-  width: 500px;
-  @media only screen and (max-width: 1000px) {
-    width: 270px;
+export const ModalContentDiv = styled.div<ModalContentProps>`
+  @media only screen and (min-width: 768px) {
+    display: ${({ variant }) => (variant === 'lg' ? 'grid' : '')};
   }
-  @media only screen and (max-width: 768px) {
-    width: 230px;
-  }
+  grid-template-columns: minmax(0px, max-content);
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: ${({ variant }) =>
-    variant == 'lg' ? '500px' : variant == 'md' ? '330px' : '280px'};
+    variant === 'lg' ? '600px' : variant === 'md' ? '400px' : '300px'};
+  max-width: 70%;
+  max-height: 70vh;
+  overflow: auto;
+  background-color: #373951;
+  padding: 40px;
+  border-radius: 24px;
+  z-index: 999;
 `
 
-export const ModalContentContainer = styled.div<ModalSizeProps>`
-  display: flex;
-  flex-direction: row;
-  @media only screen and (max-width: 1000px) {
-    flex-direction: column;
-  }
-  gap: 25px;
-  flex-direction: ${({ variant }) => (variant == 'lg' ? 'row' : 'column')};
+export const ModalCloseButtonDiv = styled.div`
+  display: block;
+  grid-column: 1/3;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 100%;
+  width: fit-content;
+  cursor: pointer;
+  z-index: 9999;
 `
 
-export const FillContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-`
-
-export const HeadingText = styled.p<ModalSizeProps>`
-  color: #ffffff;
-  word-wrap: break-word;
-  white-space: pre-wrap;
-  word-break: break-word;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 26px;
-  line-height: 1;
-  margin: 16px 0px 0px 0px;
-  @media only screen and (max-width: 1000px) {
-    margin: 0;
-  }
-  margin: ${({ variant }) => (variant == 'lg' ? '16px 0px 0px 0px' : '0')};
-`
-
-export const ContentText = styled.div`
-  color: rgba(255, 255, 255, 0.6);
-  font-style: normal;
-  word-wrap: break-word;
-  white-space: pre-wrap;
-  word-break: break-word;
-  font-weight: 600;
-  font-size: 16px;
-  margin: 16px 0px 0px 0px;
-`
-
-export const TextContainer = styled.div`
-  margin: 0;
-`
-
-export const HeadingContainer = styled.div<ModalSizeProps>`
-  display: flex;
-  flex-direction: row;
-  height: fit;
-  justify-content: flex-start;
-  @media only screen and (max-width: 1000px) {
-    justify-content: center;
-  }
-  justify-content: ${({ variant }) =>
-    variant == 'lg' ? 'flex-start' : 'center'};
-`
-
-export const ButtonContent = styled.div<ModalSizeProps>`
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  @media only screen and (max-width: 1000px) {
-    justify-content: center;
-  }
-  justify-content: ${({ variant }) =>
-    variant == 'lg' ? 'flex-end' : 'center'};
-`
-
-export const ButtonContainer = styled.div<ModalSizeProps>`
-  display: flex;
-  gap: 0.75rem;
-  margin: 16px 0px 0px 0px;
-  justify-content: flex-end;
-  flex-direction: row;
-  @media only screen and (max-width: 1000px) {
-    justify-content: center;
-    flex-direction: row;
-  }
-  @media only screen and (max-width: 768px) {
-    justify-content: center;
-    flex-direction: column;
-  }
-  justify-content: ${({ variant }) =>
-    variant == 'lg' ? 'flex-end' : 'center'};
-  flex-direction: ${({ variant }) => (variant == 'sm' ? 'column' : 'row')};
-`
-export const ImgContainer = styled.div<ModalSizeProps>`
+export const ModalImageDiv = styled.div<ModalContentProps>`
   display: flex;
   justify-content: center;
-  max-height: 200px;
-  padding: 10px 0px 0px 0px;
-  border-radius: 25px;
-  max-width: ${({ variant }) => (variant == 'lg' ? '200px' : '100%')};
-  @media (max-width: 1000px) {
-    width: 100%;
-    max-width: 100%;
+  align-items: center;
+  margin-bottom: 32px;
+  @media only screen and (min-width: 768px) {
+    margin-top: ${({ variant }) => (variant === 'lg' ? '-24px' : '')};
+    margin-right: ${({ variant }) => (variant === 'lg' ? '24px' : '')};
+    margin-bottom: ${({ variant }) => (variant === 'lg' ? '' : '32px')};
   }
+  grid-row: 2/5;
+`
+
+export const ModalHeaderDiv = styled.div<ModalContentProps>`
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  margin-bottom: 12px;
+  @media only screen and (min-width: 768px) {
+    text-align: ${({ variant }) => (variant === 'lg' ? 'left' : 'center')};
+    margin-bottom: ${({ variant }) => (variant === 'lg' ? '' : '12px')};
+  }
+  width: 100%;
+  grid-column: 2;
+`
+
+export const ModalBodyDiv = styled.div<ModalContentProps>`
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff99;
+  line-height: 24px;
+  text-align: center;
+  @media only screen and (min-width: 768px) {
+    text-align: ${({ variant }) => (variant === 'lg' ? 'left' : 'center')};
+    margin-top: ${({ variant }) => (variant === 'lg' ? '8px' : '')};
+    margin-bottom: ${({ variant }) => (variant === 'lg' ? '8px' : '')};
+  }
+  width: 100%;
+  grid-column: 2;
+`
+
+export const ModalFooterDiv = styled.div<ModalContentProps>`
+  margin-top: 32px;
+  @media only screen and (min-width: 768px) {
+    margin-top: ${({ variant }) => (variant === 'lg' ? '' : '32px')};
+    display: ${({ variant }) => (variant === 'lg' ? 'flex' : '')};
+  }
+  justify-content: end;
+  align-items: end;
+  width: 100%;
+  grid-column: 2;
 `

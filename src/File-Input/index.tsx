@@ -21,6 +21,7 @@ import {
   PrimaryMessageContainer,
   SuccessMessageContainer,
   Dropzone,
+  DeleteIconContainer,
 } from './FileInput.style'
 import {
   FileIcon,
@@ -143,7 +144,9 @@ const Success: React.FC<HelperProps> = ({
             onReset()
           }}
         >
-          <DeleteIcon />
+          <DeleteIconContainer>
+            <DeleteIcon />
+          </DeleteIconContainer>
         </DeleteButton>
       </DeleteContainer>
 

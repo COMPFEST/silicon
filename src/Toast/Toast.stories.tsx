@@ -7,6 +7,7 @@ import { StyledLoadingIcon } from '../Button/Button.style'
 
 const LoadingIcon: React.FC = () => (
   <svg
+    style={{ paddingLeft: '8px' }}
     width="24"
     height="24"
     viewBox="0 0 24 24"
@@ -22,10 +23,10 @@ const LoadingIcon: React.FC = () => (
 
 const ErrorIcon: React.FC = () => (
   <svg
-    style={{ paddingTop: '6px' }}
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
+    style={{ paddingLeft: '8px' }}
+    width="21"
+    height="20"
+    viewBox="0 0 21 20"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -39,10 +40,10 @@ const ErrorIcon: React.FC = () => (
 
 const SuccessIcon: React.FC = () => (
   <svg
-    style={{ paddingTop: '6px' }}
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
+    style={{ paddingLeft: '8px' }}
+    width="21"
+    height="20"
+    viewBox="0 0 21 20"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -106,9 +107,9 @@ const Demo = (props: ToastProps) => {
 
     if (props.variant == 'default') return useToast('This is the default!')
 
-    if (props.variant == 'success') return useToast.success('Success!')
+    if (props.variant == 'success') return useToast.success('Success message')
 
-    if (props.variant == 'error') return useToast.error("Ow.. There's an error")
+    if (props.variant == 'error') return useToast.error('Error message')
   }
   return (
     <div>
