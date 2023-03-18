@@ -1,15 +1,11 @@
 import styled from 'styled-components'
 import { StyledTextInputProps } from './interface'
 
-export const StyledTextInput = styled.input<StyledTextInputProps>`
+export const StyledTextInput = styled.input`
   display: flex;
-  border-radius: 12px;
   background-color: transparent;
   color: white;
-  border: 2px solid
-    ${(props) =>
-      props.isError ? 'rgba(255, 115, 135, 1)' : 'rgba(255, 255, 255, 0.3)'};
-  padding: 8px 12px 8px 12px;
+  border: none;
   font-size: 16px;
 
   &:focus {
@@ -33,6 +29,29 @@ export const TextInputContainer = styled.div`
   flex-direction: column;
   gap: 4px;
   font-size: 16px;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 12px;
+  }
+`
+
+export const TextInputDiv = styled.div<StyledTextInputProps>`
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  border-radius: 12px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid
+    ${(props) =>
+      props.isError ? 'rgba(255, 115, 135, 1)' : 'rgba(255, 255, 255, 0.3)'};
+
+  padding: 8px 12px 8px 12px;
+  font-size: 16px;
+
+  &:focus {
+    outline: none;
+  }
 
   @media only screen and (max-width: 768px) {
     font-size: 12px;
