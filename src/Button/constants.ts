@@ -31,7 +31,7 @@ export const VARIANTS: VariantsInterface = {
     &:focus: {
       box-shadow: none;
     }`,
-  tertiary: `background-color: transparent;
+  tertiary: `background-color: rgba(255, 255, 255, 0.3);
     color: white;
     &:hover {
         background-image: #323347;
