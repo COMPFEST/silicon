@@ -27,7 +27,8 @@ import DropdownItem from './Dropdown/DropdownItem'
 import Chip from './Chip'
 
 export {
-  Button, Chip,
+  Button,
+  Chip,
   Modal,
   ModalBody,
   ModalCloseButton,
