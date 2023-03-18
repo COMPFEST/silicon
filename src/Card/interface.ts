@@ -9,8 +9,9 @@ export interface CardProps extends Partial<StyledCardProps> {
   content?: ReactNode
   title?: string
   body?: string
-  descriptionClassName?: string
+  backgroundColor?: string
   contentClassName?: string
+  descriptionClassName?: string
   titleClassName?: string
   bodyClassName?: string
 }

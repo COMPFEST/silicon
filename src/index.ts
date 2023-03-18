@@ -8,6 +8,10 @@ import Checkbox from './Input/Checkbox'
 import Countdown from './Countdown'
 import FileInput from './File-Input'
 import Card from './Card'
+import CardContent from './Card/CardContent'
+import CardDescription from './Card/CardDescription'
+import CardTitle from './Card/CardTitile'
+import CardBody from './Card/CardBody'
 import Tooltips from './Tooltips'
 import { Toast, useToast } from './Toast'
 import Modal from './Modal/Modal'
@@ -40,6 +44,10 @@ export {
   FileInput,
   Disclosure,
   Card,
+  CardContent,
+  CardDescription,
+  CardTitle,
+  CardBody,
   Tooltips,
   Toast,
   useToast,
