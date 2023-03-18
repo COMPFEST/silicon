@@ -7,4 +7,5 @@ module.exports = {
     '@storybook/addon-actions',
   ],
   framework: '@storybook/react',
+  staticDirs: [{ from: '../public/fonts', to: '/static/media' }],
 }
