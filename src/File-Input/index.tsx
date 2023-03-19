@@ -2,7 +2,6 @@ import React, { forwardRef, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
 import {
   Line,
-  Input,
   Message,
   FileName,
   OpenButton,
@@ -37,14 +36,13 @@ import Button from '../Button'
 const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
   (
     {
-      withLink = false,
+      alternateInput = null,
       secondaryMessage,
       fileUrlLabel,
       onDrop,
       value,
       onReset,
       fileId,
-      fileUrlId,
       success = false,
       ...props
     },
@@ -94,7 +92,7 @@ const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
               </PrimaryMessageContainer>
               <SecondaryMessage>{secondaryMessage}</SecondaryMessage>
             </DropzoneTextContainer>
-            {withLink ? (
+            {alternateInput ? (
               <URLContainer>
                 <LineContainer>
                   <Line></Line>
@@ -102,10 +100,10 @@ const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
                   <Line></Line>
                 </LineContainer>
 
-                <Message htmlFor={fileUrlId}>{fileUrlLabel}</Message>
+                <Message>{fileUrlLabel}</Message>
 
                 <URLInputContainer>
-                  <Input id={fileUrlId} ref={ref} {...props} />
+                  {alternateInput}
                   <Button
                     disabled={!value}
                     onClick={() => {

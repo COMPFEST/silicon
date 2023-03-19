@@ -170,31 +170,6 @@ export const URLInputContainer = styled.div`
     gap: 10px;
   }
 `
-export const Input = styled.input`
-  color: #ffffff;
-  font-size: 16px;
-  max-width: 240px;
-  border: 2px solid #60648b;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  border-radius: 12px;
-  padding: 12px 32px;
-  font-weight: 600;
-  background-color: transparent;
-  @media only screen and (max-width: 768px) {
-    max-width: 120px;
-    font-size: 12px;
-  }
-
-  &:placeholder {
-    text-align: center;
-    color: rgba(255, 255, 255, 0.1);
-  }
-
-  &:focus {
-    border-style: none;
-  }
-`
 export const Message = styled.label`
   font-weight: 600;
   color: rgba(255, 255, 255, 0.8);
