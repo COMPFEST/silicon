@@ -25,9 +25,11 @@ import ModalOverlay from './Modal/ModalOverlay'
 import Dropdown from './Dropdown'
 import DropdownItem from './Dropdown/DropdownItem'
 import Chip from './Chip'
+import TipCard from './TipCard'
 
 export {
   Button,
+  TipCard,
   Chip,
   Modal,
   ModalBody,
