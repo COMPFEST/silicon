@@ -2,6 +2,8 @@ import React from 'react'
 import { Story } from '@storybook/react'
 import Tab from '.'
 import { TabProps } from './interface'
+import { userEvent, within } from '@storybook/testing-library'
+import { expect } from '@storybook/jest'
 
 const ExampleIcon = () => (
   <svg
@@ -44,4 +46,12 @@ const Template: Story<TabProps> = (args) => <Tab {...args} />
 export const _Tab = Template.bind({})
 _Tab.args = {
   title: 'Hello',
+}
+
+_Tab.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement)
+  await userEvent.hover(canvas.getByTestId('tab'))
+  await expect(canvas.getByTestId('tab')).toHaveStyle(
+    'background-color: rgba(0,0,0,0)'
+  )
 }

@@ -5,7 +5,7 @@ import { StyledTab } from './Tab.style'
 const Tab: React.FC<TabProps> = ({ title, icon, selected = false }) => {
   return (
     <>
-      <StyledTab selected={selected}>
+      <StyledTab selected={selected} data-testid="tab">
         {icon}
         {title}
       </StyledTab>

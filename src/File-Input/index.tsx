@@ -22,6 +22,7 @@ import {
   SuccessMessageContainer,
   Dropzone,
   DeleteIconContainer,
+  DropzoneOuterContainer,
 } from './FileInput.style'
 import {
   FileIcon,
@@ -74,26 +75,28 @@ const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
             onReset={onReset}
           />
         ) : (
-          <ContentContainer {...getRootProps()}>
-            <Dropzone
-              {...getInputProps()}
-              id={fileId}
-              ref={ref}
-              {...props}
-              name="file"
-              style={{
-                display: 'none',
-              }}
-            />
-            <UploadImg />
-            <DropzoneTextContainer>
-              <PrimaryMessageContainer>
-                Drag atau
-                <OpenButton onClick={open}>upload</OpenButton>
-                file kamu di sini!
-              </PrimaryMessageContainer>
-              <SecondaryMessage>{secondaryMessage}</SecondaryMessage>
-            </DropzoneTextContainer>
+          <DropzoneOuterContainer>
+            <ContentContainer {...getRootProps()}>
+              <Dropzone
+                {...getInputProps()}
+                id={fileId}
+                ref={ref}
+                {...props}
+                name="file"
+                style={{
+                  display: 'none',
+                }}
+              />
+              <UploadImg />
+              <DropzoneTextContainer>
+                <PrimaryMessageContainer>
+                  Drag atau
+                  <OpenButton onClick={open}>upload</OpenButton>
+                  file kamu di sini!
+                </PrimaryMessageContainer>
+                <SecondaryMessage>{secondaryMessage}</SecondaryMessage>
+              </DropzoneTextContainer>
+            </ContentContainer>
             {withLink ? (
               <URLContainer>
                 <LineContainer>
@@ -120,7 +123,7 @@ const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
             ) : (
               ''
             )}
-          </ContentContainer>
+          </DropzoneOuterContainer>
         )}
       </FileInputContainer>
     )
