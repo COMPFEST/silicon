@@ -2,7 +2,6 @@ import React, { forwardRef, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
 import {
   Line,
-  Message,
   FileName,
   OpenButton,
   URLContainer,
@@ -99,9 +98,6 @@ const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
                   atau
                   <Line></Line>
                 </LineContainer>
-
-                <Message>{fileUrlLabel}</Message>
-
                 <URLInputContainer>
                   {alternateInput}
                   <Button

@@ -170,7 +170,3 @@ export const URLInputContainer = styled.div`
     gap: 10px;
   }
 `
-export const Message = styled.label`
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.8);
-`
