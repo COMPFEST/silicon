@@ -24,9 +24,11 @@ import ModalImage from './Modal/ModalImage'
 import ModalOverlay from './Modal/ModalOverlay'
 import Dropdown from './Dropdown'
 import DropdownItem from './Dropdown/DropdownItem'
+import TipCard from './TipCard'
 
 export {
   Button,
+  TipCard,
   Modal,
   ModalBody,
   ModalCloseButton,
