@@ -17,7 +17,8 @@ export const StyledSelect = styled.select`
   }
 `
 
-export const Label = styled.div`
+export const Label = styled.label`
+  display: block;
   color: white;
   margin-bottom: 2px;
 `
