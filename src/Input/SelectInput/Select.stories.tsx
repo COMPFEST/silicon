@@ -19,7 +19,7 @@ const Template: Story<SelectInputProps> = (args) => (
       <option value="4">Child 4</option>
       <option value="5">Child 5</option>
       <option value="6">
-        Nama yang sangat amat panjang sekali oooomaaagaaa
+        Nama yang sangat amat panjang sekali panjang sekali
       </option>
     </SelectInput>
   </>
