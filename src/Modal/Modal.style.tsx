@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { ModalContentProps, ModalProps } from './interface'
 
 export const ModalDiv = styled.div<ModalProps>`
-  display: ${({ isDisplayed }) => (isDisplayed ? 'block' : ' none')};
+  display: ${({ isDisplayed }) => (isDisplayed ? 'block' : 'none')};
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -34,9 +34,25 @@ export const ModalContentDiv = styled.div<ModalContentProps>`
   max-height: 70vh;
   overflow: auto;
   background-color: #373951;
-  padding: 40px;
+  padding: 60px;
+  padding-bottom: 40px;
   border-radius: 24px;
   z-index: 999;
+
+  &::-webkit-scrollbar {
+    background-color: #343653;
+    width: 0.75em;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(165, 165, 165, 0.75);
+    border-radius: 12px;
+    &:hover {
+      background-color: rgba(165, 165, 165, 0.85);
+    }
+    &:active {
+      background-color: rgba(165, 165, 165, 1);
+    }
+  }
 `
 
 export const ModalCloseButtonDiv = styled.div`
@@ -51,17 +67,25 @@ export const ModalCloseButtonDiv = styled.div`
   z-index: 9999;
 `
 
+export const CloseButtonWrapper = styled.div`
+  position: absolute;
+  top: -30px;
+  right: -30px;
+`
+
 export const ModalImageDiv = styled.div<ModalContentProps>`
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-bottom: 32px;
+  margin-inline: auto;
+  width: fit-content;
+  height: fit-content;
+  max-width: 250px;
+  max-height: 250px;
   @media only screen and (min-width: 768px) {
-    margin-top: ${({ variant }) => (variant === 'lg' ? '-24px' : '')};
     margin-right: ${({ variant }) => (variant === 'lg' ? '24px' : '')};
-    margin-bottom: ${({ variant }) => (variant === 'lg' ? '' : '32px')};
+    margin-bottom: ${({ variant }) => (variant === 'lg' ? '0' : '32px')};
   }
   grid-row: 2/5;
+  overflow: hidden;
 `
 
 export const ModalHeaderDiv = styled.div<ModalContentProps>`
@@ -72,7 +96,7 @@ export const ModalHeaderDiv = styled.div<ModalContentProps>`
   margin-bottom: 12px;
   @media only screen and (min-width: 768px) {
     text-align: ${({ variant }) => (variant === 'lg' ? 'left' : 'center')};
-    margin-bottom: ${({ variant }) => (variant === 'lg' ? '' : '12px')};
+    margin-bottom: ${({ variant }) => (variant === 'lg' ? '0' : '12px')};
   }
   width: 100%;
   grid-column: 2;
@@ -86,8 +110,8 @@ export const ModalBodyDiv = styled.div<ModalContentProps>`
   text-align: center;
   @media only screen and (min-width: 768px) {
     text-align: ${({ variant }) => (variant === 'lg' ? 'left' : 'center')};
-    margin-top: ${({ variant }) => (variant === 'lg' ? '8px' : '')};
-    margin-bottom: ${({ variant }) => (variant === 'lg' ? '8px' : '')};
+    margin-top: ${({ variant }) => (variant === 'lg' ? '8px' : '0')};
+    margin-bottom: ${({ variant }) => (variant === 'lg' ? '8px' : '0')};
   }
   width: 100%;
   grid-column: 2;
@@ -95,12 +119,16 @@ export const ModalBodyDiv = styled.div<ModalContentProps>`
 
 export const ModalFooterDiv = styled.div<ModalContentProps>`
   margin-top: 32px;
-  @media only screen and (min-width: 768px) {
-    margin-top: ${({ variant }) => (variant === 'lg' ? '' : '32px')};
-    display: ${({ variant }) => (variant === 'lg' ? 'flex' : '')};
-  }
-  justify-content: end;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: end;
   width: 100%;
   grid-column: 2;
+  @media only screen and (min-width: 768px) {
+    margin-top: ${({ variant }) => (variant === 'lg' ? '0' : '32px')};
+    justify-content: ${({ variant }) => (variant === 'lg' ? 'end' : 'center')};
+    -webkit-justify-content: ${({ variant }) =>
+      variant === 'lg' ? 'flex-end' : ''};
+  }
 `
