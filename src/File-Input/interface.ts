@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef } from 'react'
+import { ComponentPropsWithoutRef, ReactNode } from 'react'
 
 export interface StyledFileInputProps {
   isSuccess: boolean
@@ -15,12 +15,11 @@ export interface HelperProps {
 export interface FileInputProps
   extends Omit<ComponentPropsWithoutRef<'input'>, 'onDrop'> {
   secondaryMessage?: string
-  withLink?: boolean
+  alternateInput?: ReactNode
   fileUrlLabel?: string
   value: string
   onDrop: (acceptedFiles: File[]) => void
   onReset: () => void
   fileId?: string
-  fileUrlId?: string
   success?: boolean
 }

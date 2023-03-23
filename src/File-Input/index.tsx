@@ -2,8 +2,6 @@ import React, { forwardRef, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
 import {
   Line,
-  Input,
-  Message,
   FileName,
   OpenButton,
   URLContainer,
@@ -22,7 +20,6 @@ import {
   SuccessMessageContainer,
   Dropzone,
   DeleteIconContainer,
-  DropzoneOuterContainer,
 } from './FileInput.style'
 import {
   FileIcon,
@@ -38,14 +35,13 @@ import Button from '../Button'
 const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
   (
     {
-      withLink = false,
+      alternateInput = null,
       secondaryMessage,
       fileUrlLabel,
       onDrop,
       value,
       onReset,
       fileId,
-      fileUrlId,
       success = false,
       ...props
     },
@@ -75,40 +71,35 @@ const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
             onReset={onReset}
           />
         ) : (
-          <DropzoneOuterContainer>
-            <ContentContainer {...getRootProps()}>
-              <Dropzone
-                {...getInputProps()}
-                id={fileId}
-                ref={ref}
-                {...props}
-                name="file"
-                style={{
-                  display: 'none',
-                }}
-              />
-              <UploadImg />
-              <DropzoneTextContainer>
-                <PrimaryMessageContainer>
-                  Drag atau
-                  <OpenButton onClick={open}>upload</OpenButton>
-                  file kamu di sini!
-                </PrimaryMessageContainer>
-                <SecondaryMessage>{secondaryMessage}</SecondaryMessage>
-              </DropzoneTextContainer>
-            </ContentContainer>
-            {withLink ? (
+          <ContentContainer {...getRootProps()}>
+            <Dropzone
+              {...getInputProps()}
+              id={fileId}
+              ref={ref}
+              {...props}
+              name="file"
+              style={{
+                display: 'none',
+              }}
+            />
+            <UploadImg />
+            <DropzoneTextContainer>
+              <PrimaryMessageContainer>
+                Drag atau
+                <OpenButton onClick={open}>upload</OpenButton>
+                file kamu di sini!
+              </PrimaryMessageContainer>
+              <SecondaryMessage>{secondaryMessage}</SecondaryMessage>
+            </DropzoneTextContainer>
+            {alternateInput ? (
               <URLContainer>
                 <LineContainer>
                   <Line></Line>
                   atau
                   <Line></Line>
                 </LineContainer>
-
-                <Message htmlFor={fileUrlId}>{fileUrlLabel}</Message>
-
                 <URLInputContainer>
-                  <Input id={fileUrlId} ref={ref} {...props} />
+                  {alternateInput}
                   <Button
                     disabled={!value}
                     onClick={() => {
@@ -123,7 +114,7 @@ const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
             ) : (
               ''
             )}
-          </DropzoneOuterContainer>
+          </ContentContainer>
         )}
       </FileInputContainer>
     )
