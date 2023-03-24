@@ -9,10 +9,12 @@ const SelectInput = forwardRef<HTMLSelectElement, SelectInputProps>(
 
     return (
       <SelectContainer>
-        <Label onClick={() => inputRef.current?.focus()}>{label}</Label>
-        <StyledSelect ref={inputRef} {...props}>
-          {children}
-        </StyledSelect>
+        <Label onClick={() => inputRef.current?.focus()}>
+          {label}
+          <StyledSelect ref={inputRef} {...props}>
+            {children}
+          </StyledSelect>
+        </Label>
       </SelectContainer>
     )
   }

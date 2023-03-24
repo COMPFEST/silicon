@@ -29,6 +29,9 @@ export const StyledSelect = styled.select`
 `
 
 export const Label = styled.label`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   color: white;
   margin-bottom: 2px;
 `
