@@ -34,7 +34,7 @@ export const Body = styled.div`
 export const Container = styled.div<StyledCardProps>`
   display: flex;
   flex-direction: ${({ direction }) =>
-    direction == 'horizontal' ? 'column' : 'row'};
+    direction === 'horizontal' ? 'row' : 'column'};
   justify-content: flex-end;
   align-items: center;
   background: #373951;
@@ -42,6 +42,7 @@ export const Container = styled.div<StyledCardProps>`
   ${({ size, direction }) => SIZES[size][direction]};
   text-align: start;
   transition: 0.2s;
+  overflow-wrap: break-word;
 `
 
 export const Content = styled.div<{
