@@ -108,7 +108,9 @@ const Template: Story<CardProps> = (args) => {
         direction={args.direction}
         backgroundColor={args.backgroundColor}
       >
-        {args.content != undefined && <CardContent>{args.content}</CardContent>}
+        {args.content != undefined && (
+          <CardContent direction={args.direction}>{args.content}</CardContent>
+        )}
 
         {(args.title != undefined || args.body != undefined) && (
           <CardDescription descriptionClassName={args.descriptionClassName}>
@@ -128,8 +130,11 @@ Normal.args = {
       src={'https://land-stg.virgoku.dev/static/media/logo.e6ea0f3a.png'}
       alt="test"
       style={{
-        width: '240px',
-        height: '120px',
+        width: '100%',
+        height: '100%',
+        objectFit: 'contain',
+        maxWidth: '240px',
+        maxHeight: '120px',
       }}
     />
   ),

@@ -52,6 +52,6 @@ export const Content = styled.div<{
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: ${({ direction }) => (direction == 'horizontal' ? '250px' : '100%')};
+  height: ${({ direction }) => (direction == 'vertical' ? '250px' : '100%')};
   position: relative;
 `
