@@ -36,6 +36,7 @@ export const ChildrenContainer = styled.div<{
   color: rgba(255, 255, 255, 0.8);
   width: 100%;
   display: ${(props) => (props.isShowed ? 'block' : 'none')};
+  overflow-wrap: break-word;
   animation: fadeIn 100ms ease-out;
   @keyframes fadeIn {
     from {
