@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const TooltipsContainer = styled.div`
-  background-color: white;
   border-radius: 6px;
 `
 
@@ -17,6 +16,7 @@ export const TooltipsSpanTop = styled.span`
   word-wrap: break-word;
   white-space: pre-wrap;
   word-break: break-word;
+  min-width: 5ch;
   &:after {
     content: '';
     position: absolute;
@@ -40,6 +40,7 @@ export const TooltipsSpanBot = styled.span`
   word-wrap: break-word;
   white-space: pre-wrap;
   word-break: break-word;
+  min-width: 5ch;
   &:after {
     content: '';
     position: absolute;

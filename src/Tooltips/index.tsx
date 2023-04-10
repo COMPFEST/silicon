@@ -24,11 +24,11 @@ const Tooltips: React.FC<TooltipsProps> = ({ id, text = '', children }) => {
         const { height } = container.current.getBoundingClientRect()
         const tooltipHeight = tooltipRef.current.getBoundingClientRect().height
 
-        if (windowHeight - (bottom + height + tooltipHeight) < 5) {
-          tooltipRef.current.style.bottom = height + 'px'
+        if (windowHeight - (bottom + height + tooltipHeight) < 25) {
+          tooltipRef.current.style.bottom = height + 25 + 'px'
           setPosition(false)
         } else {
-          tooltipRef.current.style.top = bottom + window.scrollY + 5 + 'px'
+          tooltipRef.current.style.top = height + window.scrollY + 25 + 'px'
           setPosition(true)
         }
       }}
