@@ -28,7 +28,7 @@ const TextInput = forwardRef<
     return (
       <>
         <TextInputContainer>
-          <LabelDiv>{label}</LabelDiv>
+          {label && <LabelDiv>{label}</LabelDiv>}
 
           <TextInputDiv isError={!!error}>
             {leftIcon}
