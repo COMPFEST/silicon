@@ -21,6 +21,9 @@ const TextInput = forwardRef<
       placeholder = 'Placeholder',
       leftIcon,
       rightIcon,
+      labelClassName = '',
+      inputDivClassName = '',
+      inputClassName = '',
       ...props
     },
     ref
@@ -28,11 +31,12 @@ const TextInput = forwardRef<
     return (
       <>
         <TextInputContainer>
-          <LabelDiv>{label}</LabelDiv>
+          <LabelDiv className={labelClassName}>{label}</LabelDiv>
 
-          <TextInputDiv isError={!!error}>
+          <TextInputDiv isError={!!error} className={inputDivClassName}>
             {leftIcon}
             <StyledTextInput
+              className={inputClassName}
               placeholder={placeholder}
               ref={ref}
               type={type}

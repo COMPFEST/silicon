@@ -7,6 +7,7 @@ export const StyledTextInput = styled.input`
   color: white;
   border: none;
   font-size: 16px;
+  width: 100%;
 
   &:focus {
     outline: none;
