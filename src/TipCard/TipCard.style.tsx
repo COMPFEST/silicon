@@ -4,8 +4,11 @@ export const TipCardContainer = styled.div`
   color: #ffffff;
   font-weight: 500;
   border-radius: 0.75rem;
-  display: table;
-  width: fit-content;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  max-width: 90vw;
   background-color: #373951;
   border: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
@@ -13,8 +16,8 @@ export const TipCardContainer = styled.div`
 `
 
 export const Leading = styled.div`
-  display: table-cell;
-  vertical-align: middle;
+  display: flex;
+  align-items: center;
   background-color: #3e405b;
   padding: 1rem;
   border-radius: 0.75rem;
@@ -24,13 +27,13 @@ export const Leading = styled.div`
 export const Content = styled.div`
   display: -webkit-box;
   display: -moz-box;
-  vertical-align: middle;
-  max-width: 30ch;
-  max-height: 36px;
+  width: 100%;
+  height: 100%;
+  max-height: 48px;
   overflow: hidden;
   text-overflow: ellipsis;
   word-wrap: break-word;
-  padding: 0.75rem 1rem;
+  padding: 0 1rem;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   -moz-line-clamp: 2;
