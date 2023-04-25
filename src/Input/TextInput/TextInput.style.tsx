@@ -7,6 +7,7 @@ export const StyledTextInput = styled.input`
   color: white;
   border: none;
   font-size: 16px;
+  width: 100%;
 
   &:focus {
     outline: none;
@@ -24,17 +25,6 @@ export const StyledTextInput = styled.input`
   }
 `
 
-export const TextInputContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  font-size: 16px;
-
-  @media only screen and (max-width: 768px) {
-    font-size: 12px;
-  }
-`
-
 export const TextInputDiv = styled.div<StyledTextInputProps>`
   display: flex;
   gap: 8px;
@@ -44,7 +34,7 @@ export const TextInputDiv = styled.div<StyledTextInputProps>`
   color: white;
   border: 2px solid
     ${(props) =>
-      props.isError ? 'rgba(255, 115, 135, 1)' : 'rgba(255, 255, 255, 0.3)'};
+      props.isError ? 'rgba(255, 115, 135, 1)' : 'rgba(168, 168, 168, 0.5)'};
 
   padding: 8px 12px 8px 12px;
   font-size: 16px;
@@ -56,19 +46,4 @@ export const TextInputDiv = styled.div<StyledTextInputProps>`
   @media only screen and (max-width: 768px) {
     font-size: 12px;
   }
-`
-
-export const LabelDiv = styled.div`
-  color: white;
-`
-
-export const BottomTextDiv = styled.div<{
-  error?: boolean
-}>`
-  color: rgba(255, 255, 255, 0.8);
-  color: ${(props) =>
-    props.error ? 'rgba(255, 115, 135, 1)' : 'rgba(255, 255, 255, 0.8)'};
-  display: flex;
-  align-items: center;
-  gap: 4px;
 `

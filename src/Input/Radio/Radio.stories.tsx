@@ -55,9 +55,7 @@ const Template: Story<RadioProps> = (args) => (
 )
 
 export const _Radio = Template.bind({})
-_Radio.args = {
-  label: 'Label',
-}
+_Radio.args = {}
 
 const ColDiv = styled.div`
   display: flex;

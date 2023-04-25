@@ -58,8 +58,6 @@ const Template: Story<TextInputProps> = (args) => <TextInput {...args} />
 
 export const _TextInput = Template.bind({})
 _TextInput.args = {
-  label: 'Label',
-  helper: 'Helper text',
   error: 'Error message',
   type: 'text',
 }
