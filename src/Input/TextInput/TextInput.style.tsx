@@ -25,17 +25,6 @@ export const StyledTextInput = styled.input`
   }
 `
 
-export const TextInputContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  font-size: 16px;
-
-  @media only screen and (max-width: 768px) {
-    font-size: 12px;
-  }
-`
-
 export const TextInputDiv = styled.div<StyledTextInputProps>`
   display: flex;
   gap: 8px;
@@ -57,15 +46,4 @@ export const TextInputDiv = styled.div<StyledTextInputProps>`
   @media only screen and (max-width: 768px) {
     font-size: 12px;
   }
-`
-
-export const BottomTextDiv = styled.div<{
-  error?: boolean
-}>`
-  color: rgba(255, 255, 255, 0.8);
-  color: ${(props) =>
-    props.error ? 'rgba(255, 115, 135, 1)' : 'rgba(255, 255, 255, 0.8)'};
-  display: flex;
-  align-items: center;
-  gap: 4px;
 `
