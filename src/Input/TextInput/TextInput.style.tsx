@@ -59,10 +59,6 @@ export const TextInputDiv = styled.div<StyledTextInputProps>`
   }
 `
 
-export const LabelDiv = styled.div`
-  color: white;
-`
-
 export const BottomTextDiv = styled.div<{
   error?: boolean
 }>`

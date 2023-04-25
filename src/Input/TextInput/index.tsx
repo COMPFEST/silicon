@@ -3,7 +3,6 @@ import { TextInputProps } from './interface'
 import {
   StyledTextInput,
   TextInputContainer,
-  LabelDiv,
   BottomTextDiv,
   TextInputDiv,
 } from './TextInput.style'
@@ -21,7 +20,6 @@ const TextInput = forwardRef<
       placeholder = 'Placeholder',
       leftIcon,
       rightIcon,
-      labelClassName = '',
       inputDivClassName = '',
       inputClassName = '',
       ...props
@@ -31,8 +29,6 @@ const TextInput = forwardRef<
     return (
       <>
         <TextInputContainer>
-          {label && <LabelDiv className={labelClassName}>{label}</LabelDiv>}
-
           <TextInputDiv isError={!!error} className={inputDivClassName}>
             {leftIcon}
             <StyledTextInput
