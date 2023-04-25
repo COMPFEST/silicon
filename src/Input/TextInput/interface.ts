@@ -9,5 +9,4 @@ export interface TextInputProps {
   type?: 'text' | 'url' | 'email' | 'password' | 'number' | 'hidden'
   leftIcon?: ReactNode
   rightIcon?: ReactNode
-  inputClassName?: string
 }

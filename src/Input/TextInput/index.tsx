@@ -13,7 +13,7 @@ const TextInput = forwardRef<
       placeholder = 'Placeholder',
       leftIcon,
       rightIcon,
-      inputClassName = '',
+      className = '',
       ...props
     },
     ref
@@ -23,7 +23,7 @@ const TextInput = forwardRef<
         <TextInputDiv isError={!!error}>
           {leftIcon}
           <StyledTextInput
-            className={inputClassName}
+            className={className}
             placeholder={placeholder}
             ref={ref}
             type={type}
