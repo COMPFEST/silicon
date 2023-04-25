@@ -13,7 +13,6 @@ const TextInput = forwardRef<
 >(
   (
     {
-      label,
       helper,
       error,
       type = 'text',

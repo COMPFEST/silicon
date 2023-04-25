@@ -45,7 +45,7 @@ export const TextInputDiv = styled.div<StyledTextInputProps>`
   color: white;
   border: 2px solid
     ${(props) =>
-      props.isError ? 'rgba(255, 115, 135, 1)' : 'rgba(255, 255, 255, 0.3)'};
+      props.isError ? 'rgba(255, 115, 135, 1)' : 'rgba(255, 255, 255, 0.1)'};
 
   padding: 8px 12px 8px 12px;
   font-size: 16px;
