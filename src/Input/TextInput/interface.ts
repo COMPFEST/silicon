@@ -5,7 +5,6 @@ export interface StyledTextInputProps {
 }
 
 export interface TextInputProps {
-  helper?: string
   error?: string
   type?: 'text' | 'url' | 'email' | 'password' | 'number' | 'hidden'
   leftIcon?: ReactNode
