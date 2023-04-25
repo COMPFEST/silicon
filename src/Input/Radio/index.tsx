@@ -3,7 +3,7 @@ import { RadioProps } from './interface'
 import { RadioDiv, StyledRadio, SVGDiv } from './Radio.style'
 
 const Radio = forwardRef<HTMLInputElement, RadioProps>(
-  ({ icon = null, labelClassName, radioClassName, ...props }, ref) => {
+  ({ icon = null, className, ...props }, ref) => {
     const radioRef = useRef<HTMLInputElement>(null)
 
     useImperativeHandle(ref, () => radioRef.current as HTMLInputElement)
@@ -12,7 +12,7 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(
       <>
         <RadioDiv onClick={() => radioRef.current?.click()}>
           <StyledRadio
-            className={radioClassName}
+            className={className}
             ref={radioRef}
             type="radio"
             {...props}
