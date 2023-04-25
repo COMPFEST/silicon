@@ -1,9 +1,9 @@
 import React, { forwardRef, useImperativeHandle, useRef } from 'react'
 import { RadioProps } from './interface'
-import { RadioDiv, RadioLabel, StyledRadio, SVGDiv } from './Radio.style'
+import { RadioDiv, StyledRadio, SVGDiv } from './Radio.style'
 
 const Radio = forwardRef<HTMLInputElement, RadioProps>(
-  ({ label, icon = null, labelClassName, radioClassName, ...props }, ref) => {
+  ({ icon = null, labelClassName, radioClassName, ...props }, ref) => {
     const radioRef = useRef<HTMLInputElement>(null)
 
     useImperativeHandle(ref, () => radioRef.current as HTMLInputElement)
@@ -18,7 +18,6 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(
             {...props}
           ></StyledRadio>
           {icon && <SVGDiv>{icon}</SVGDiv>}
-          <RadioLabel className={labelClassName}>{label}</RadioLabel>
         </RadioDiv>
       </>
     )

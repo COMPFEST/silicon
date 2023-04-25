@@ -55,9 +55,7 @@ const Template: Story<CheckboxProps> = (args) => (
 )
 
 export const _Checkbox = Template.bind({})
-_Checkbox.args = {
-  label: 'Label',
-}
+_Checkbox.args = {}
 
 const ColDiv = styled.div`
   display: flex;
