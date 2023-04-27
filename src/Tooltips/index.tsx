@@ -28,7 +28,6 @@ const Tooltips: React.FC<TooltipsProps> = ({ id, text = '', children }) => {
           tooltipRef.current.style.bottom = height + 25 + 'px'
           setPosition(false)
         } else {
-          tooltipRef.current.style.top = height + window.scrollY + 25 + 'px'
           setPosition(true)
         }
       }}
