@@ -10,6 +10,7 @@ const Tab: React.FC<TabProps> = ({
   onSelected,
   selectedClassName,
   unselectedClassName,
+  className = '',
 }) => {
   const { selectedIndex, setSelectedIndex } = useTabGroupContext()
 
@@ -24,9 +25,9 @@ const Tab: React.FC<TabProps> = ({
           }
         }
       }}
-      className={
+      className={`${className} ${
         selectedIndex === index ? selectedClassName : unselectedClassName
-      }
+      }`}
     >
       {icon}
       {title}
