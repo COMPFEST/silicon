@@ -10,9 +10,11 @@ const Tab: React.FC<TabProps> = ({ title, icon, index, onSelected }) => {
     <StyledTab
       selected={selectedIndex === index}
       onClick={() => {
-        if (selectedIndex !== index && onSelected && index !== undefined) {
+        if (selectedIndex !== index && index !== undefined) {
           setSelectedIndex(index)
-          onSelected()
+          if (onSelected) {
+            onSelected()
+          }
         }
       }}
     >
