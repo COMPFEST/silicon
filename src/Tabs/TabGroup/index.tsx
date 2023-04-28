@@ -3,9 +3,11 @@ import { TabGroupProps } from './interface'
 import { TabGroupDiv } from './TabGroup.style'
 import { TabGroupProvider } from './TabGroupContext'
 
-const TabGroup: React.FC<TabGroupProps> = ({ children }) => {
+const TabGroup: React.FC<
+  TabGroupProps & React.ComponentPropsWithoutRef<'div'>
+> = ({ children, ...props }) => {
   return (
-    <TabGroupDiv>
+    <TabGroupDiv {...props}>
       <TabGroupProvider>
         {children?.map((value, idx) => {
           return cloneElement(value, {

@@ -9,4 +9,6 @@ export interface TabProps {
   icon?: ReactNode
   onSelected?: () => void
   index?: number
+  selectedClassName?: string
+  unselectedClassName?: string
 }
