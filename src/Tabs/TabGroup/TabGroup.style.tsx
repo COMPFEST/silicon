@@ -7,5 +7,3 @@ export const TabGroupDiv = styled.div`
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 12px;
 `
-
-export const TabDiv = styled.div``
