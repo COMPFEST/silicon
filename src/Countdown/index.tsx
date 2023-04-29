@@ -34,11 +34,14 @@ const Countdown: React.FC<
   }
 
   const [remainingTime, setRemainingTime] = useState(defaultRemainingTime)
+  const [dateTime, setDateTime] = useState({
+    date: '',
+    time: '',
+  })
 
-  const startTimer = () => {
-    const deadlineDate = targetDate.getTime()
-
-    const intervalId = setInterval(() => {
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const deadlineDate = targetDate.getTime()
       const now = new Date().getTime()
       const distance = deadlineDate - now
 
@@ -56,7 +59,6 @@ const Countdown: React.FC<
           minutes: 0,
           seconds: 0,
         })
-        clearInterval(intervalId)
       } else {
         setRemainingTime({
           days,
@@ -67,26 +69,28 @@ const Countdown: React.FC<
       }
     }, 1000)
 
-    return intervalId
-  }
+    return () => clearInterval(interval)
+  }, [targetDate])
 
   useEffect(() => {
-    const intervalId = startTimer()
-    return () => clearInterval(intervalId)
-  }, [])
-
-  const dateString = targetDate.toLocaleDateString('id-ID', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  })
-  const timeString = targetDate
-    .toLocaleTimeString('id-ID', {
-      hour: '2-digit',
-      minute: '2-digit',
-      timeZoneName: 'short',
+    const date = targetDate.toLocaleDateString('id-ID', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
     })
-    .replace('.', ':')
+    const time = targetDate
+      .toLocaleTimeString('id-ID', {
+        hour: '2-digit',
+        minute: '2-digit',
+        timeZoneName: 'short',
+      })
+      .replace('.', ':')
+
+    setDateTime({
+      date,
+      time,
+    })
+  }, [targetDate, displayDate])
 
   return (
     <CountdownContainer {...props}>
@@ -141,7 +145,7 @@ const Countdown: React.FC<
       </TimeContainer>
 
       {/* Deadline Date */}
-      {displayDate && `${dateString}, ${timeString}`}
+      {displayDate && `${dateTime.date}, ${dateTime.time}`}
     </CountdownContainer>
   )
 }
