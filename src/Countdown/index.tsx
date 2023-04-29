@@ -69,7 +69,7 @@ const Countdown: React.FC<
 
   useEffect(() => {
     startTimer()
-  })
+  }, [])
 
   const dateString = targetDate.toLocaleDateString('id-ID', {
     day: 'numeric',
