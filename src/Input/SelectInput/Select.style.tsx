@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const StyledSelect = styled.select`
   border-radius: 12px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(168, 168, 168, 0.5);
   color: white;
   padding: 8px 12px;
   background-color: transparent;
@@ -20,6 +20,7 @@ export const StyledSelect = styled.select`
 
   &:focus {
     outline: none;
+    border: 2px solid rgba(204, 229, 255, 1);
   }
 
   & > option {
