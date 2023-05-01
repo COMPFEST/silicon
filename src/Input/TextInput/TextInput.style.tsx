@@ -35,9 +35,13 @@ export const TextInputDiv = styled.div<StyledTextInputProps>`
   border: 2px solid
     ${(props) =>
       props.isError ? 'rgba(255, 115, 135, 1)' : 'rgba(168, 168, 168, 0.5)'};
-
+  transition: all 1000ms cubic-bezier(0.075, 0.82, 0.165, 1) 0ms;
   padding: 8px 12px 8px 12px;
   font-size: 16px;
+
+  &:hover {
+    border: 2px solid rgba(204, 229, 255, 1);
+  }
 
   &:focus {
     outline: none;
