@@ -1,5 +1,5 @@
 import { TooltipsProps } from './interface'
-import React, { useState } from 'react'
+import React, { ComponentPropsWithoutRef, useState } from 'react'
 import { useRef } from 'react'
 
 import {
@@ -8,7 +8,12 @@ import {
   TooltipsSpanTop,
 } from './Tooltips.style'
 
-const Tooltips: React.FC<TooltipsProps> = ({ id, text = '', children }) => {
+const Tooltips: React.FC<TooltipsProps & ComponentPropsWithoutRef<'span'>> = ({
+  id,
+  text = '',
+  children,
+  ...props
+}) => {
   const tooltipRef = useRef<HTMLSpanElement>(null)
   const container = useRef<HTMLDivElement>(null)
   const [position, setPosition] = useState(true)
@@ -39,9 +44,13 @@ const Tooltips: React.FC<TooltipsProps> = ({ id, text = '', children }) => {
       <>{children}</>
 
       {position == true ? (
-        <TooltipsSpanBot ref={tooltipRef}>{text}</TooltipsSpanBot>
+        <TooltipsSpanBot {...props} ref={tooltipRef}>
+          {text}
+        </TooltipsSpanBot>
       ) : (
-        <TooltipsSpanTop ref={tooltipRef}>{text}</TooltipsSpanTop>
+        <TooltipsSpanTop {...props} ref={tooltipRef}>
+          {text}
+        </TooltipsSpanTop>
       )}
     </TooltipsContainer>
   )
