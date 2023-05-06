@@ -13,3 +13,7 @@ export interface ModalContextProps extends ModalProps {
   children: ReactNode
   onClose: () => void
 }
+
+export interface ModalCloseButtonProps {
+  color?: string
+}

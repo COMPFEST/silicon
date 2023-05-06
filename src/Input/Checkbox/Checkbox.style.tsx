@@ -70,16 +70,6 @@ export const StyledCheckbox = styled.input`
   }
 `
 
-export const CheckboxLabel = styled.div`
-  color: white;
-  font-size: 16px;
-  line-height: 18px;
-
-  @media only screen and (max-width: 768px) {
-    font-size: 12px;
-  }
-`
-
 export const CheckboxDiv = styled.div`
   display: flex;
   gap: 8px;

@@ -23,6 +23,9 @@ export const ModalContentDiv = styled.div<ModalContentProps>`
   @media only screen and (min-width: 768px) {
     display: ${({ variant }) => (variant === 'lg' ? 'grid' : '')};
   }
+  @media only screen and (max-width: 768px) {
+    padding: 20px;
+  }
   grid-template-columns: minmax(0px, max-content);
   position: fixed;
   left: 50%;
