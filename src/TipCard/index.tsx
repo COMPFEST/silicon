@@ -5,11 +5,11 @@ import { Content, Leading, TipCardContainer } from './TipCard.style'
 const TipCard: React.FC<TipCardProps> = ({
   text,
   containerClassName,
-  iconClassName,
+  iconContainerClassName,
 }) => {
   return (
     <TipCardContainer className={containerClassName}>
-      <Leading className={iconClassName}>
+      <Leading className={iconContainerClassName}>
         <svg
           width="41"
           height="41"
