@@ -26,6 +26,7 @@ export const StyledTextInput = styled.input`
 `
 
 export const TextInputDiv = styled.div<StyledTextInputProps>`
+  width: 100%;
   display: flex;
   gap: 8px;
   align-items: center;
