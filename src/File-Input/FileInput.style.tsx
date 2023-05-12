@@ -8,7 +8,11 @@ export const FileInputContainer = styled.div<StyledFileInputProps>`
   outline-style: dashed;
   outline-width: 4px;
   outline-color: ${(props) =>
-    props.isSuccess ? 'rgba(62, 235, 190, 1)' : 'rgba(255, 255, 255, 0.1)'};
+    props.isSuccess
+      ? 'rgba(62, 235, 190, 1)'
+      : props.theme === 'dark'
+      ? 'rgba(255, 255, 255, 0.1)'
+      : 'rgb(231, 235, 255)'};
   border-radius: 24px;
   align-items: start;
   justify-content: center;
@@ -45,7 +49,9 @@ export const Dropzone = styled.input`
   display: none !important;
 `
 
-export const PrimaryMessageContainer = styled.div`
+export const PrimaryMessageContainer = styled.div<
+  React.ComponentPropsWithoutRef<'div'>
+>`
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -76,7 +82,7 @@ export const FileUploaded = styled.div`
   flex-direction: row;
   justify-content: center;
 `
-export const FileName = styled.div`
+export const FileName = styled.div<React.ComponentPropsWithoutRef<'div'>>`
   max-width: 500px;
   overflow: hidden;
   word-break: break-word;
@@ -101,19 +107,19 @@ export const DeleteButton = styled.button`
   cursor: pointer;
   width: 48px;
   height: 48px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: ${(props) =>
+    props.theme === 'dark' ? 'rgba(255, 255, 255, 0.1)' : 'rgb(245, 248, 255)'};
   transition: all;
   transition-duration: 0.5s;
   border-radius: 100%;
+  display: flex;
+  justify-items: center;
+  align-items: center;
   &:hover {
     background-color: rgba(255, 255, 255, 0.5);
     transition: all;
     transition-duration: 0.5s;
   }
-`
-export const DeleteIconContainer = styled.div`
-  position: relative;
-  left: -6px;
 `
 export const SuccessImageContainer = styled.div`
   padding-top: 32px;

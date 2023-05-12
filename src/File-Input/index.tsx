@@ -19,7 +19,6 @@ import {
   PrimaryMessageContainer,
   SuccessMessageContainer,
   Dropzone,
-  DeleteIconContainer,
 } from './FileInput.style'
 import {
   FileIcon,
@@ -28,6 +27,8 @@ import {
   UploadImg,
   SuccessImg,
   DeleteIcon,
+  UploadImgLight,
+  SuccessImgLight,
 } from './assets'
 import { FileInputProps, HelperProps } from './interface'
 import Button from '../Button'
@@ -43,6 +44,8 @@ const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
       onReset,
       fileId,
       success = false,
+      textClassName,
+      isDarkTheme = true,
       ...props
     },
     ref
@@ -61,7 +64,10 @@ const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
     })
 
     return (
-      <FileInputContainer isSuccess={isSuccess}>
+      <FileInputContainer
+        isSuccess={isSuccess}
+        theme={isDarkTheme ? 'dark' : 'light'}
+      >
         {isSuccess ? (
           <Success
             isLink={isLink}
@@ -69,6 +75,8 @@ const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
             value={value}
             setIsSuccess={setIsSuccess}
             onReset={onReset}
+            textClassName={textClassName}
+            isDarkTheme={isDarkTheme}
           />
         ) : (
           <ContentContainer {...getRootProps()}>
@@ -82,9 +90,9 @@ const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
                 display: 'none',
               }}
             />
-            <UploadImg />
+            {isDarkTheme ? <UploadImg /> : <UploadImgLight />}
             <DropzoneTextContainer>
-              <PrimaryMessageContainer>
+              <PrimaryMessageContainer className={textClassName}>
                 Drag atau
                 <OpenButton onClick={open}>upload</OpenButton>
                 file kamu di sini!
@@ -127,6 +135,8 @@ const Success: React.FC<HelperProps> = ({
   value,
   setIsSuccess,
   onReset,
+  textClassName,
+  isDarkTheme = true,
 }) => {
   return (
     <ContentContainer>
@@ -137,23 +147,26 @@ const Success: React.FC<HelperProps> = ({
             setIsLink(false)
             onReset()
           }}
+          theme={isDarkTheme ? 'dark' : 'light'}
         >
-          <DeleteIconContainer>
-            <DeleteIcon />
-          </DeleteIconContainer>
+          <DeleteIcon fill={isDarkTheme ? 'white' : '#7D8DC1'} />
         </DeleteButton>
       </DeleteContainer>
 
       <SuccessImageContainer>
-        <SuccessImg />
+        {isDarkTheme ? <SuccessImg /> : <SuccessImgLight />}
       </SuccessImageContainer>
 
       <SuccessMessageContainer>
         <SuccessMessage>File telah terupload!</SuccessMessage>
 
         <FileUploaded>
-          {isLink ? <LinkIcon /> : <FileIcon />}
-          <FileName>{value}</FileName>
+          {isLink ? (
+            <LinkIcon />
+          ) : (
+            <FileIcon fill={isDarkTheme ? 'white' : '#DDE7FF'} />
+          )}
+          <FileName className={textClassName}>{value}</FileName>
         </FileUploaded>
       </SuccessMessageContainer>
     </ContentContainer>
