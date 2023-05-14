@@ -2,10 +2,14 @@ import React from 'react'
 import { TipCardProps } from './interface'
 import { Content, Leading, TipCardContainer } from './TipCard.style'
 
-const TipCard: React.FC<TipCardProps> = ({ text }) => {
+const TipCard: React.FC<TipCardProps> = ({
+  text,
+  containerClassName,
+  iconContainerClassName,
+}) => {
   return (
-    <TipCardContainer>
-      <Leading>
+    <TipCardContainer className={containerClassName}>
+      <Leading className={iconContainerClassName}>
         <svg
           width="41"
           height="41"
