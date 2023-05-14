@@ -34,6 +34,12 @@ export default {
     children: {
       description: 'The text inside the chip.',
     },
+    variant: {
+      description: 'Change Chip color',
+      control: 'radio',
+      options: ['default', 'success', 'danger', 'warning'],
+      defaultValue: 'default',
+    },
   },
 } as ComponentMeta<typeof Chip>
 

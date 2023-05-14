@@ -6,4 +6,6 @@ export interface ChipProps {
   showLeftIcon?: boolean
   leftIcon?: ReactNode
   children: ReactNode
+  disabled?: boolean
+  variant?: 'default' | 'success' | 'danger' | 'warning'
 }

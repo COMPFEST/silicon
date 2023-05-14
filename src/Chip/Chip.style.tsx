@@ -1,8 +1,32 @@
 import styled from 'styled-components'
+import { ChipProps } from './interface'
 
-export const SelectedChip = styled.div`
-  background-color: #4ec1f3;
-  border: 3px solid #0aa4e7;
+export const SelectedChip = styled.div<ChipProps>`
+  background-color: ${({ variant }) => {
+    switch (variant) {
+      case 'success':
+        return '#32D4AA'
+      case 'danger':
+        return '#EF586E'
+      case 'warning':
+        return '#EEA02B'
+      default:
+        return '#4ec1f3'
+    }
+  }};
+  border: 2px solid #0aa4e7;
+  border-color: ${({ variant }) => {
+    switch (variant) {
+      case 'success':
+        return '#32D4AA'
+      case 'danger':
+        return '#EF586E'
+      case 'warning':
+        return '#EEA02B'
+      default:
+        return '#0aa4e7'
+    }
+  }};
   font-weight: 500;
   color: rgba(0, 0, 0, 0.5);
   display: flex;
@@ -17,16 +41,40 @@ export const SelectedChip = styled.div`
   }
 `
 
-export const UnselectedChip = styled(SelectedChip)`
+export const UnselectedChip = styled(SelectedChip)<ChipProps>`
   background-color: transparent;
-  border-color: #ffffff;
-  color: #ffffff;
+  border-color: ${({ variant }) => {
+    switch (variant) {
+      case 'success':
+        return '#32D4AA'
+      case 'danger':
+        return '#EF586E'
+      case 'warning':
+        return '#EEA02B'
+      default:
+        return '#FFFFFF'
+    }
+  }};
+  color: ${({ variant }) => {
+    switch (variant) {
+      case 'success':
+        return '#32D4AA'
+      case 'danger':
+        return '#EF586E'
+      case 'warning':
+        return '#EEA02B'
+      default:
+        return '#FFFFFF'
+    }
+  }};
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: ${({ disabled }) =>
+      disabled ? 'transparent' : 'rgba(255, 255, 255, 0.1)'};
   }
 
   &:focus {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: ${({ disabled }) =>
+      disabled ? 'transparent' : 'rgba(255, 255, 255, 0.1)'};
   }
 `
