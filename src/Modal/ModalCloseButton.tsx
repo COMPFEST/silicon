@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { ComponentPropsWithoutRef } from 'react'
 import { ModalCloseButtonProps, ModalContextProps } from './interface'
 import { useModalContext } from './Modal'
 import { CloseButtonWrapper, ModalCloseButtonDiv } from './Modal.style'
 
-const ModalCloseButton: React.FC<ModalCloseButtonProps> = ({ color }) => {
+const ModalCloseButton: React.FC<
+  ModalCloseButtonProps & ComponentPropsWithoutRef<'div'>
+> = ({ color = 'white', ...props }) => {
   const { onClose }: ModalContextProps = useModalContext()
 
   return (
-    <ModalCloseButtonDiv onClick={onClose}>
+    <ModalCloseButtonDiv onClick={onClose} {...props}>
       <CloseButtonWrapper>
         <svg
           width="18"
