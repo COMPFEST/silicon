@@ -39,5 +39,7 @@ export const StyledTab = styled.button<StyledTabProps>`
     );
 
     outline: 4px solid rgba(255, 255, 255, 0.1);
+
+    color: white !important;
   `}
 `

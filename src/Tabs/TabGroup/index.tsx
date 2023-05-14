@@ -1,26 +1,24 @@
-import React, { cloneElement, useState } from 'react'
+import React, { cloneElement } from 'react'
 import { TabGroupProps } from './interface'
-import { TabDiv, TabGroupDiv } from './TabGroup.style'
+import { TabGroupDiv } from './TabGroup.style'
+import { TabGroupProvider } from './TabGroupContext'
 
-const TabGroup: React.FC<TabGroupProps> = ({ children }) => {
-  const [selected, setSelected] = useState(0)
-
+const TabGroup: React.FC<
+  TabGroupProps & React.ComponentPropsWithoutRef<'div'>
+> = ({ children, ...props }) => {
   return (
-    <>
-      <TabGroupDiv>
+    <TabGroupDiv {...props}>
+      <TabGroupProvider>
         {children?.map((value, idx) => {
-          return (
-            <TabDiv onClick={() => setSelected(idx)} key={idx}>
-              {cloneElement(value, {
-                title: value.props.title,
-                icon: value.props.icon,
-                selected: selected === idx,
-              })}
-            </TabDiv>
-          )
+          return cloneElement(value, {
+            title: value.props.title,
+            icon: value.props.icon,
+            index: idx,
+            onSelected: value.props.onSelected,
+          })
         })}
-      </TabGroupDiv>
-    </>
+      </TabGroupProvider>
+    </TabGroupDiv>
   )
 }
 
