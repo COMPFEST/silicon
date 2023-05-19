@@ -8,7 +8,7 @@ export const ModalDiv = styled.div<ModalProps>`
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 9;
+  z-index: 99;
 `
 
 export const ModalOverlayDiv = styled.div`
