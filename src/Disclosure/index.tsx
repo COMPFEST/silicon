@@ -10,7 +10,14 @@ import {
 
 const Disclosure: React.FC<
   DisclosureProps & React.ComponentPropsWithoutRef<'div'>
-> = ({ title, children, ...props }) => {
+> = ({
+  title,
+  children,
+  titleContainerClassName,
+  childrenContainerClassName,
+  iconColor,
+  ...props
+}) => {
   const [isShowed, setIsShowed] = useState(false)
 
   return (
@@ -19,20 +26,31 @@ const Disclosure: React.FC<
         id="title"
         onClick={() => setIsShowed(!isShowed)}
         isShowed={isShowed}
+        className={titleContainerClassName}
       >
         <Title>{title}</Title>
         <StyledCaretIcon id="caret">
-          <CaretIcon isShowed={isShowed} />
+          <CaretIcon isShowed={isShowed} color={iconColor} />
         </StyledCaretIcon>
       </TitleContainer>
-      <ChildrenContainer id="children" isShowed={isShowed}>
+      <ChildrenContainer
+        id="children"
+        isShowed={isShowed}
+        className={childrenContainerClassName}
+      >
         {children}
       </ChildrenContainer>
     </MainContainer>
   )
 }
 
-const CaretIcon = ({ isShowed }: { isShowed: boolean }) => (
+const CaretIcon = ({
+  isShowed,
+  color = 'white',
+}: {
+  isShowed: boolean
+  color?: string
+}) => (
   <svg
     style={
       !isShowed
@@ -47,7 +65,7 @@ const CaretIcon = ({ isShowed }: { isShowed: boolean }) => (
   >
     <path
       d="M2.12499 7.00001L6.00499 3.12001L9.88499 7.00001C10.275 7.39001 10.905 7.39001 11.295 7.00001C11.685 6.61001 11.685 5.98001 11.295 5.59001L6.70499 1.00001C6.31499 0.610012 5.68499 0.610012 5.29499 1.00001L0.704995 5.59001C0.314995 5.98001 0.314995 6.61001 0.704995 7.00001C1.095 7.38001 1.73499 7.39001 2.12499 7.00001Z"
-      fill="white"
+      fill={color}
     />
   </svg>
 )
