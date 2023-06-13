@@ -2,9 +2,9 @@ import styled from 'styled-components'
 import { StyledFileInputProps } from './interface'
 
 export const FileInputContainer = styled.div<StyledFileInputProps>`
-  width: 558px;
+  max-width: 558px;
   padding: 12px;
-  height: 260x;
+  min-height: 260px;
   outline-style: dashed;
   outline-width: 4px;
   outline-color: ${(props) =>
@@ -20,10 +20,6 @@ export const FileInputContainer = styled.div<StyledFileInputProps>`
   position: relative;
   transition: all;
   transition-duration: 0.5s;
-  @media only screen and (max-width: 768px) {
-    width: 308px;
-    font-size: 12px;
-  }
   &:hover {
     transition: all;
     transition-duration: 0.5s;
@@ -56,6 +52,9 @@ export const PrimaryMessageContainer = styled.div<
   display: flex;
   align-items: center;
   justify-content: center;
+  @media only screen and (max-width: 768px) {
+    font-size: 12px;
+  }
 `
 export const SecondaryMessage = styled.p`
   color: rgba(255, 255, 255, 0.8);
@@ -98,9 +97,7 @@ export const DeleteContainer = styled.div`
   align-items: left;
   justify-content: end;
   position: absolute;
-  @media only screen and (max-width: 768px) {
-    width: 308px;
-  }
+  width: 100%;
 `
 export const DeleteButton = styled.button`
   border-style: none;
@@ -119,6 +116,10 @@ export const DeleteButton = styled.button`
     background-color: rgba(255, 255, 255, 0.5);
     transition: all;
     transition-duration: 0.5s;
+  }
+  @media only screen and (max-width: 768px) {
+    width: 36px;
+    height: 36px;
   }
 `
 export const SuccessImageContainer = styled.div`
