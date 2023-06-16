@@ -14,7 +14,7 @@ export const ModalDiv = styled.div<ModalProps>`
 export const ModalOverlayDiv = styled.div`
   width: 100%;
   height: 100%;
-  background: rgb(40, 41, 61, 0.2);
+  background: rgb(40, 41, 61, 0.5);
   backdrop-filter: blur(1px);
   z-index: 99;
 `
