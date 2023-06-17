@@ -59,7 +59,6 @@
     "lib": "lib"
   },
   "dependencies": {
-    "np": "^7.6.2",
     "react-dropzone": "^14.2.3",
     "react-hot-toast": "^2.4.0",
     "react-icons": "^4.7.1",
