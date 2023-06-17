@@ -44,9 +44,8 @@ export const TooltipsSpanBot = styled.span`
   &:after {
     content: '';
     position: absolute;
-    bottom: 100%;
-    left: 20%;
-    margin-left: -10px;
+    bottom: 95%;
+    left: 0%;
     border-width: 7px;
     border-style: solid;
     border-color: transparent transparent #3e405b transparent;
