@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Title = styled.div`
   align-items: stretch;
   padding: 13px;
-  white-space: nowrap;
+  white-space: normal;
   overflow: hidden;
   text-overflow: ellipsis;
 `
