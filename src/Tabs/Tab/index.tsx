@@ -16,6 +16,7 @@ const Tab: React.FC<TabProps> = ({
 
   return (
     <StyledTab
+      type="button"
       selected={selectedIndex === index}
       onClick={() => {
         if (selectedIndex !== index && index !== undefined) {
