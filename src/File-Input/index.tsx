@@ -81,7 +81,6 @@ const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
         ) : (
           <ContentContainer {...getRootProps()}>
             <Dropzone
-              {...getInputProps()}
               id={fileId}
               ref={ref}
               {...props}
@@ -89,6 +88,7 @@ const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
               style={{
                 display: 'none',
               }}
+              {...getInputProps()}
             />
             {isDarkTheme ? <UploadImg /> : <UploadImgLight />}
             <DropzoneTextContainer>

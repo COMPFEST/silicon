@@ -3,6 +3,7 @@ import { StyledFileInputProps } from './interface'
 
 export const FileInputContainer = styled.div<StyledFileInputProps>`
   max-width: 558px;
+  width: 100%;
   padding: 12px;
   min-height: 260px;
   outline-style: dashed;
@@ -91,6 +92,7 @@ export const FileName = styled.div<React.ComponentPropsWithoutRef<'div'>>`
 `
 export const DeleteContainer = styled.div`
   top: 0px;
+  right: 0;
   padding: 20px 20px 0px 0px;
   width: 558px;
   display: flex;
