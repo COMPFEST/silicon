@@ -8,9 +8,10 @@ const TabGroupContext = createContext<TabGroupContextProps>(
 export const useTabGroupContext = () => useContext(TabGroupContext)
 
 export const TabGroupProvider: React.FC<TabGroupProviderProps> = ({
+  initialSelectedIndex = 0,
   children,
 }) => {
-  const [selectedIndex, setSelectedIndex] = useState(0)
+  const [selectedIndex, setSelectedIndex] = useState(initialSelectedIndex)
 
   const contextValue = {
     selectedIndex,
