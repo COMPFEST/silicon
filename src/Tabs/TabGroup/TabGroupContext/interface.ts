@@ -6,5 +6,6 @@ export interface TabGroupContextProps {
 }
 
 export interface TabGroupProviderProps {
+  initialSelectedIndex?: number
   children: ReactNode
 }

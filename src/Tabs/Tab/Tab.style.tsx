@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 import { StyledTabProps } from './interface'
 
-export const StyledTab = styled.button<StyledTabProps>`
+export const StyledTab = styled.button<
+  StyledTabProps & React.ComponentPropsWithoutRef<'button'>
+>`
   display: flex;
   justify-content: center;
   align-items: center;

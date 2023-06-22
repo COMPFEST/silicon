@@ -5,10 +5,10 @@ import { TabGroupProvider } from './TabGroupContext'
 
 const TabGroup: React.FC<
   TabGroupProps & React.ComponentPropsWithoutRef<'div'>
-> = ({ children, ...props }) => {
+> = ({ initialSelectedIndex, children, ...props }) => {
   return (
     <TabGroupDiv {...props}>
-      <TabGroupProvider>
+      <TabGroupProvider initialSelectedIndex={initialSelectedIndex}>
         {children?.map((value, idx) => {
           return cloneElement(value, {
             title: value.props.title,
