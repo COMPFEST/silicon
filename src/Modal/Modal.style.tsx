@@ -33,8 +33,6 @@ export const ModalContentDiv = styled.div<ModalContentProps>`
   transform: translate(-50%, -50%);
   width: ${({ variant }) =>
     variant === 'lg' ? '600px' : variant === 'md' ? '400px' : '300px'};
-  max-width: 70%;
-  max-height: 70vh;
   overflow: auto;
   background-color: #373951;
   padding: 60px;
