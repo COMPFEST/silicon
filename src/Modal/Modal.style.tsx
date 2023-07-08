@@ -14,7 +14,7 @@ export const ModalDiv = styled.div<ModalProps>`
 export const ModalOverlayDiv = styled.div`
   width: 100%;
   height: 100%;
-  background: rgb(40, 41, 61, 0.5);
+  background: rgb(40, 41, 61, 0.7);
   backdrop-filter: blur(1px);
   z-index: 99;
 `
@@ -39,7 +39,7 @@ export const ModalContentDiv = styled.div<ModalContentProps>`
   padding-bottom: 40px;
   border-radius: 24px;
   z-index: 999;
-
+  box-shadow: 0 0px 15px rgba(0, 0, 0, 0.75);
   &::-webkit-scrollbar {
     background-color: #343653;
     width: 0.75em;
