@@ -3,7 +3,7 @@ import { TabProps } from './interface'
 import { StyledTab } from './Tab.style'
 import { useTabGroupContext } from '../TabGroup/TabGroupContext'
 
-const Tab: React.FC<TabProps> = ({
+const Tab: React.FC<TabProps & React.ComponentPropsWithoutRef<'button'>> = ({
   title,
   icon,
   index,
@@ -11,6 +11,7 @@ const Tab: React.FC<TabProps> = ({
   selectedClassName,
   unselectedClassName,
   className = '',
+  disabled = false,
 }) => {
   const { selectedIndex, setSelectedIndex } = useTabGroupContext()
 
@@ -29,6 +30,7 @@ const Tab: React.FC<TabProps> = ({
       className={`${className} ${
         selectedIndex === index ? selectedClassName : unselectedClassName
       }`}
+      disabled={disabled}
     >
       {icon}
       {title}
