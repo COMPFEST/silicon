@@ -1,6 +1,6 @@
 {
   "name": "compfest-silicon",
-  "version": "1.5.0-0",
+  "version": "1.6.0-0",
   "description": "COMPFEST Silicon Design System - Lightweight and interactive React component",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
