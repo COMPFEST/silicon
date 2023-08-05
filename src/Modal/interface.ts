@@ -11,7 +11,7 @@ export interface ModalContentProps {
 
 export interface ModalContextProps extends ModalProps {
   children: ReactNode
-  onClose: () => void
+  onClose?: () => void
 }
 
 export interface ModalCloseButtonProps {
