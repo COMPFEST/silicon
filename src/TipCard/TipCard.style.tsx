@@ -28,7 +28,6 @@ export const Content = styled.div`
   display: -webkit-box;
   display: -moz-box;
   width: 100%;
-  height: 100%;
   max-height: 48px;
   overflow: hidden;
   text-overflow: ellipsis;
